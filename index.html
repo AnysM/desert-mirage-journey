@@ -85,58 +85,46 @@
     position: absolute;
     inset: 0;
     overflow: hidden;
+    background: var(--night);
   }
 
-  .hero-slide {
+  .hero-video-wrap {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transform: scale(1.06);
-    transition: opacity 1.8s ease-in-out, transform 8s ease-in-out;
+    pointer-events: none;
   }
 
-  .hero-slide.active {
-    opacity: 1;
-    transform: scale(1.0);
+  .hero-video-wrap iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 16:9 ratio, oversized to cover any viewport */
+    width: 100vw;
+    height: 56.25vw; /* 100/16*9 */
+    min-height: 100vh;
+    min-width: 177.78vh; /* 100/9*16 */
+    transform: translate(-50%, -50%);
+    border: none;
+    pointer-events: none;
   }
 
-  .hero-slide-1 { background-image: url('hero2.jpg'); }
-  .hero-slide-2 { background-image: url('anys1.jpg'); background-position: center 30%; }
-  .hero-slide-3 { background-image: url('hero1.jpg'); }
+  /* fallback image shown before video loads */
+  .hero-video-fallback {
+    position: absolute;
+    inset: 0;
+    background: url('hero2.jpg') center/cover no-repeat;
+    transition: opacity 1s ease;
+  }
 
   .hero-gradient {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-      rgba(26,20,16,0.25) 0%,
-      rgba(26,20,16,0.05) 35%,
-      rgba(26,20,16,0.6) 75%,
+      rgba(26,20,16,0.35) 0%,
+      rgba(26,20,16,0.1) 35%,
+      rgba(26,20,16,0.65) 75%,
       rgba(26,20,16,1) 100%);
     z-index: 1;
-  }
-
-  .hero-dots {
-    position: absolute;
-    bottom: 44px;
-    left: 80px;
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-  }
-
-  .hero-dot {
-    width: 24px;
-    height: 1px;
-    background: rgba(250,246,241,0.3);
-    cursor: pointer;
-    transition: background 0.3s, width 0.3s;
-  }
-
-  .hero-dot.active {
-    background: var(--amber);
-    width: 40px;
   }
 
   .hero-content {
@@ -867,15 +855,17 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <div class="hero-slide hero-slide-1 active"></div>
-    <div class="hero-slide hero-slide-2"></div>
-    <div class="hero-slide hero-slide-3"></div>
+    <div class="hero-video-fallback" id="heroFallback"></div>
+    <div class="hero-video-wrap">
+      <iframe
+        id="heroVideo"
+        src="https://www.youtube-nocookie.com/embed/iCWNsOf8T8Y?autoplay=1&mute=1&loop=1&playlist=iCWNsOf8T8Y&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        title=""
+      ></iframe>
+    </div>
     <div class="hero-gradient"></div>
-  </div>
-  <div class="hero-dots">
-    <div class="hero-dot active" onclick="goSlide(0)"></div>
-    <div class="hero-dot" onclick="goSlide(1)"></div>
-    <div class="hero-dot" onclick="goSlide(2)"></div>
   </div>
   <div class="hero-content">
   <div class="hero-content">
@@ -1291,21 +1281,13 @@
 </footer>
 
 <script>
-  let current = 0;
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots = document.querySelectorAll('.hero-dot');
-
-  function goSlide(n) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = n;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-  }
-
-  setInterval(() => {
-    goSlide((current + 1) % slides.length);
-  }, 6000);
+  // Fade out fallback image once video has had time to load
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var fallback = document.getElementById('heroFallback');
+      if (fallback) fallback.style.opacity = '0';
+    }, 2000);
+  });
 </script>
 </body>
 </html>
