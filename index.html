@@ -804,16 +804,24 @@
     overflow: hidden;
     padding: 0;
     display: flex;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     height: 280px;
   }
 
   .gallery-strip img {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
     height: 100%;
-    width: auto;
     object-fit: cover;
-    flex-shrink: 0;
     filter: sepia(20%) contrast(1.05);
     transition: filter 0.3s;
+    display: block;
   }
 
   .gallery-strip img:hover { filter: sepia(0%) contrast(1.1); }
@@ -1094,8 +1102,7 @@
 <!-- PRESENCES -->
 <section class="facilitators" id="presences">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">2026 — Your Facilitators</p>
-    <h2 class="section-title">Yi Chen &amp; Anys Neoqii<br><em>will accompany you.</em></h2>
+    <p style="font-family:'Cinzel',serif;font-size:16px;letter-spacing:5px;color:var(--amber);margin-bottom:0;text-transform:uppercase;">2026 — Your Facilitators</p>
 
     <!-- Yi Chen + Anys -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
@@ -1300,6 +1307,28 @@
         <div style="display:flex;flex-direction:column;gap:4px;">
           <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);">Sandrine Barrande</span>
           <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Initiatory desert journey, November 2023</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;">
+
+      <!-- Céline -->
+      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Before we left, Anys was precious in calming our concerns. Once we arrived, each of our needs, each sensitive state, found its place. I was struck by the range of approaches he was able to offer us — each one exactly right."</p>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);">Céline Mercatello</span>
+          <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Desert retreat</span>
+        </div>
+      </div>
+
+      <!-- Joséphina -->
+      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Anys took time with each of us. Time to care. Time to listen when we needed it. Time to let us be free — to laugh, to cry, to be silent. Sacred spaces of sharing. A harmony of rhythms. Very precious days."</p>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);">Joséphina Bos</span>
+          <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">5 days in the Moroccan desert</span>
         </div>
       </div>
 
