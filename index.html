@@ -22,838 +22,190 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
+  body { background: var(--night); color: var(--stars); font-family: 'Baskervville', serif; overflow-x: hidden; }
 
-  body {
-    background: var(--night);
-    color: var(--stars);
-    font-family: 'Baskervville', serif;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 20px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to bottom, rgba(26,20,16,0.95), transparent);
-    backdrop-filter: blur(2px);
-  }
-
-  .nav-logo {
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: var(--amber);
-    text-transform: uppercase;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--sand-light);
-    text-decoration: none;
-    opacity: 0.75;
-    transition: opacity 0.3s, color 0.3s;
-  }
-
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to bottom, rgba(26,20,16,0.95), transparent); backdrop-filter: blur(2px); }
+  .nav-logo { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 4px; color: var(--amber); text-transform: uppercase; }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sand-light); text-decoration: none; opacity: 0.75; transition: opacity 0.3s, color 0.3s; }
   .nav-links a:hover { opacity: 1; color: var(--amber); }
 
-  /* ── HERO ── */
-  .hero {
-    height: 100vh;
-    min-height: 700px;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden;
-  }
+  /* EARLY BIRD BANNER */
+  .early-bird-banner { background: var(--amber); color: var(--night); text-align: center; padding: 10px 24px; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; position: relative; z-index: 99; margin-top: 0; }
+  .early-bird-banner a { color: var(--night); text-decoration: underline; margin-left: 16px; font-size: 10px; }
 
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    background: var(--night);
-  }
+  /* HERO */
+  .hero { height: 100vh; min-height: 700px; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; overflow: hidden; background: var(--night); }
+  .hero-video-wrap { position: absolute; inset: 0; pointer-events: none; }
+  .hero-video-wrap iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.78vh; transform: translate(-50%, -50%); border: none; pointer-events: none; }
+  .hero-video-fallback { position: absolute; inset: 0; background: url('hero2.jpg') center/cover no-repeat; transition: opacity 1s ease; }
+  .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,20,16,0.35) 0%, rgba(26,20,16,0.1) 35%, rgba(26,20,16,0.65) 75%, rgba(26,20,16,1) 100%); z-index: 1; }
+  .hero-content { position: relative; z-index: 5; padding: 0 80px 80px; max-width: 900px; }
+  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 6px; color: var(--amber); text-transform: uppercase; margin-bottom: 24px; opacity: 0; animation: fadeup 1s 0.3s forwards; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(56px, 8vw, 110px); font-weight: 300; line-height: 0.95; letter-spacing: -2px; color: var(--stars); margin-bottom: 32px; opacity: 0; animation: fadeup 1s 0.5s forwards; }
+  .hero-title em { font-style: italic; color: var(--amber); }
+  @keyframes fadeup { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-scroll { position: absolute; bottom: 40px; right: 80px; writing-mode: vertical-rl; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--sand); opacity: 0.5; animation: fadeup 1s 1.5s forwards; display: flex; align-items: center; gap: 16px; }
+  .hero-scroll::after { content: ''; display: block; width: 1px; height: 60px; background: var(--sand); opacity: 0.4; animation: grow 2s 2s ease-out forwards; transform-origin: top; transform: scaleY(0); }
+  @keyframes grow { to { transform: scaleY(1); } }
 
-  .hero-video-wrap {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
+  /* SECTIONS */
+  .section-label { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 6px; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; opacity: 0.8; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 58px); font-weight: 300; line-height: 1.2; color: var(--stars); margin-bottom: 48px; }
 
-  .hero-video-wrap iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* 16:9 ratio, oversized to cover any viewport */
-    width: 100vw;
-    height: 56.25vw; /* 100/16*9 */
-    min-height: 100vh;
-    min-width: 177.78vh; /* 100/9*16 */
-    transform: translate(-50%, -50%);
-    border: none;
-    pointer-events: none;
-  }
-
-  /* fallback image shown before video loads */
-  .hero-video-fallback {
-    position: absolute;
-    inset: 0;
-    background: url('hero2.jpg') center/cover no-repeat;
-    transition: opacity 1s ease;
-  }
-
-  .hero-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom,
-      rgba(26,20,16,0.35) 0%,
-      rgba(26,20,16,0.1) 35%,
-      rgba(26,20,16,0.65) 75%,
-      rgba(26,20,16,1) 100%);
-    z-index: 1;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 5;
-    padding: 0 80px 80px;
-    max-width: 900px;
-  }
-
-  .hero-eyebrow {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 6px;
-    color: var(--amber);
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeup 1s 0.3s forwards;
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(56px, 8vw, 110px);
-    font-weight: 300;
-    line-height: 0.95;
-    letter-spacing: -2px;
-    color: var(--stars);
-    margin-bottom: 32px;
-    opacity: 0;
-    animation: fadeup 1s 0.5s forwards;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--amber);
-  }
-
-  .hero-sub {
-    font-size: 18px;
-    font-style: italic;
-    color: var(--sand-light);
-    opacity: 0;
-    animation: fadeup 1s 0.8s forwards;
-    letter-spacing: 1px;
-  }
-
-  @keyframes fadeup {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 40px;
-    right: 80px;
-    writing-mode: vertical-rl;
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--sand);
-    opacity: 0.5;
-    animation: fadeup 1s 1.5s forwards;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .hero-scroll::after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 60px;
-    background: var(--sand);
-    opacity: 0.4;
-    animation: grow 2s 2s ease-out forwards;
-    transform-origin: top;
-    transform: scaleY(0);
-  }
-
-  @keyframes grow {
-    to { transform: scaleY(1); }
-  }
-
-  /* ── DIVIDER ── */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 0 80px;
-    margin: 60px 0;
-  }
-
-  .divider-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--sand-deep), transparent);
-  }
-
-  .divider-glyph {
-    font-family: 'Cinzel', serif;
-    font-size: 18px;
-    color: var(--amber);
-    opacity: 0.6;
-  }
-
-  /* ── INTRO ── */
-  .intro {
-    padding: 80px;
-    background: var(--dusk);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .intro::before {
-    content: 'DESERT';
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    font-family: 'Cinzel', serif;
-    font-size: 200px;
-    color: rgba(200,164,110,0.04);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .intro-question {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 3vw, 42px);
-    font-weight: 300;
-    line-height: 1.4;
-    color: var(--sand-light);
-    font-style: italic;
-  }
-
-  .intro-question span {
-    color: var(--amber);
-  }
-
-  .intro-body {
-    font-size: 17px;
-    line-height: 1.85;
-    color: rgba(250,246,241,0.75);
-  }
-
+  /* INTRO */
+  .intro { padding: 80px; background: var(--dusk); position: relative; overflow: hidden; }
+  .intro::before { content: 'DESERT'; position: absolute; top: -20px; right: -20px; font-family: 'Cinzel', serif; font-size: 200px; color: rgba(200,164,110,0.04); line-height: 1; pointer-events: none; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; max-width: 1200px; margin: 0 auto; }
+  .intro-question { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3vw, 42px); font-weight: 300; line-height: 1.4; color: var(--sand-light); font-style: italic; }
+  .intro-question span { color: var(--amber); }
+  .intro-body { font-size: 17px; line-height: 1.85; color: rgba(250,246,241,0.75); }
   .intro-body p + p { margin-top: 20px; }
-
   .intro-body strong { color: var(--sand); }
 
-  /* ── SECTION ── */
-  .section {
-    padding: 100px 80px;
-  }
-
-  .section-label {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 16px;
-    opacity: 0.8;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 4vw, 58px);
-    font-weight: 300;
-    line-height: 1.2;
-    color: var(--stars);
-    margin-bottom: 48px;
-  }
-
-  /* ── FACILITATORS ── */
-  .facilitators {
-    background: var(--night);
-    padding: 60px 80px 100px;
-  }
-
-  .facil-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .facil-card {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 3/4;
-    background: var(--dusk);
-  }
-
-  .facil-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: sepia(20%) contrast(1.05);
-    transition: transform 0.6s ease;
-  }
-
-  .facil-card:hover img { transform: scale(1.04); }
-
-  .facil-overlay {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 32px 24px 28px;
-    background: linear-gradient(to top, rgba(26,20,16,0.95), transparent);
-  }
-
-  .facil-year {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    letter-spacing: 4px;
-    color: var(--amber);
-    margin-bottom: 8px;
-  }
-
-  .facil-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 300;
-    color: var(--stars);
-    font-style: italic;
-  }
-
-  .facil-role {
-    font-size: 12px;
-    color: var(--sand);
-    margin-top: 4px;
-    letter-spacing: 1px;
-  }
-
-  /* ── QUOTE ── */
-  .quote-section {
-    background: var(--sand);
-    padding: 100px 80px;
-    position: relative;
-  }
-
-  .quote-section::before {
-    content: '"';
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 400px;
-    color: rgba(168,124,74,0.15);
-    position: absolute;
-    top: -80px;
-    left: 60px;
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .quote-inner {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .quote-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(20px, 2.5vw, 30px);
-    font-weight: 300;
-    line-height: 1.7;
-    color: var(--night);
-    font-style: italic;
-    margin-bottom: 32px;
-  }
-
-  .quote-author {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 4px;
-    color: var(--earth);
-    text-transform: uppercase;
-  }
-
-  /* ── EXPERIENCE CARDS ── */
-  .experiences {
-    background: var(--dusk);
-    padding: 100px 80px;
-  }
-
-  .exp-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    margin-top: 60px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .exp-card {
-    background: var(--night);
-    padding: 48px 36px;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.4s;
-  }
-
-  .exp-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--amber);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-
-  .exp-card:hover::after { transform: scaleX(1); }
-  .exp-card:hover { background: var(--dusk); }
-
-  .exp-number {
-    font-family: 'Cinzel', serif;
-    font-size: 48px;
-    color: rgba(232,177,83,0.15);
-    line-height: 1;
-    margin-bottom: 20px;
-  }
-
-  .exp-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    font-style: italic;
-    color: var(--sand-light);
-    margin-bottom: 16px;
-  }
-
-  .exp-body {
-    font-size: 15px;
-    line-height: 1.75;
-    color: rgba(250,246,241,0.55);
-  }
-
-  /* ── SCHEDULE ── */
-  .schedule {
-    background: var(--night);
-    padding: 100px 80px;
-  }
-
-  .schedule-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-  }
-
-  .schedule-day {
-    border-left: 1px solid rgba(232,177,83,0.2);
-    padding: 24px 0 24px 32px;
-    transition: border-color 0.3s;
-  }
-
-  .schedule-day:hover { border-color: var(--amber); }
-
-  .day-date {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: var(--amber);
-    margin-bottom: 10px;
-  }
-
-  .day-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-style: italic;
-    color: var(--stars);
-    margin-bottom: 8px;
-  }
-
-  .day-desc {
-    font-size: 14px;
-    line-height: 1.7;
-    color: rgba(250,246,241,0.5);
-  }
-
-  /* ── ACCOMMODATION ── */
-  .accommodation {
-    background: var(--sand-light);
-    padding: 100px 80px;
-  }
-
-  .accom-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    max-width: 1200px;
-    margin: 60px auto 0;
-  }
-
-  .accom-card {
-    background: white;
-    overflow: hidden;
-  }
-
-  .accom-img {
-    height: 220px;
-    background: var(--sand);
-    overflow: hidden;
-  }
-
-  .accom-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: sepia(15%);
-    transition: transform 0.5s ease;
-  }
-
-  .accom-card:hover .accom-img img { transform: scale(1.05); }
-
-  .accom-body {
-    padding: 28px 24px;
-  }
-
-  .accom-type {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: var(--earth);
-    margin-bottom: 8px;
-    text-transform: uppercase;
-  }
-
-  .accom-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    color: var(--night);
-    font-style: italic;
-    margin-bottom: 12px;
-  }
-
-  .accom-desc {
-    font-size: 14px;
-    line-height: 1.7;
-    color: rgba(26,20,16,0.6);
-  }
-
-  .accommodation .section-label,
-  .accommodation .section-title { color: var(--night); }
-  .accommodation .section-label { color: var(--earth); }
-
-  /* ── INCLUDED ── */
-  .included {
-    background: var(--dusk);
-    padding: 100px 80px;
-  }
-
-  .included-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    max-width: 1200px;
-    margin: 60px auto 0;
-  }
-
-  .included-box {
-    padding: 48px;
-    border: 1px solid rgba(232,177,83,0.15);
-  }
-
-  .included-box-title {
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    letter-spacing: 4px;
-    margin-bottom: 32px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(232,177,83,0.2);
-  }
-
-  .included-box-title.in { color: var(--amber); }
-  .included-box-title.ex { color: var(--sand-deep); }
-
-  .included-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .included-list li {
-    font-size: 15px;
-    line-height: 1.5;
-    color: rgba(250,246,241,0.7);
-    padding-left: 20px;
-    position: relative;
-  }
-
-  .included-list li::before {
-    content: '✤';
-    position: absolute;
-    left: 0;
-    color: var(--amber);
-    font-size: 10px;
-    top: 3px;
-  }
-
-  /* ── PRICE ── */
-  .price {
-    background:
-      linear-gradient(to bottom, rgba(26,20,16,0.7), rgba(26,20,16,0.85)),
-      url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,fit=crop/m2W883WELbIWJPg1/raul_bartolome_desert_retreat_trip-39-dJoJLOL9NwUPlko9.jpg') center 30%/cover no-repeat fixed;
-    padding: 120px 80px;
-    text-align: center;
-  }
-
-  .price-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    max-width: 1000px;
-    margin: 60px auto 0;
-  }
-
-  .price-card {
-    background: rgba(250,246,241,0.05);
-    padding: 40px 24px;
-    border: 1px solid rgba(232,177,83,0.1);
-    transition: background 0.3s, border-color 0.3s;
-  }
-
-  .price-card:hover {
-    background: rgba(232,177,83,0.08);
-    border-color: rgba(232,177,83,0.3);
-  }
-
-  .price-amount {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
-    font-weight: 300;
-    color: var(--amber);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .price-currency {
-    font-size: 18px;
-    vertical-align: super;
-  }
-
-  .price-room {
-    font-size: 13px;
-    color: rgba(250,246,241,0.55);
-    line-height: 1.5;
-    margin-top: 12px;
-  }
-
-  .price-note {
-    margin-top: 48px;
-    font-size: 14px;
-    color: rgba(250,246,241,0.5);
-    font-style: italic;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.7;
-  }
-
-  .price-note strong { color: var(--amber); }
-
-  /* ── CONTACT ── */
-  .contact {
-    background: var(--night);
-    padding: 120px 80px;
-  }
-
-  .contact-inner {
-    max-width: 640px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 48px;
-    text-align: left;
-  }
-
-  .contact label {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: var(--sand);
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  .contact input,
-  .contact textarea {
-    width: 100%;
-    background: rgba(250,246,241,0.04);
-    border: 1px solid rgba(232,177,83,0.2);
-    color: var(--stars);
-    font-family: 'Baskervville', serif;
-    font-size: 16px;
-    padding: 14px 18px;
-    outline: none;
-    transition: border-color 0.3s;
-  }
-
-  .contact input:focus,
-  .contact textarea:focus { border-color: var(--amber); }
-
-  .contact textarea { resize: vertical; min-height: 140px; }
-
-  .btn {
-    display: inline-block;
-    padding: 16px 48px;
-    background: transparent;
-    border: 1px solid var(--amber);
-    color: var(--amber);
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-    text-align: center;
-    margin-top: 8px;
-  }
-
-  .btn:hover {
-    background: var(--amber);
-    color: var(--night);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--dusk);
-    padding: 60px 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(232,177,83,0.1);
-  }
-
-  .footer-logo {
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    letter-spacing: 4px;
-    color: var(--amber);
-  }
-
-  .footer-tagline {
-    font-size: 13px;
-    font-style: italic;
-    color: rgba(250,246,241,0.35);
-  }
-
-  .footer-credit {
-    font-size: 12px;
-    color: rgba(250,246,241,0.25);
-    text-align: right;
-    line-height: 1.7;
-  }
-
-  /* ── GALLERY STRIP ── */
-  .gallery-strip {
-    background: var(--night);
-    overflow: hidden;
-    padding: 0;
-    display: flex;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    height: 280px;
-  }
-
-  .gallery-strip img {
-    flex: 1 1 0;
-    width: 0;
-    min-width: 0;
-    height: 100%;
-    object-fit: cover;
-    filter: sepia(20%) contrast(1.05);
-    transition: filter 0.3s;
-    display: block;
-  }
-
+  /* PARALLAX */
+  .parallax { height: 70vh; overflow: hidden; position: relative; }
+
+  /* GALLERY STRIP */
+  .gallery-strip { background: var(--night); overflow: hidden; padding: 0; display: flex; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; height: 280px; }
+  .gallery-strip img { flex: 1 1 0; width: 0; min-width: 0; height: 100%; object-fit: cover; filter: sepia(20%) contrast(1.05); transition: filter 0.3s; display: block; }
   .gallery-strip img:hover { filter: sepia(0%) contrast(1.1); }
 
-  /* ── RESPONSIVE ── */
+  /* CAMP SECTION */
+  .camp-section { padding: 100px 80px; background: var(--night); }
+  .camp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1200px; margin: 60px auto 0; }
+  .camp-img { overflow: hidden; aspect-ratio: 4/3; }
+  .camp-img img { width: 100%; height: 100%; object-fit: cover; filter: sepia(10%) contrast(1.05); transition: transform 0.6s ease; }
+  .camp-img:hover img { transform: scale(1.03); }
+  .camp-img-wide { grid-column: span 2; aspect-ratio: 16/7; }
+
+  /* QUOTE */
+  .quote-section { background: var(--sand); padding: 100px 80px; position: relative; }
+  .quote-section::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 400px; color: rgba(168,124,74,0.15); position: absolute; top: -80px; left: 60px; line-height: 1; pointer-events: none; }
+  .quote-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+  .quote-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 2.5vw, 30px); font-weight: 300; line-height: 1.7; color: var(--night); font-style: italic; margin-bottom: 32px; }
+  .quote-author { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 4px; color: var(--earth); text-transform: uppercase; }
+
+  /* PROCESS */
+  .experiences { background: var(--dusk); padding: 100px 80px; }
+  .exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+  .exp-card { background: var(--night); padding: 48px 36px; position: relative; overflow: hidden; transition: background 0.4s; }
+  .exp-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--amber); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+  .exp-card:hover::after { transform: scaleX(1); }
+  .exp-card:hover { background: var(--dusk); }
+  .exp-number { font-family: 'Cinzel', serif; font-size: 48px; color: rgba(232,177,83,0.15); line-height: 1; margin-bottom: 20px; }
+  .exp-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: var(--sand-light); margin-bottom: 16px; }
+  .exp-body { font-size: 15px; line-height: 1.75; color: rgba(250,246,241,0.55); }
+
+  /* SCHEDULE */
+  .schedule { background: var(--night); padding: 100px 80px; }
+
+  /* FACILITATORS */
+  .facilitators { background: var(--night); padding: 60px 80px 100px; }
+  .facil-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto; }
+  .facil-card { position: relative; overflow: hidden; aspect-ratio: 3/4; background: var(--dusk); }
+  .facil-card img { width: 100%; height: 100%; object-fit: cover; filter: sepia(20%) contrast(1.05); transition: transform 0.6s ease; }
+  .facil-card:hover img { transform: scale(1.04); }
+  .facil-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 32px 24px 28px; background: linear-gradient(to top, rgba(26,20,16,0.95), transparent); }
+  .facil-year { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 4px; color: var(--amber); margin-bottom: 8px; }
+  .facil-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--stars); font-style: italic; }
+  .facil-role { font-size: 12px; color: var(--sand); margin-top: 4px; letter-spacing: 1px; }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--dusk); padding: 100px 80px; }
+
+  /* ACCOMMODATION */
+  .accommodation { background: var(--sand-light); padding: 100px 80px; }
+  .accom-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1200px; margin: 60px auto 0; }
+  .accom-card { background: white; overflow: hidden; }
+  .accom-img { height: 220px; background: var(--sand); overflow: hidden; }
+  .accom-img img { width: 100%; height: 100%; object-fit: cover; filter: sepia(15%); transition: transform 0.5s ease; }
+  .accom-card:hover .accom-img img { transform: scale(1.05); }
+  .accom-body { padding: 28px 24px; }
+  .accom-type { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px; color: var(--earth); margin-bottom: 8px; text-transform: uppercase; }
+  .accom-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--night); font-style: italic; margin-bottom: 12px; }
+  .accom-desc { font-size: 14px; line-height: 1.7; color: rgba(26,20,16,0.6); }
+  .accommodation .section-label { color: var(--earth); }
+  .accommodation .section-title { color: var(--night); }
+
+  /* PRESENCES */
+  .presences { background: var(--dusk); padding: 100px 80px; }
+
+  /* INCLUDED */
+  .included { background: var(--night); padding: 100px 80px; }
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1200px; margin: 60px auto 0; }
+  .included-box { padding: 48px; border: 1px solid rgba(232,177,83,0.15); }
+  .included-box-title { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 4px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid rgba(232,177,83,0.2); }
+  .included-box-title.in { color: var(--amber); }
+  .included-box-title.ex { color: var(--sand-deep); }
+  .included-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .included-list li { font-size: 15px; line-height: 1.5; color: rgba(250,246,241,0.7); padding-left: 20px; position: relative; }
+  .included-list li::before { content: '✤'; position: absolute; left: 0; color: var(--amber); font-size: 10px; top: 3px; }
+
+  /* PRICE */
+  .price { background: linear-gradient(to bottom, rgba(26,20,16,0.7), rgba(26,20,16,0.85)), url('camp5.jpg') center 30%/cover no-repeat fixed; padding: 120px 80px; text-align: center; }
+  .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 1000px; margin: 60px auto 0; }
+  .price-card { background: rgba(250,246,241,0.05); padding: 40px 24px; border: 1px solid rgba(232,177,83,0.1); transition: background 0.3s, border-color 0.3s; }
+  .price-card:hover { background: rgba(232,177,83,0.08); border-color: rgba(232,177,83,0.3); }
+  .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--amber); line-height: 1; margin-bottom: 8px; }
+  .price-early { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: rgba(232,177,83,0.5); line-height: 1; text-decoration: line-through; margin-bottom: 4px; }
+  .price-currency { font-size: 18px; vertical-align: super; }
+  .price-room { font-size: 13px; color: rgba(250,246,241,0.55); line-height: 1.5; margin-top: 12px; }
+  .price-note { margin-top: 48px; font-size: 14px; color: rgba(250,246,241,0.5); font-style: italic; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .price-note strong { color: var(--amber); }
+
+  /* CONTACT */
+  .contact { background: var(--night); padding: 120px 80px; }
+  .contact-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+
+  /* BTN */
+  .btn { display: inline-block; padding: 16px 48px; background: transparent; border: 1px solid var(--amber); color: var(--amber); font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; cursor: pointer; transition: background 0.3s, color 0.3s; text-align: center; margin-top: 8px; }
+  .btn:hover { background: var(--amber); color: var(--night); }
+
+  /* FOOTER */
+  footer { background: var(--dusk); padding: 60px 80px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(232,177,83,0.1); }
+  .footer-logo { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 4px; color: var(--amber); }
+  .footer-tagline { font-size: 13px; font-style: italic; color: rgba(250,246,241,0.35); }
+  .footer-credit { font-size: 12px; color: rgba(250,246,241,0.25); text-align: right; line-height: 1.7; }
+
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
     .hero-content { padding: 0 24px 60px; }
     .hero-scroll { right: 24px; }
-    .intro, .section, .schedule, .accommodation, .included, .price, .contact, .facilitators, .experiences, .quote-section { padding: 60px 24px; }
-    .divider { padding: 0 24px; }
+    .intro, .experiences, .schedule, .accommodation, .included, .price, .contact, .facilitators, .presences, .testimonials, .camp-section { padding: 60px 24px; }
     .intro-grid { grid-template-columns: 1fr; gap: 40px; }
     .facil-grid { grid-template-columns: 1fr 1fr; }
     .exp-grid { grid-template-columns: 1fr; }
-    .schedule-inner { grid-template-columns: 1fr; gap: 0; }
     .accom-grid { grid-template-columns: 1fr; }
+    .camp-grid { grid-template-columns: 1fr; }
+    .camp-img-wide { grid-column: span 1; }
     .included-grid { grid-template-columns: 1fr; gap: 32px; }
-    .price-grid { grid-template-columns: 1fr 1fr; }
+    .price-grid { grid-template-columns: 1fr; max-width: 360px; }
     footer { flex-direction: column; gap: 24px; text-align: center; }
     .footer-credit { text-align: center; }
+    .testimonials-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
+<!-- EARLY BIRD BANNER -->
+<div class="early-bird-banner">
+  Early Bird until September 15 — save up to 15%&nbsp;&nbsp;<a href="#register">Apply now</a>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-logo">間 &nbsp; Desert Mirage Journey</div>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+    <li><a href="#about">Intention</a></li>
     <li><a href="#experience">Process</a></li>
+    <li><a href="#guides">Guides</a></li>
     <li><a href="#price">Price</a></li>
     <li><a href="#register">Register</a></li>
   </ul>
@@ -864,17 +216,10 @@
   <div class="hero-bg">
     <div class="hero-video-fallback" id="heroFallback"></div>
     <div class="hero-video-wrap">
-      <iframe
-        id="heroVideo"
-        src="https://www.youtube-nocookie.com/embed/iCWNsOf8T8Y?autoplay=1&mute=1&loop=1&playlist=iCWNsOf8T8Y&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-        title=""
-      ></iframe>
+      <iframe id="heroVideo" src="https://www.youtube-nocookie.com/embed/iCWNsOf8T8Y?autoplay=1&mute=1&loop=1&playlist=iCWNsOf8T8Y&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen title=""></iframe>
     </div>
     <div class="hero-gradient"></div>
   </div>
-  <div class="hero-content">
   <div class="hero-content">
     <p class="hero-eyebrow">Desert Mirage Journey &nbsp;·&nbsp; Sahara, Morocco</p>
     <h1 class="hero-title">間 &nbsp;<em>Ma</em></h1>
@@ -883,17 +228,14 @@
         <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,60px);font-weight:300;color:var(--amber);letter-spacing:1px;line-height:1;">10 – 21 December 2026</span>
       </div>
       <div style="margin-bottom:20px;">
-        <span style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:5px;color:rgba(250,246,241,0.7);text-transform:uppercase;">Artistic Residency in the Desert &nbsp;·&nbsp; 12 days</span>
+        <span style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:5px;color:rgba(250,246,241,0.7);text-transform:uppercase;">Cross Art Residency &nbsp;·&nbsp; Moroccan Sahara &nbsp;·&nbsp; 12 days</span>
       </div>
-      <p style="font-size:17px;color:rgba(250,246,241,0.45);font-family:'Baskervville',serif;font-style:italic;letter-spacing:0.5px;">Cross art residency · Nomadic walking · Sahara, Morocco</p>
     </div>
-  </div>
   </div>
   <div class="hero-scroll">Scroll</div>
 </section>
 
-
-
+<!-- INTENTION 1 -->
 <section class="intro" id="about">
   <div class="intro-grid">
     <div class="intro-question">
@@ -904,47 +246,159 @@
       <p>There is something in you that wants to emerge. That has been waiting. Not because you haven't tried, but because the answer keeps coming from the same place: the mind, the will, the urge to do more, add more, find the right method, the right practice, the right form.</p>
       <p>We live submerged. In information, injunctions, tools, philosophies, ideologies, art forms. Layer after layer of porridge. And what is meant to be born suffocates inside it.</p>
       <p>The only thing that can allow the essence of what wants to emerge to actually take form is <strong>emptiness. The space between things. Ma.</strong></p>
-      <p>The desert itself is a vast field of 間 Ma. Not silence, not emptiness, not timelessness. Within it exists the frequency beneath silence, the emergence of life from apparent nothingness, a presence not yet fully appeared, yet already here.</p>
-      <p>Desert Mirage Journey is the space you offer yourself. To let the mirage come alive. To give yourself room, real room, to be fully traversed by life. To free yourself, for a time, from the noise, the overflow, the constant pull of what you should be doing or becoming.</p>
-      <p>In this journey, the only thing that will truly matter is listening. Listening to what asks to be expressed. To what asks to be born. Without judgment.</p>
-      <p>This is not a workshop. Not a stage. Not a course with a curriculum. It is a space of emergence, of <strong>artistic co-creation</strong>. And to create that space, we hold the posture of the midwife. A midwife does not decide what is born. She does not know in advance what will come. She simply stays present, trusts the process, and holds the space for it to happen. That is our role here, so that what is unknown in you can emerge. And grow.</p>
     </div>
   </div>
 </section>
 
 <!-- PARALLAX 1 -->
-<div style="height:70vh;overflow:hidden;position:relative;">
+<div class="parallax">
   <div style="position:absolute;inset:0;background:url('hero1.jpg') center 40%/cover fixed;"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,20,16,0.2),rgba(26,20,16,0.5));"></div>
 </div>
 
-<!-- GALLERY STRIP -->
-<div class="gallery-strip">
-  <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=700,fit=crop/m2W883WELbIWJPg1/raul_bartolome_desert_retreat_trip-57-YNqJ7VJZK7T1J5By.jpg" alt="">
-  <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=700,fit=crop/m2W883WELbIWJPg1/raul_bartolome_desert_retreat_trip-44-A0xNOgN2Dwi8Kokk.jpg" alt="">
-  <img src="tuareg.jpg" alt="">
-  <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=700,fit=crop/m2W883WELbIWJPg1/raul_bartolome_desert_retreat_trip-22-Awvrb6MKPNsBl0M0.jpg" alt="">
-  <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=700,fit=crop/m2W883WELbIWJPg1/raul_bartolome_desert_retreat_trip-34-YKbJjwJ24oSDpvWD.jpg" alt="">
-  <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=700,fit=crop/m2W883WELbIWJPg1/raul_bartolome_desert_retreat_trip-23-A85p9bw8oDfN3xwd.jpg" alt="">
-</div>
-<!-- FACILITATORS -->
-<section class="facilitators" id="workshop">
-  <div style="max-width:1200px;margin:0 auto;">
-
-    <p class="section-label">December 2026 — Cross Art Residency</p>
-    <h2 class="section-title">間 is the teacher.<br><em>We are here to listen.</em></h2>
-    <p style="max-width:640px;font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-bottom:80px;">Each edition takes a different form. This one brings together artists from different disciplines, not to teach, but to co-create. No fixed curriculum. No performance to produce. Only presence, and what emerges in the space between.</p>
-
-    <!-- Previous editions -->
-    <div style="display:flex;align-items:center;gap:24px;margin-bottom:48px;">
-      <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(232,177,83,0.2),transparent);"></div>
-      <span style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:rgba(232,177,83,0.5);">PREVIOUS EDITIONS</span>
-      <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(232,177,83,0.2),transparent);"></div>
+<!-- INTENTION 2 -->
+<section class="intro">
+  <div class="intro-grid">
+    <div class="intro-question">
+      Desert Mirage Journey is the <span>space you offer yourself.</span>
     </div>
+    <div class="intro-body">
+      <p>The desert itself is a vast field of 間 Ma. Not silence, not emptiness, not timelessness. Within it exists the frequency beneath silence, the emergence of life from apparent nothingness, a presence not yet fully appeared, yet already here.</p>
+      <p>To let the mirage come alive. To give yourself room, real room, to be fully traversed by life. To free yourself, for a time, from the noise, the overflow, the constant pull of what you should be doing or becoming.</p>
+      <p>In this journey, the only thing that will truly matter is listening. Listening to what asks to be expressed. To what asks to be born. Without judgment.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:60px;">
+    <a href="#register" class="btn" style="text-decoration:none;">Apply for a spot</a>
+  </div>
+</section>
 
-    <p style="font-size:14px;color:rgba(250,246,241,0.35);font-style:italic;margin-bottom:40px;max-width:600px;">The Desert Mirage Journey was first held in 2023 and 2024. Each edition takes a different form, guided by a different artistic vision. Their transmission lives in these dunes.</p>
+<!-- DESERT SECTION -->
+<section class="camp-section" id="desert" style="background:var(--dusk);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">The Sahara</p>
+    <h2 class="section-title">Eight days<br><em>in the desert.</em></h2>
+    <p style="max-width:640px;font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-bottom:60px;">Nomadic walking, bivouac under stars, dunes, silence. The desert strips what is unnecessary. Space opens. What was suffocating begins to breathe.</p>
+    <div class="camp-grid">
+      <div class="camp-img camp-img-wide">
+        <img src="camp8.jpg" alt="Practice space in the desert at sunset">
+      </div>
+      <div class="camp-img">
+        <img src="hero1.jpg" alt="Desert dunes">
+      </div>
+      <div class="camp-img">
+        <img src="tuareg.jpg" alt="Nomadic guide">
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="facil-grid" style="margin-bottom:100px;">
+<!-- RESIDENCY SECTION -->
+<section class="intro" style="background:var(--night);">
+  <div class="intro-grid" style="max-width:1200px;margin:0 auto;">
+    <div class="intro-question">
+      A cross-art residency.<br><span>A different form each time.</span>
+    </div>
+    <div class="intro-body">
+      <p>This is not a workshop. Not a stage. Not a course with a curriculum. It is a space of emergence, of <strong>artistic co-creation</strong>.</p>
+      <p>Artists from different disciplines come together — not to teach each other, but to co-create. Each edition takes a different form, guided by a different artistic vision.</p>
+      <p>And to create that space, we hold the posture of the midwife. A midwife does not decide what is born. She does not know in advance what will come. She simply stays present, trusts the process, and holds the space for it to happen.</p>
+      <p style="font-size:14px;font-style:italic;color:rgba(232,177,83,0.65);margin-top:20px;line-height:1.7;">"Butoh is the continual transformation of emptiness. To become an empty body does not mean wishing to think of nothing. It means changing the relationship between consciousness and the body that has been disciplined by it." — Tatsumi Hijikata</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="experiences" id="experience">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">The Process</p>
+    <h2 class="section-title">Not a programme.<br><em>A journey into the unknown.</em></h2>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-number">01</div>
+        <div class="exp-title">Arriving</div>
+        <p class="exp-body">Marrakech. The medina, the culture, the noise. A first breath before the silence ahead. The body starts to land.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-number">02</div>
+        <div class="exp-title">Walking into emptiness</div>
+        <p class="exp-body">Eight days in the Sahara. Nomadic walking, bivouac under stars, dunes, silence. The desert strips what is unnecessary. Space opens.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-number">03</div>
+        <div class="exp-title">What emerges</div>
+        <p class="exp-body">Embodied practices, co-creation, artistic exploration. Not a performance to produce. An encounter with what has been waiting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATES -->
+<section class="schedule" id="schedule">
+  <div style="max-width:700px;margin:0 auto;">
+    <p class="section-label">Dates</p>
+    <h2 class="section-title">December 10 – 21<br><span style="color:var(--amber);font-size:0.65em;">12 Days · Moroccan Sahara</span></h2>
+    <div style="margin-top:40px;display:flex;flex-direction:column;gap:0;">
+      <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
+        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">Day 1 — Dec 10</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">Arrival in Marrakech</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">Airport pickup, riad in the medina. First contact with Morocco.</p>
+      </div>
+      <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
+        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">Days 2 to 8 — Dec 11 to 17</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">The Desert</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">Drive south through the Atlas mountains. Eight days in the Sahara: nomadic trekking, bivouac, fixed camp at the Dune Hurlante, embodied practices, co-creation, silence.</p>
+      </div>
+      <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
+        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">Days 9 and 10 — Dec 18 and 19</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">Integration</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">Return to the fixed camp. Space for sharing, rest, and letting the experience settle.</p>
+      </div>
+      <div style="border-left:1px solid rgba(232,177,83,0.35);padding:24px 0 24px 32px;">
+        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">Days 11 and 12 — Dec 20 and 21</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">Return to Marrakech</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">Drive north. One last night in the medina. Departure on Dec 21.</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:60px;">
+    <a href="#register" class="btn" style="text-decoration:none;">Apply for a spot</a>
+  </div>
+</section>
+
+<!-- CAMP SECTION -->
+<section class="camp-section" id="camp" style="background:var(--dusk);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">The Fixed Camp</p>
+    <h2 class="section-title">Your base<br><em>in the Sahara.</em></h2>
+    <p style="max-width:640px;font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-bottom:60px;">Built by nomad hands in the heart of the dunes. Adobe, earth, straw. A gathering place between treks — for meals, music, rest, and creation.</p>
+    <div class="camp-grid">
+      <div class="camp-img">
+        <img src="camp1.jpg" alt="Camp entrance at golden hour">
+      </div>
+      <div class="camp-img">
+        <img src="camp6.jpg" alt="Dining hall with desert mural">
+      </div>
+      <div class="camp-img">
+        <img src="camp7.jpg" alt="Evening under the nomad tent">
+      </div>
+      <div class="camp-img">
+        <img src="camp4.jpg" alt="Camp at night with lanterns">
+      </div>
+      <div class="camp-img camp-img-wide">
+        <img src="camp2.jpg" alt="Fixed camp by night under the stars">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES / EDITIONS PRÉCÉDENTES -->
+<section class="facilitators" id="guides">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">Previous Editions</p>
+    <h2 class="section-title">Each edition<br><em>a different form.</em></h2>
+    <p style="max-width:640px;font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-bottom:80px;">The Desert Mirage Journey was first held in 2023 and 2024. Each edition is guided by a different artistic vision. Their transmission lives in these dunes.</p>
+    <div class="facil-grid">
       <div class="facil-card">
         <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=500,fit=crop,trim=0;69.93681917211329;0;17.856209150326798/m2W883WELbIWJPg1/3-m5KPv9onP0HGovPd.jpg" alt="Yumiko Yoshioka">
         <div class="facil-overlay">
@@ -966,90 +420,86 @@
         <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:rgba(250,246,241,0.3);text-align:center;line-height:1.6;">2026<br>A different form</div>
       </div>
     </div>
-
-
   </div>
 </section>
 
-<!-- QUOTE -->
-<section class="quote-section">
-  <div class="quote-inner">
-    <p class="quote-text">"Butoh is the continual transformation of emptiness. To become an empty body does not mean wishing to think of nothing, imagining oneself as such, or attempting to become a body that abandons everything. Rather, it means changing the relationship between consciousness and the body that has been disciplined by it."</p>
-    <p class="quote-author">— Tatsumi Hijikata, echoed by Seisaku</p>
-  </div>
-</section>
-
-<!-- EXPERIENCE / PROCESS -->
-<section class="experiences" id="experience">
+<!-- TESTIMONIALS -->
+<section class="testimonials">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">The Process</p>
-    <h2 class="section-title">Not a programme.<br><em>A journey into the unknown.</em></h2>
-    <p style="font-style:italic;color:rgba(250,246,241,0.5);font-size:16px;margin-bottom:0;">Three movements. No script. What happens in between is yours.</p>
-    <div class="exp-grid">
-      <div class="exp-card">
-        <div class="exp-number">01</div>
-        <div class="exp-title">Arriving</div>
-        <p class="exp-body">Marrakech. The city, the medina, the noise. A first breath of this culture before the silence ahead. The body starts to land. You begin to arrive.</p>
+    <p class="section-label">They have walked this desert</p>
+    <h2 class="section-title">Words from<br><em>past journeys</em></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:60px;" class="testimonials-grid">
+      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"No noise, no cars, no TV, no radio, no lights, no signs, no phone. Nothing, just being there. Magnificent. Travelling with Anys is not a trip. It's an adventure."</p>
+        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Pascal Wagner</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Desert journey, April 2024</span>
       </div>
-      <div class="exp-card">
-        <div class="exp-number">02</div>
-        <div class="exp-title">Walking into emptiness</div>
-        <p class="exp-body">Eight days in the Sahara. Nomadic walking, bivouac under stars, dunes, silence. The desert strips what is unnecessary. Space opens. What was suffocating begins to breathe.</p>
+      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Each evening, I chose a dune to sleep under the stars with my bundle. A journey to the heart of the simple and the true. Anys knew how to accompany me through the inner desert while preserving my autonomy, with presence, gentleness, non-judgment."</p>
+        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Sandrine Barrande</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Initiatory desert journey, November 2023</span>
       </div>
-      <div class="exp-card">
-        <div class="exp-number">03</div>
-        <div class="exp-title">What emerges</div>
-        <p class="exp-body">Embodied practices, co-creation, artistic exploration. Not a performance to produce. An encounter with what has been waiting. The midwives hold the space. The rest is yours.</p>
+      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Before we left, Anys was precious in calming our concerns. Once we arrived, each of our needs, each sensitive state, found its place. I was struck by the range of approaches he was able to offer us, each one exactly right."</p>
+        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Céline Mercatello</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Desert retreat</span>
+      </div>
+      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Anys took time with each of us. Time to care. Time to listen when we needed it. Time to let us be free, to laugh, to cry, to be silent. Sacred spaces of sharing. A harmony of rhythms. Very precious days."</p>
+        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Joséphina Bos</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">5 days in the Moroccan desert</span>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:60px;">
+      <a href="#register" class="btn" style="text-decoration:none;">Apply for a spot</a>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOMMODATION -->
+<section class="accommodation" id="accom">
+  <p class="section-label">Where You Sleep</p>
+  <h2 class="section-title" style="color:var(--night);">Accommodation</h2>
+  <div class="accom-grid">
+    <div class="accom-card">
+      <div class="accom-img">
+        <img src="marrakech.jpg" alt="Riad">
+      </div>
+      <div class="accom-body">
+        <div class="accom-type">Marrakech — Nights 1 &amp; 12</div>
+        <div class="accom-title">Riad</div>
+        <p class="accom-desc">Traditional Moroccan architecture in the heart of the medina. Breakfast included, airport transfers included.</p>
+      </div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-img">
+        <img src="camp3.jpg" alt="Fixed Camp">
+      </div>
+      <div class="accom-body">
+        <div class="accom-type">Fixed Camp — Nights 2, 3, 10, 11</div>
+        <div class="accom-title">Fixed Bivouac</div>
+        <p class="accom-desc">Adobe buildings built by nomad hands in the dunes. Rooms of 4, some with private bathroom. Shared spaces, communal meals.</p>
+      </div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-img">
+        <img src="hero3.jpg" alt="Nomadic Bivouac">
+      </div>
+      <div class="accom-body">
+        <div class="accom-type">Sahara — Nights 4 to 9</div>
+        <div class="accom-title">Nomadic Bivouac</div>
+        <p class="accom-desc">Sleep under a shared nomad tent or under the Milky Way. Universe as roof, spacious desert as ground, silence as lullaby.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SCHEDULE -->
-<section class="schedule" id="schedule">
+<!-- MIDWIFES -->
+<section class="presences" id="midwifes">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">Dates</p>
-    <h2 class="section-title">December 10 – 21<br><span style="color:var(--amber);font-size:0.65em;">12 Days · Moroccan Sahara</span></h2>
-    <div style="max-width:700px;margin-top:40px;">
-      <div class="schedule-day">
-        <div class="day-date">Day 1 — Dec 10</div>
-        <div class="day-title">Arrival in Marrakech</div>
-        <p class="day-desc">Airport pickup, riad in the medina. First contact with Morocco.</p>
-      </div>
-      <div class="schedule-day">
-        <div class="day-date">Days 2 to 8 — Dec 11 to 17</div>
-        <div class="day-title">The Desert</div>
-        <p class="day-desc">Drive south through the Atlas mountains. Eight days in the Sahara: nomadic trekking, bivouac, fixed camp at the Dune Hurlante, embodied practices, co-creation, silence.</p>
-      </div>
-      <div class="schedule-day">
-        <div class="day-date">Days 9 and 10 — Dec 18 and 19</div>
-        <div class="day-title">Integration</div>
-        <p class="day-desc">Return to the fixed camp. Space for sharing, rest, and letting the experience settle.</p>
-      </div>
-      <div class="schedule-day" style="border-color:rgba(232,177,83,0.35);">
-        <div class="day-date">Days 11 and 12 — Dec 20 and 21</div>
-        <div class="day-title">Return to Marrakech</div>
-        <p class="day-desc">Drive north. One last night in the medina. Departure on Dec 21.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PARALLAX 2 -->
-<div style="height:70vh;overflow:hidden;position:relative;">
-  <div style="position:absolute;inset:0;background:url('anys1.jpg') center 70%/cover fixed;"></div>
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,20,16,0.15),rgba(26,20,16,0.55));"></div>
-</div>
-
-
-<!-- PRESENCES -->
-<section class="facilitators" id="presences">
-  <div style="max-width:1200px;margin:0 auto;">
-    <p style="font-family:'Cinzel',serif;font-size:16px;letter-spacing:5px;color:var(--amber);margin-bottom:56px;text-transform:uppercase;">2026 — Your Facilitators</p>
-
-    <!-- Yi Chen + Anys -->
+    <p class="section-label">2026 — The Midwifes</p>
+    <h2 class="section-title">Yi Chen<br><em>&amp; Anys</em></h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-
       <div>
         <div style="position:relative;overflow:hidden;aspect-ratio:4/5;">
           <img src="yi1.jpg" alt="Yi Chen" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;transform:scale(1.6);transform-origin:center 30%;filter:sepia(10%) contrast(1.05);">
@@ -1061,14 +511,13 @@
         </div>
         <div style="padding:28px 0 0;">
           <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);">Born in China, Yi Chen is an Ankoku Butoh dancer, choreographer, teacher and medium. Her work explores a dimensional space bridging the visible and invisible. Body is the movement; space is the dance. Her practice draws from Qigong, Kalaripayattu, Noguchi Taiso and Ankoku Butoh, guiding participants toward releasing tension, shedding conditioned identity, and opening to what wants to emerge.</p>
-          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);margin-top:14px;">Co-creator of the Desert Mirage Journey since its first edition. She has walked this desert before — and each time, differently.</p>
+          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);margin-top:14px;">Co-creator of the Desert Mirage Journey since its first edition. She has walked this desert before, and each time, differently.</p>
           <p style="font-size:14px;font-style:italic;color:rgba(232,177,83,0.65);margin-top:20px;line-height:1.7;">"Butoh builds a bridge, in between the visible and invisible, an expanded life concept."</p>
         </div>
       </div>
-
       <div>
         <div style="position:relative;overflow:hidden;aspect-ratio:4/5;">
-          <img src="anys3.jpg" alt="Anys Neoqii" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:sepia(5%) contrast(1.05);">
+          <img src="anys3.jpg" alt="Anys" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:sepia(5%) contrast(1.05);">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,20,16,0.85) 0%,transparent 55%);"></div>
           <div style="position:absolute;bottom:24px;left:28px;">
             <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--amber);margin-bottom:8px;">Practitioner &amp; initiatory guide</div>
@@ -1076,83 +525,57 @@
           </div>
         </div>
         <div style="padding:28px 0 0;">
-          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);">Painter, dancer, and organiser of desert retreats and initiatory experiences. His work — on paper and through the body — draws from Butoh, Tao, calligraphy, and elemental movement. Each performance is conceived as a ritual: a psychomagical act that bridges the personal and the universal.</p>
-          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);margin-top:14px;">Franco-Moroccan, nomadic by nature. The Sahara is not a destination for him — it is a place of return.</p>
+          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);">Painter, dancer, and organiser of desert retreats and initiatory experiences. His work, on paper and through the body, draws from Butoh, Tao, calligraphy, and elemental movement. Each performance is conceived as a ritual: a psychomagical act that bridges the personal and the universal.</p>
+          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);margin-top:14px;">Franco-Moroccan, nomadic by nature. The Sahara is not a destination for him. It is a place of return.</p>
         </div>
       </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ACCOMMODATION -->
-<section class="accommodation" id="accom">
-  <p class="section-label">Where You Sleep</p>
-  <h2 class="section-title" style="color:var(--night);">Accommodation</h2>
-  <div class="accom-grid">
-    <div class="accom-card">
-      <div class="accom-img">
-        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=500,fit=crop/m2W883WELbIWJPg1/screenshot-2023-03-16-at-7.02.11-pm-YD0rpR738eUbrQBp.png" alt="Riad">
-      </div>
-      <div class="accom-body">
-        <div class="accom-type">Marrakech — Nights 1 & 10</div>
-        <div class="accom-title">Riad</div>
-        <p class="accom-desc">Traditional Moroccan architecture with multiple storeys around an open-air courtyard. Two nights in the heart of the medina.</p>
-      </div>
-    </div>
-    <div class="accom-card">
-      <div class="accom-img">
-        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=500,fit=crop/m2W883WELbIWJPg1/10-Aq2ZB75310Sl4MJZ.jpg" alt="Earth Bungalow">
-      </div>
-      <div class="accom-body">
-        <div class="accom-type">Desert Flower Camp — Nights 2 & 3, 8 & 9</div>
-        <div class="accom-title">Earth Bungalow</div>
-        <p class="accom-desc">Eco-lodge built with sandbag, straw clay, and adobe by nomad hands. Warm at night, cool by day — it breathes.</p>
-      </div>
-    </div>
-    <div class="accom-card">
-      <div class="accom-img">
-        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=500,fit=crop,trim=0;114.14012738853503;0;175.28662420382165/m2W883WELbIWJPg1/raul_bartolome_desert_retreat_trip-30-m7Vp9W5ElxSlQgP0.jpg" alt="Bivouac">
-      </div>
-      <div class="accom-body">
-        <div class="accom-type">Sahara — Nights 4–7</div>
-        <div class="accom-title">Desert Bivouac</div>
-        <p class="accom-desc">Sleep under a shared nomad tent or under the Milky Way. Universe as roof, spacious desert as ground, silence as lullaby.</p>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- DATE ANNOUNCEMENT BLOCK -->
-<section style="background:var(--sand);padding:60px 80px;text-align:center;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;background:url('anys2.jpg') center/cover;opacity:0.06;filter:sepia(100%);"></div>
-  <div style="position:relative;z-index:1;max-width:600px;margin:0 auto;">
-    <p style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:6px;color:var(--earth);text-transform:uppercase;margin-bottom:14px;">Next Edition</p>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,40px);font-weight:300;color:var(--night);line-height:1.15;letter-spacing:-0.5px;margin-bottom:8px;">10 – 21 December 2026</h2>
-    <div style="width:32px;height:1px;background:var(--earth);margin:16px auto;opacity:0.4;"></div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.5vw,19px);font-weight:300;font-style:italic;color:var(--night);opacity:0.65;line-height:1.5;margin-bottom:10px;">Artistic residency in the desert &nbsp;·&nbsp; Moroccan Sahara &nbsp;·&nbsp; 12 days</p>
-    <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:rgba(26,20,16,0.3);margin-bottom:28px;">DESERT MIRAGE JOURNEY &nbsp;·&nbsp; 間 MA</p>
-    <a href="#register" class="btn" style="text-decoration:none;display:inline-block;color:var(--night);border-color:rgba(26,20,16,0.4);">Register Now</a>
+<!-- PRICE -->
+<section class="price" id="price">
+  <p class="section-label" style="color:var(--amber);">Investment</p>
+  <h2 class="section-title">Price</h2>
+  <div style="background:rgba(232,177,83,0.1);border:1px solid rgba(232,177,83,0.3);max-width:600px;margin:0 auto 40px;padding:20px 32px;text-align:center;">
+    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:var(--amber);margin-bottom:8px;">EARLY BIRD — UNTIL SEPTEMBER 15</p>
+    <p style="font-size:15px;color:rgba(250,246,241,0.7);">Save 15% on all room types. Limited spots.</p>
   </div>
+  <div class="price-grid">
+    <div class="price-card">
+      <div class="price-early"><span class="price-currency">€</span>1820</div>
+      <div class="price-amount"><span class="price-currency">€</span>1600</div>
+      <div class="price-room">Single room<br>Private bathroom</div>
+    </div>
+    <div class="price-card">
+      <div class="price-early"><span class="price-currency">€</span>1640</div>
+      <div class="price-amount"><span class="price-currency">€</span>1400</div>
+      <div class="price-room">Twin room<br>Private bathroom</div>
+    </div>
+    <div class="price-card">
+      <div class="price-early"><span class="price-currency">€</span>1560</div>
+      <div class="price-amount"><span class="price-currency">€</span>1350</div>
+      <div class="price-room">Dormitory (3 to 4 people)<br>Shared bathroom</div>
+    </div>
+  </div>
+  <p class="price-note"><strong>Early bird until September 15.</strong> After that date, standard prices apply.<br>50% transfer in advance to confirm registration.<br>Scholarship available on request.</p>
 </section>
-
 
 <!-- INCLUDED -->
 <section class="included" id="included">
   <div style="max-width:1200px;margin:0 auto;">
     <p class="section-label">Details</p>
-    <h2 class="section-title">Included & Excluded</h2>
+    <h2 class="section-title">Included &amp; Excluded</h2>
     <div class="included-grid">
       <div class="included-box">
         <div class="included-box-title in">Included</div>
         <ul class="included-list">
           <li>12 days of artistic practice and co-creation with facilitators</li>
-          <li>5 days / 4 nights desert trek with local guides and camels</li>
-          <li>Airport/station pickup and drop off on Day 1 & Day 11</li>
-          <li>Round trip transportation Marrakech – Desert – Marrakech</li>
-          <li>Three vegetarian meals per day + drinking water</li>
-          <li>12 days / 11 nights accommodation: riad, earth bungalow & bivouac</li>
+          <li>8 days nomadic desert trek with local guides</li>
+          <li>Airport pickup and drop off on Day 1 and Day 12</li>
+          <li>Round trip transportation Marrakech to Desert and back</li>
+          <li>Three vegetarian meals per day and drinking water</li>
+          <li>12 days / 11 nights accommodation: riad, fixed camp and nomadic bivouac</li>
           <li>Performance documented by professional photographer</li>
         </ul>
       </div>
@@ -1161,7 +584,7 @@
         <ul class="included-list">
           <li>Plane tickets</li>
           <li>Extra private photo session in the desert</li>
-          <li>Travel insurance (must show on arrival)</li>
+          <li>Travel insurance (required on arrival)</li>
           <li>Individual care</li>
           <li>Tips for guides and crew</li>
           <li>Personal expenses</li>
@@ -1174,87 +597,14 @@
   </div>
 </section>
 
-<!-- PRICE -->
-<section class="price" id="price">
-  <p class="section-label" style="color:var(--amber);">Investment</p>
-  <h2 class="section-title">Price</h2>
-  <div class="price-grid">
-    <div class="price-card">
-      <div class="price-amount"><span class="price-currency">€</span>1820</div>
-      <div class="price-room">Single room<br>Private bathroom</div>
-    </div>
-    <div class="price-card">
-      <div class="price-amount"><span class="price-currency">€</span>1640</div>
-      <div class="price-room">Twin room<br>Private bathroom</div>
-    </div>
-    <div class="price-card">
-      <div class="price-amount"><span class="price-currency">€</span>1560</div>
-      <div class="price-room">Dormitory (3 to 4 people)<br>Shared bathroom</div>
-    </div>
-  </div>
-  <p class="price-note"><strong>10% early bird</strong> — register before October 10th.<br>50% transfer in advance to confirm registration.<br>Limited spots available, first-come first-served.</p>
-</section>
-
 <!-- REGISTER -->
 <section class="contact" id="register">
   <div class="contact-inner">
     <p class="section-label" style="color:var(--amber);text-align:center;">Registration</p>
     <h2 class="section-title" style="text-align:center;">Are You Ready?</h2>
-    <p style="font-size:15px;line-height:1.8;color:rgba(250,246,241,0.5);font-style:italic;">The desert does not ask if you are prepared. It only asks if you are willing. If something in you is already moving — say yes.</p>
+    <p style="font-size:15px;line-height:1.8;color:rgba(250,246,241,0.5);font-style:italic;">The desert does not ask if you are prepared. It only asks if you are willing. If something in you is already moving, say yes.</p>
     <div style="margin-top:48px;text-align:center;">
       <a href="#" class="btn" style="text-decoration:none;display:inline-block;">Apply for a spot</a>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section style="background:var(--dusk);padding:100px 80px;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">They have walked this desert</p>
-    <h2 class="section-title">Words from<br><em>past journeys</em></h2>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:60px;">
-
-      <!-- Pascal -->
-      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"No noise, no cars, no TV, no radio, no lights, no signs, no phone. Nothing — just being there. Magnificent. Travelling with Anys is not a trip. It's an adventure."</p>
-        <div style="display:flex;flex-direction:column;gap:4px;">
-          <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);">Pascal Wagner</span>
-          <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Desert journey, April 2024</span>
-        </div>
-      </div>
-
-      <!-- Sandrine -->
-      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Each evening, I chose a dune to sleep under the stars with my bundle. A journey to the heart of the simple and the true. Anys knew how to accompany me through the 'inner desert' while preserving my autonomy — with presence, gentleness, non-judgment."</p>
-        <div style="display:flex;flex-direction:column;gap:4px;">
-          <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);">Sandrine Barrande</span>
-          <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Initiatory desert journey, November 2023</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;">
-
-      <!-- Céline -->
-      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Before we left, Anys was precious in calming our concerns. Once we arrived, each of our needs, each sensitive state, found its place. I was struck by the range of approaches he was able to offer us — each one exactly right."</p>
-        <div style="display:flex;flex-direction:column;gap:4px;">
-          <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);">Céline Mercatello</span>
-          <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Desert retreat</span>
-        </div>
-      </div>
-
-      <!-- Joséphina -->
-      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Anys took time with each of us. Time to care. Time to listen when we needed it. Time to let us be free — to laugh, to cry, to be silent. Sacred spaces of sharing. A harmony of rhythms. Very precious days."</p>
-        <div style="display:flex;flex-direction:column;gap:4px;">
-          <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);">Joséphina Bos</span>
-          <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">5 days in the Moroccan desert</span>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1263,7 +613,7 @@
 <div style="height:70vh;overflow:hidden;position:relative;">
   <div style="position:absolute;inset:0;background:url('hero2.jpg') center 40%/cover;filter:sepia(15%) contrast(1.05);"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(26,20,16,0.4), rgba(26,20,16,0.7));display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;">
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,52px);font-weight:300;color:var(--stars);text-align:center;font-style:italic;margin-bottom:16px;">The space between — already there</h2>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,52px);font-weight:300;color:var(--stars);text-align:center;font-style:italic;margin-bottom:16px;">The space between, already there</h2>
     <p style="color:rgba(250,246,241,0.6);font-style:italic;font-size:18px;text-align:center;">Looking forward to entering 間 with you in the desert</p>
     <p style="margin-top:24px;font-size:13px;color:rgba(250,246,241,0.3);font-family:'Cinzel',serif;letter-spacing:3px;">DESERT MIRAGE JOURNEY · DECEMBER 2026</p>
   </div>
@@ -1277,7 +627,6 @@
 </footer>
 
 <script>
-  // Fade out fallback image once video has had time to load
   window.addEventListener('load', function() {
     setTimeout(function() {
       var fallback = document.getElementById('heroFallback');
