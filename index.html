@@ -179,7 +179,7 @@
     .hero-scroll { right: 24px; }
     .intro, .experiences, .schedule, .accommodation, .included, .price, .contact, .facilitators, .presences, .testimonials, .camp-section { padding: 60px 24px; }
     .intro-grid { grid-template-columns: 1fr; gap: 40px; }
-    .facil-grid { grid-template-columns: 1fr 1fr; }
+    .facil-grid { grid-template-columns: 1fr; }
     .exp-grid { grid-template-columns: 1fr; }
     .accom-grid { grid-template-columns: 1fr; }
     .camp-grid { grid-template-columns: 1fr; }
@@ -188,7 +188,9 @@
     .price-grid { grid-template-columns: 1fr; max-width: 360px; }
     footer { flex-direction: column; gap: 24px; text-align: center; }
     .footer-credit { text-align: center; }
-    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr !important; }
+    .parallax { height: 40vh; }
+    .parallax div { background-attachment: scroll !important; }
   }
 </style>
 </head>
@@ -366,12 +368,25 @@
   </div>
 </section>
 
-<!-- CAMP SECTION -->
+<!-- CAMP & GUIDES SECTION -->
 <section class="camp-section" id="camp" style="background:var(--dusk);">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">The Fixed Camp</p>
-    <h2 class="section-title">Your base<br><em>in the Sahara.</em></h2>
-    <p style="max-width:640px;font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-bottom:60px;">Built by nomad hands in the heart of the dunes. Adobe, earth, straw. A gathering place between treks — for meals, music, rest, and creation.</p>
+    <p class="section-label">Racines du Désert</p>
+    <h2 class="section-title">Our hosts.<br><em>Born in the desert.</em></h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px;">
+      <div style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);">
+        <p>Racines du Désert was founded by Nomads from the Draa Valley, settled in M'Hamid after the desert where they were born dried up. Their culture draws from history, song, poetry, and the caravan trade. These are its roots.</p>
+        <p style="margin-top:20px;">Faysal, Abdallah, Ali, Mohamed, Bachir and their team — guides, camel handlers, cooks, drivers — will be with you every step of the way. Born in the desert, they will share their way of life with you: the fire made only from dead wood, the water never wasted, the traces left behind always erased.</p>
+        <p style="margin-top:20px;">This is not a tourist service. It is an invitation to share something that belongs to them — and that they offer with generosity, humor, and quiet pride.</p>
+      </div>
+      <div style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.45);font-style:italic;border-left:1px solid rgba(232,177,83,0.2);padding-left:40px;">
+        <p style="font-size:20px;font-family:'Cormorant Garamond',serif;color:rgba(250,246,241,0.7);margin-bottom:24px;">"I grew up in an environment that unites the simplicity of nomads and their noble culture. Today, even settled, at the bottom of my heart I remain a Nomad."</p>
+        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);">Faysal</span><br>
+        <span style="font-size:13px;color:rgba(250,246,241,0.3);">Desert guide, M'Hamid el Ghizlane</span>
+      </div>
+    </div>
+
     <div class="camp-grid">
       <div class="camp-img">
         <img src="camp1.jpg" alt="Camp entrance at golden hour">
