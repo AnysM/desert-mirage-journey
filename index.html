@@ -26,7 +26,7 @@
   body { background: var(--night); color: var(--stars); font-family: 'Baskervville', serif; overflow-x: hidden; }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; background: transparent; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to bottom, rgba(26,20,16,0.95), transparent); backdrop-filter: blur(2px); }
   .nav-logo { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 4px; color: var(--amber); text-transform: uppercase; }
   .nav-links { display: flex; gap: 40px; list-style: none; }
   .nav-links a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sand-light); text-decoration: none; opacity: 0.75; transition: opacity 0.3s, color 0.3s; }
@@ -42,7 +42,7 @@
   .hero-video-wrap { position: absolute; inset: 0; pointer-events: none; }
   .hero-video-wrap iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.78vh; transform: translate(-50%, -50%); border: none; pointer-events: none; }
   .hero-video-fallback { position: absolute; inset: 0; background: url('hero2.jpg') center/cover no-repeat; transition: opacity 1s ease; }
-  .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,20,16,0.35) 0%, rgba(26,20,16,0.1) 30%, rgba(26,20,16,0.65) 70%, rgba(26,20,16,1) 100%); z-index: 1; }
+  .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(26,20,16,0.65) 70%, rgba(26,20,16,1) 100%); z-index: 1; }
   /* Masque bas vidéo pour cacher sous-titres */
   .hero-video-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 42%; background: linear-gradient(to top, rgba(26,20,16,1) 0%, rgba(26,20,16,1) 25%, rgba(26,20,16,0.7) 55%, transparent 100%); z-index: 2; pointer-events: none; }
   .hero-content { position: relative; z-index: 5; padding: 0 80px 80px; max-width: 900px; }
