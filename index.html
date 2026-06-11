@@ -42,7 +42,9 @@
   .hero-video-wrap { position: absolute; inset: 0; pointer-events: none; }
   .hero-video-wrap iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.78vh; transform: translate(-50%, -50%); border: none; pointer-events: none; }
   .hero-video-fallback { position: absolute; inset: 0; background: url('hero2.jpg') center/cover no-repeat; transition: opacity 1s ease; }
-  .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,20,16,0.35) 0%, rgba(26,20,16,0.1) 35%, rgba(26,20,16,0.65) 75%, rgba(26,20,16,1) 100%); z-index: 1; }
+  .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,20,16,0.35) 0%, rgba(26,20,16,0.1) 30%, rgba(26,20,16,0.65) 70%, rgba(26,20,16,1) 100%); z-index: 1; }
+  /* Masque bas vidéo pour cacher sous-titres */
+  .hero-video-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 25%; background: linear-gradient(to top, rgba(26,20,16,1) 0%, rgba(26,20,16,0.95) 30%, rgba(26,20,16,0.6) 60%, transparent 100%); z-index: 2; pointer-events: none; }
   .hero-content { position: relative; z-index: 5; padding: 0 80px 80px; max-width: 900px; }
   .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 6px; color: var(--amber); text-transform: uppercase; margin-bottom: 24px; opacity: 0; animation: fadeup 1s 0.3s forwards; }
   .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(56px, 8vw, 110px); font-weight: 300; line-height: 0.95; letter-spacing: -2px; color: var(--stars); margin-bottom: 32px; opacity: 0; animation: fadeup 1s 0.5s forwards; }
@@ -146,7 +148,7 @@
   .included-list li::before { content: '✤'; position: absolute; left: 0; color: var(--amber); font-size: 10px; top: 3px; }
 
   /* PRICE */
-  .price { background: linear-gradient(to bottom, rgba(26,20,16,0.7), rgba(26,20,16,0.85)), url('camp5.jpg') center 30%/cover no-repeat fixed; padding: 120px 80px; text-align: center; }
+  .price { background: linear-gradient(to bottom, rgba(26,20,16,0.7), rgba(26,20,16,0.85)), url('camp5.jpg') center 30%/cover no-repeat; padding: 120px 80px; text-align: center; }
   .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 1000px; margin: 60px auto 0; }
   .price-card { background: rgba(250,246,241,0.05); padding: 40px 24px; border: 1px solid rgba(232,177,83,0.1); transition: background 0.3s, border-color 0.3s; }
   .price-card:hover { background: rgba(232,177,83,0.08); border-color: rgba(232,177,83,0.3); }
@@ -185,12 +187,22 @@
     .camp-grid { grid-template-columns: 1fr; }
     .camp-img-wide { grid-column: span 1; }
     .included-grid { grid-template-columns: 1fr; gap: 32px; }
-    .price-grid { grid-template-columns: 1fr; max-width: 360px; }
+    .price-grid { grid-template-columns: 1fr; max-width: 360px; margin-left: auto; margin-right: auto; }
     footer { flex-direction: column; gap: 24px; text-align: center; }
     .footer-credit { text-align: center; }
+    /* Toutes les grilles inline en 2 colonnes passent en 1 colonne */
     .testimonials-grid { grid-template-columns: 1fr !important; }
-    .parallax { height: 40vh; }
-    .parallax div { background-attachment: scroll !important; }
+    [style*="grid-template-columns:1fr 1fr"] { display: block !important; }
+    [style*="grid-template-columns: 1fr 1fr"] { display: block !important; }
+    [style*="grid-template-columns:1fr 1fr"] > div,
+    [style*="grid-template-columns: 1fr 1fr"] > div { margin-bottom: 48px; width: 100% !important; }
+    /* Parallax désactivé sur mobile iOS (zones vides) */
+    .parallax { height: 50vw; min-height: 200px; }
+    .parallax > div:first-child { background-attachment: scroll !important; background-size: cover !important; }
+    [style*="background-attachment:scroll"],
+    [style*="background-attachment: scroll"] { background-attachment: scroll !important; }
+    /* Fix price background fixed */
+    .price { background-attachment: scroll !important; background: linear-gradient(to bottom, rgba(26,20,16,0.7), rgba(26,20,16,0.85)), url('camp5.jpg') center/cover no-repeat !important; }
   }
 </style>
 </head>
@@ -218,8 +230,9 @@
   <div class="hero-bg">
     <div class="hero-video-fallback" id="heroFallback"></div>
     <div class="hero-video-wrap">
-      <iframe id="heroVideo" src="https://www.youtube-nocookie.com/embed/iCWNsOf8T8Y?autoplay=1&mute=1&loop=1&playlist=iCWNsOf8T8Y&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen title=""></iframe>
+      <iframe src="https://player.mediadelivery.net/embed/680447/de882a62-46f8-46aa-b2e7-8f4d8c19aee8?autoplay=true&loop=true&muted=true&preload=true&responsive=true" loading="lazy" style="border:0;position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true"></iframe>
     </div>
+    <div class="hero-video-mask"></div>
     <div class="hero-gradient"></div>
   </div>
   <div class="hero-content">
@@ -254,7 +267,7 @@
 
 <!-- PARALLAX 1 -->
 <div class="parallax">
-  <div style="position:absolute;inset:0;background:url('hero1.jpg') center 40%/cover fixed;"></div>
+  <div style="position:absolute;inset:0;background:url('hero1.jpg') center 40%/cover no-repeat;background-attachment:scroll;"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,20,16,0.2),rgba(26,20,16,0.5));"></div>
 </div>
 
@@ -392,18 +405,9 @@
         <img src="nomad1.jpg" alt="Nomadic guides with camels">
       </div>
       <div class="camp-img">
-        <img src="nomad4.jpg" alt="Nomadic guide">
-      </div>
-      <div class="camp-img">
-        <img src="nomad7.jpg" alt="Nomadic guide portrait">
-      </div>
-      <div class="camp-img">
         <img src="nomad10.jpg" alt="The team">
       </div>
       <div class="camp-img">
-        <img src="nomad8.jpg" alt="Camels in the Sahara">
-      </div>
-      <div class="camp-img camp-img-wide">
         <img src="nomad2.jpg" alt="Team with camels">
       </div>
     </div>
@@ -413,17 +417,14 @@
       <h2 class="section-title" style="margin-bottom:32px;">Built by<br><em>nomad hands.</em></h2>
       <p style="max-width:640px;font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-bottom:60px;">Adobe, earth, straw. A gathering place between treks, for meals, music, rest, and creation. At the foot of the Dune Hurlante.</p>
       <div class="camp-grid">
+        <div class="camp-img camp-img-wide">
+          <img src="camp3.jpg" alt="Fixed camp at sunset">
+        </div>
         <div class="camp-img">
           <img src="camp1.jpg" alt="Camp entrance">
         </div>
         <div class="camp-img">
           <img src="camp6.jpg" alt="Dining hall">
-        </div>
-        <div class="camp-img">
-          <img src="camp7.jpg" alt="Evening tent">
-        </div>
-        <div class="camp-img">
-          <img src="camp4.jpg" alt="Night lanterns">
         </div>
         <div class="camp-img camp-img-wide">
           <img src="camp2.jpg" alt="Camp at night under stars">
