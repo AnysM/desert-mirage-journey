@@ -32,6 +32,17 @@
   .nav-links a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sand-light); text-decoration: none; opacity: 0.75; transition: opacity 0.3s, color 0.3s; }
   .nav-links a:hover { opacity: 1; color: var(--amber); }
 
+  /* BURGER */
+  .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; z-index: 110; }
+  .burger span { display: block; width: 24px; height: 1px; background: var(--amber); transition: all 0.3s; }
+  .burger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .burger.open span:nth-child(2) { opacity: 0; }
+  .burger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(26,20,16,0.97); z-index: 105; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 5px; text-transform: uppercase; color: var(--sand-light); text-decoration: none; opacity: 0.8; }
+  .mobile-menu a:hover { color: var(--amber); opacity: 1; }
+
 
   /* HERO */
   .hero { height: 100vh; height: 100dvh; min-height: 700px; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
@@ -171,8 +182,9 @@
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    nav { padding: 16px 24px; }
+    nav { padding: 16px 24px; background: rgba(26,20,16,0.97); }
     .nav-links { display: none; }
+    .burger { display: flex; }
     .hero-content { padding: 0 24px 60px; }
     .hero-scroll { right: 24px; }
     .intro, .experiences, .schedule, .accommodation, .included, .price, .contact, .facilitators, .presences, .testimonials, .camp-section { padding: 60px 24px; }
@@ -214,7 +226,26 @@
     <li><a href="#price">Price</a></li>
     <li><a href="#register">Register</a></li>
   </ul>
+  <div class="burger" id="burger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">Intention</a>
+  <a href="#experience" onclick="toggleMenu()">Process</a>
+  <a href="#guides" onclick="toggleMenu()">Guides</a>
+  <a href="#price" onclick="toggleMenu()">Price</a>
+  <a href="#register" onclick="toggleMenu()">Register</a>
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+</script>
 
 <!-- HERO -->
 <section class="hero">
