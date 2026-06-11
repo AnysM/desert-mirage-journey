@@ -33,8 +33,6 @@
   .nav-links a:hover { opacity: 1; color: var(--amber); }
 
   /* EARLY BIRD BANNER */
-  .early-bird-banner { background: var(--amber); color: var(--night); text-align: center; padding: 10px 24px; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; position: relative; z-index: 99; margin-top: 0; }
-  .early-bird-banner a { color: var(--night); text-decoration: underline; margin-left: 16px; font-size: 10px; }
 
   /* HERO */
   .hero { height: 100vh; height: 100dvh; min-height: 700px; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
@@ -43,7 +41,8 @@
   .hero-video-wrap iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.78vh; transform: translate(-50%, -50%); border: none; pointer-events: none; }
   .hero-video-fallback { position: absolute; inset: 0; background: url('hero2.jpg') center/cover no-repeat; transition: opacity 1s ease; }
   .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(26,20,16,0.65) 70%, rgba(26,20,16,1) 100%); z-index: 1; }
-  /* Masque bas vidéo pour cacher sous-titres */
+  /* Masque haut vidéo */
+  .hero-video-top { position: absolute; top: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, #1a1410 0%, transparent 100%); z-index: 3; pointer-events: none; }
   .hero-video-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 55%; background: linear-gradient(to top, rgba(26,20,16,1) 0%, rgba(26,20,16,1) 30%, rgba(26,20,16,0.7) 58%, transparent 100%); z-index: 2; pointer-events: none; }
   .hero-content { position: relative; z-index: 5; padding: 0 80px 80px; max-width: 900px; }
   .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 6px; color: var(--amber); text-transform: uppercase; margin-bottom: 24px; opacity: 0; animation: fadeup 1s 0.3s forwards; }
@@ -224,9 +223,10 @@
 <section class="hero">
   <div class="hero-bg">
     <div class="hero-video-wrap">
-      <iframe src="https://player.mediadelivery.net/embed/680447/de882a62-46f8-46aa-b2e7-8f4d8c19aee8?autoplay=true&loop=true&muted=true&preload=true&responsive=true&controls=false" style="border:0;position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="false"></iframe>
+      <iframe src="https://player.mediadelivery.net/embed/680447/de882a62-46f8-46aa-b2e7-8f4d8c19aee8?autoplay=true&loop=true&muted=true&preload=true&responsive=true&controls=false" style="background:#1a1410;border:0;position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="false"></iframe>
     </div>
     <div class="hero-video-mask"></div>
+    <div class="hero-video-top"></div>
     <div class="hero-gradient"></div>
   </div>
   <div class="hero-content">
