@@ -32,6 +32,7 @@
   /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; background: transparent; }
   .nav-logo { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 4px; color: var(--amber); text-transform: uppercase; }
+  .logo-img { filter: brightness(0) saturate(100%) invert(72%) sepia(60%) saturate(600%) hue-rotate(350deg) brightness(0.95); }
   .nav-links { display: flex; gap: 40px; list-style: none; }
   .nav-links a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sand-light); text-decoration: none; opacity: 0.75; transition: opacity 0.3s, color 0.3s; }
   .nav-links a:hover { opacity: 1; color: var(--amber); }
@@ -190,7 +191,8 @@
     nav { padding: 16px 24px; background: rgba(26,20,16,0.97); }
     .nav-links { display: none; }
     .burger { display: flex; }
-    .nav-logo-text { display: none; }
+    .nav-logo-text { display: block; font-size: 10px; letter-spacing: 2px; }
+    .nav-logo { font-size: 10px; letter-spacing: 2px; }
     .hero-content { padding: 0 24px 60px; }
     .hero-scroll { right: 24px; }
     .intro, .experiences, .schedule, .accommodation, .included, .price, .contact, .facilitators, .presences, .testimonials, .camp-section { padding: 60px 24px; }
@@ -226,7 +228,7 @@
 <nav>
   <div class="nav-logo" style="display:flex;align-items:center;gap:10px;">
     <span class="nav-logo-text">Desert Mirage Journey</span>
-    <img src="logo.svg" style="height:56px;width:auto;" alt="Desert Mirage Journey">
+    <img src="logo.svg" class="logo-img" style="height:56px;width:auto;" alt="Desert Mirage Journey">
   </div>
   <ul class="nav-links">
     <li><a href="#about">Intention</a></li>
@@ -695,7 +697,7 @@ function toggleMenu() {
 <footer>
   <div class="footer-logo" style="display:flex;align-items:center;gap:10px;">
     <span>Desert Mirage Journey</span>
-    <img src="logo.svg" style="height:48px;width:auto;" alt="">
+    <img src="logo.svg" class="logo-img" style="height:48px;width:auto;" alt="">
   </div>
   <div class="footer-tagline">Ma · Cross Art Residency · Sahara · Dec 2026</div>
   <div class="footer-credit">Photos: Raúl Bartolome<br>© 2026 BodhiBody</div>
