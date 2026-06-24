@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Desert Mirage Journey</title>
+<meta name="description" content="A 12-day cross-art residency in the Moroccan Sahara. December 10–21, 2026. A space of emergence around the concept of 間 Ma.">
+<meta property="og:title" content="Desert Mirage Journey">
+<meta property="og:description" content="A 12-day cross-art residency in the Moroccan Sahara. December 10–21, 2026.">
+<meta property="og:image" content="https://desertmiragejourney.com/raul-perf1.jpg">
+<meta property="og:url" content="https://desertmiragejourney.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Desert Mirage Journey">
+<meta name="twitter:description" content="A 12-day cross-art residency in the Moroccan Sahara. December 10–21, 2026.">
+<meta name="twitter:image" content="https://desertmiragejourney.com/raul-perf1.jpg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -88,6 +98,11 @@
 
   /* GALLERY STRIP */
   .gallery-strip { background: var(--night); overflow: hidden; padding: 0; display: flex; width: 100%; height: 280px; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary { position: relative; padding-right: 40px; transition: color 0.3s; }
+  details summary::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--amber); transition: transform 0.3s; }
+  details[open] summary::after { content: '−'; }
+  details summary:hover { color: var(--amber); }
   .gallery-strip img { flex: 1 1 0; width: 0; min-width: 0; height: 100%; object-fit: cover; filter: sepia(20%) contrast(1.05); transition: filter 0.3s; display: block; }
   .gallery-strip img:hover { filter: sepia(0%) contrast(1.1); }
 
@@ -215,6 +230,11 @@
     [style*="grid-template-columns: 1fr 1fr"] { display: block !important; }
     [style*="grid-template-columns:1fr 1fr"] > div,
     [style*="grid-template-columns: 1fr 1fr"] > div { margin-bottom: 48px; width: 100% !important; }
+    /* Editions en 1 colonne pleine largeur sur mobile */
+    .editions-grid { grid-template-columns: 1fr !important; gap: 16px; }
+    .editions-grid > div { min-height: 380px !important; }
+    .gallery-strip { height: 200px; }
+    .gallery-strip img:nth-child(n+5) { display: none; }
     /* Parallax désactivé sur mobile iOS (zones vides) */
     .parallax { height: 50vw; min-height: 200px; }
     .parallax-band { background-attachment: scroll; height: 42vh; min-height: 260px; }
@@ -240,6 +260,7 @@
     <li><a href="#experience">Process</a></li>
     <li><a href="#guides">Guides</a></li>
     <li><a href="#price">Price</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#register">Register</a></li>
   </ul>
   <div class="burger" id="burger" onclick="toggleMenu()">
@@ -254,6 +275,7 @@
   <a href="#experience" onclick="toggleMenu()">Process</a>
   <a href="#guides" onclick="toggleMenu()">Guides</a>
   <a href="#price" onclick="toggleMenu()">Price</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="#register" onclick="toggleMenu()">Register</a>
 </div>
 
@@ -279,7 +301,7 @@ function toggleMenu() {
       <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,24px);font-weight:300;font-style:italic;color:rgba(250,246,241,0.75);margin-bottom:6px;">An artistic residency in the Moroccan Sahara</p>
       <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.6vw,20px);font-weight:300;font-style:italic;color:rgba(250,246,241,0.5);margin-bottom:16px;">Exploring 間 Ma, the space in between</p>
       <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:5px;color:var(--amber);text-transform:uppercase;display:block;">December 10–21, 2026</span>
-      <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:5px;color:rgba(232,177,83,0.6);text-transform:uppercase;display:block;margin-top:6px;">8 days in the desert</span>
+      <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:5px;color:rgba(232,177,83,0.6);text-transform:uppercase;display:block;margin-top:6px;">10 days in the desert</span>
     </div>
   </div>
   <div class="hero-scroll">Scroll</div>
@@ -486,7 +508,7 @@ function toggleMenu() {
     <h2 class="section-title">Each edition<br><em>a different form.</em></h2>
     <p style="max-width:640px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.55);margin-bottom:48px;">The previous editions were built around a single master practitioner. This edition takes a different form: an open artistic residency, cross-disciplinary, where each participant brings their practice and co-creates the experience.</p>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0;">
+    <div class="editions-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0;">
       <!-- 2026 -->
       <div style="padding:24px;border:1px solid rgba(232,177,83,0.4);background:rgba(232,177,83,0.05);min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;">
         <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--amber);margin-bottom:12px;">2026 — OPEN</div>
@@ -495,7 +517,7 @@ function toggleMenu() {
       </div>
       <!-- 2024 -->
       <div style="position:relative;padding:24px;border:1px solid rgba(250,246,241,0.06);overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;">
-        <div style="position:absolute;inset:0;background:url('imre-thormann.jpg') center/cover;filter:sepia(20%);"></div>
+        <div style="position:absolute;inset:0;background:url('imre-thormann.jpg') center 25%/cover;filter:sepia(20%);"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,9,8,0.92) 0%, rgba(10,9,8,0.55) 50%, rgba(10,9,8,0.35) 100%);"></div>
         <div style="position:relative;">
           <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:rgba(232,177,83,0.7);margin-bottom:6px;">2024</div>
@@ -505,7 +527,7 @@ function toggleMenu() {
       </div>
       <!-- 2023 -->
       <div style="position:relative;padding:24px;border:1px solid rgba(250,246,241,0.06);overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;">
-        <div style="position:absolute;inset:0;background:url('yukiko-yoshioka.jpg') center/cover;filter:sepia(20%);"></div>
+        <div style="position:absolute;inset:0;background:url('yukiko-yoshioka.jpg') center 30%/cover;filter:sepia(20%);"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,9,8,0.92) 0%, rgba(10,9,8,0.55) 50%, rgba(10,9,8,0.35) 100%);"></div>
         <div style="position:relative;">
           <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:rgba(232,177,83,0.7);margin-bottom:6px;">2023</div>
@@ -646,7 +668,7 @@ function toggleMenu() {
   <p class="section-label" style="color:var(--amber);">Investment</p>
   <h2 class="section-title">Price</h2>
   <div style="background:rgba(232,177,83,0.1);border:1px solid rgba(232,177,83,0.3);max-width:600px;margin:0 auto 40px;padding:20px 32px;text-align:center;">
-    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:var(--amber);margin-bottom:8px;">EARLY BIRD UNTIL SEPTEMBER 15</p>
+    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:var(--amber);margin-bottom:8px;">EARLY BIRD UNTIL SEPTEMBER 1</p>
     <p style="font-size:15px;color:rgba(250,246,241,0.7);">Save 15% on all room types. Limited spots.</p>
   </div>
   <div class="price-grid">
@@ -705,6 +727,44 @@ function toggleMenu() {
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="included" id="faq" style="background:var(--dusk);">
+  <div style="max-width:820px;margin:0 auto;">
+    <p class="section-label">Before you come</p>
+    <h2 class="section-title" style="margin-bottom:48px;">Questions</h2>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">Do I need to be an experienced artist?</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">No. This residency welcomes artists from any discipline and any level. What matters is the willingness to create, to listen, and to co-create with others. We hold a short call with each applicant to make sure the journey is right for you.</p>
+    </details>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">What level of physical fitness is required?</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">The trek involves walking around 3 to 4 hours per day across sand, at a calm pace, with camels carrying the luggage. No specific training is needed, but you should be comfortable walking and spending full days outdoors. If you have any health concerns, tell us during the call.</p>
+    </details>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">What is the weather like in December?</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">December in the Sahara brings mild, sunny days (around 20°C) and cold nights that can drop near 0°C. Warm layers, a good sleeping bag, and a hat are essential. A full packing list is sent once you are registered.</p>
+    </details>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">What language is the residency in?</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">The residency is conducted entirely in English. Participants come from many countries.</p>
+    </details>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">How does payment work?</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">A 50% transfer confirms your registration, with the balance due before departure. Early bird prices apply until September 1. A scholarship is available on request. Payment details are shared after your call.</p>
+    </details>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);border-bottom:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">What is included in the price?</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">All accommodation from Marrakech to the desert, all meals during the journey, airport transfers, the full guided trek with the nomadic team, and the artistic residency itself. Flights to Marrakech and travel insurance are not included.</p>
+    </details>
+  </div>
+</section>
+
 <!-- REGISTER -->
 <section class="contact" id="register">
   <div class="contact-inner">
@@ -720,10 +780,10 @@ function toggleMenu() {
 <!-- CLOSING IMAGE -->
 <div style="height:70vh;overflow:hidden;position:relative;">
   <div style="position:absolute;inset:0;background:url('raul-sand.jpg') center 40%/cover;filter:sepia(15%) contrast(1.05);"></div>
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(26,20,16,0.4), rgba(26,20,16,0.7));display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;">
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,52px);font-weight:300;color:var(--stars);text-align:center;font-style:italic;margin-bottom:16px;">The space in between, already there</h2>
-    <p style="color:rgba(250,246,241,0.6);font-style:italic;font-size:18px;text-align:center;">Looking forward to entering 間 with you in the desert</p>
-    <p style="margin-top:24px;font-size:13px;color:rgba(250,246,241,0.3);font-family:'Cinzel',serif;letter-spacing:3px;">DESERT MIRAGE JOURNEY · DECEMBER 2026</p>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(26,20,16,0.6), rgba(26,20,16,0.82));display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,52px);font-weight:300;color:var(--stars);text-align:center;font-style:italic;margin-bottom:16px;text-shadow:0 2px 24px rgba(0,0,0,0.6);">The space in between, already there</h2>
+    <p style="color:rgba(250,246,241,0.85);font-style:italic;font-size:18px;text-align:center;text-shadow:0 2px 16px rgba(0,0,0,0.6);">Looking forward to entering 間 with you in the desert</p>
+    <p style="margin-top:24px;font-size:13px;color:rgba(232,177,83,0.7);font-family:'Cinzel',serif;letter-spacing:3px;text-shadow:0 1px 12px rgba(0,0,0,0.6);">DESERT MIRAGE JOURNEY · DECEMBER 2026</p>
   </div>
 </div>
 
