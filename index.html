@@ -238,7 +238,12 @@
     [style*="background-attachment: scroll"] { background-attachment: scroll !important; }
     /* Fix price background fixed */
     .price { background-attachment: scroll !important; background: linear-gradient(to bottom, rgba(26,20,16,0.7), rgba(26,20,16,0.85)), url('camp5.jpg') center/cover no-repeat !important; }
+    /* Sticky mobile apply button */
+    .sticky-apply { display: block; }
+    footer { padding-bottom: 90px; }
   }
+  .sticky-apply { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: rgba(26,20,16,0.95); backdrop-filter: blur(8px); padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(232,177,83,0.2); }
+  .sticky-apply a { display: block; text-align: center; background: var(--amber); color: var(--night); font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; padding: 14px; text-decoration: none; }
 </style>
 </head>
 <body>
@@ -640,7 +645,7 @@ function toggleMenu() {
           </div>
         </div>
         <div style="padding:28px 0 0;">
-          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);">Painter, dancer, and organiser of desert retreats and initiatory experiences. His work, on paper and through the body, draws from Butoh, Tao, calligraphy, and elemental movement. Each performance is conceived as a ritual: a psychomagical act that bridges the personal and the universal.</p>
+          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);">Painter, dancer, and guide of desert retreats and initiatory journeys. His work, on paper and through the body, draws from Butoh, Tao, calligraphy, and elemental movement. Each performance is conceived as a ritual: a psychomagical act that bridges the personal and the universal.</p>
           <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);margin-top:14px;">Franco-Moroccan, nomadic by nature. The Sahara is not a destination for him. It is a place of return.</p>
         </div>
       </div>
@@ -654,7 +659,7 @@ function toggleMenu() {
   <h2 class="section-title">Price</h2>
   <div style="background:rgba(232,177,83,0.1);border:1px solid rgba(232,177,83,0.3);max-width:600px;margin:0 auto 40px;padding:20px 32px;text-align:center;">
     <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:var(--amber);margin-bottom:8px;">EARLY BIRD UNTIL SEPTEMBER 1</p>
-    <p style="font-size:15px;color:rgba(250,246,241,0.7);">Save 15% on all room types. Limited spots.</p>
+    <p style="font-size:15px;color:rgba(250,246,241,0.7);">Save up to 15% on all room types. Limited spots.</p>
   </div>
   <div class="price-grid">
     <div class="price-card">
@@ -778,6 +783,10 @@ function toggleMenu() {
   <div class="footer-credit">Photos: Raúl Bartolome · Marian Perchet<br>© 2026 Desert Mirage Journey</div>
 </footer>
 
+<!-- STICKY MOBILE APPLY -->
+<div class="sticky-apply">
+  <a href="https://anys.typeform.com/to/OqXCadp7" target="_blank" rel="noopener">Apply for a spot</a>
+</div>
 
 </body>
 </html>
