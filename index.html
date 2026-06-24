@@ -81,6 +81,10 @@
 
   /* PARALLAX */
   .parallax { height: 70vh; overflow: hidden; position: relative; }
+  .parallax-band { height: 60vh; position: relative; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
+  .parallax-band .pb-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,9,8,0.45), rgba(10,9,8,0.35), rgba(10,9,8,0.55)); }
+  .parallax-band .pb-quote { position: relative; max-width: 760px; text-align: center; padding: 0 32px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(22px, 3vw, 40px); line-height: 1.5; color: rgba(250,246,241,0.92); text-shadow: 0 2px 30px rgba(0,0,0,0.5); }
+  .parallax-band .pb-ma { display: block; font-family: 'Cinzel', serif; font-style: normal; font-size: 13px; letter-spacing: 5px; color: var(--amber); margin-top: 24px; }
 
   /* GALLERY STRIP */
   .gallery-strip { background: var(--night); overflow: hidden; padding: 0; display: flex; width: 100%; height: 280px; }
@@ -213,6 +217,8 @@
     [style*="grid-template-columns: 1fr 1fr"] > div { margin-bottom: 48px; width: 100% !important; }
     /* Parallax désactivé sur mobile iOS (zones vides) */
     .parallax { height: 50vw; min-height: 200px; }
+    .parallax-band { background-attachment: scroll; height: 42vh; min-height: 260px; }
+    .parallax-band .pb-quote { font-size: 22px; }
     .parallax > div:first-child { background-attachment: scroll !important; background-size: cover !important; }
     [style*="background-attachment:scroll"],
     [style*="background-attachment: scroll"] { background-attachment: scroll !important; }
@@ -353,6 +359,12 @@ function toggleMenu() {
   </div>
 </section>
 
+<!-- PARALLAX BAND 1 -->
+<div class="parallax-band" style="background-image:url('raul-arm.jpg');">
+  <div class="pb-overlay"></div>
+  <div class="pb-quote">Not creation through forceful production, but creation that emerges through being moved.<span class="pb-ma">間 MA</span></div>
+</div>
+
 <!-- PROCESS -->
 <section class="experiences" id="experience">
   <div style="max-width:1200px;margin:0 auto;">
@@ -419,6 +431,12 @@ function toggleMenu() {
     <a href="#register" class="btn" style="text-decoration:none;">Apply for a spot</a>
   </div>
 </section>
+
+<!-- PARALLAX BAND 2 -->
+<div class="parallax-band" style="background-image:url('raul-dancer.jpg');">
+  <div class="pb-overlay"></div>
+  <div class="pb-quote">The desert does not ask if you are prepared. It asks only if you are willing.</div>
+</div>
 
 <!-- CAMP & GUIDES SECTION -->
 <section class="camp-section" id="camp" style="background:var(--dusk);">
@@ -539,6 +557,12 @@ function toggleMenu() {
     </div>
   </div>
 </section>
+
+<!-- PARALLAX BAND 3 -->
+<div class="parallax-band" style="background-image:url('raul-perf1.jpg');background-position:center 60%;">
+  <div class="pb-overlay"></div>
+  <div class="pb-quote">Let art and life return to their most naked state.</div>
+</div>
 
 <!-- ACCOMMODATION -->
 <section class="accommodation" id="accom">
