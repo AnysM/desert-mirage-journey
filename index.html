@@ -174,14 +174,16 @@
   .included-list li::before { content: '✤'; position: absolute; left: 0; color: var(--amber); font-size: 10px; top: 3px; }
 
   /* PRICE */
-  .price { background: linear-gradient(to bottom, rgba(26,20,16,0.7), rgba(26,20,16,0.85)), url('camp5.jpg') center 30%/cover no-repeat; padding: 120px 80px; text-align: center; }
+  .price { background: var(--night); padding: 120px 80px; text-align: center; }
   .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 1000px; margin: 60px auto 0; }
-  .price-card { background: rgba(250,246,241,0.05); padding: 40px 24px; border: 1px solid rgba(232,177,83,0.1); transition: background 0.3s, border-color 0.3s; }
+  .price-card { background: rgba(250,246,241,0.04); padding: 32px 28px; border: 1px solid rgba(232,177,83,0.1); transition: background 0.3s, border-color 0.3s; text-align: right; }
   .price-card:hover { background: rgba(232,177,83,0.08); border-color: rgba(232,177,83,0.3); }
+  .price-title { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--amber); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(232,177,83,0.15); }
   .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--amber); line-height: 1; margin-bottom: 8px; }
   .price-early { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: rgba(232,177,83,0.5); line-height: 1; text-decoration: line-through; margin-bottom: 4px; }
   .price-currency { font-size: 18px; vertical-align: super; }
   .price-room { font-size: 13px; color: rgba(250,246,241,0.55); line-height: 1.5; margin-top: 12px; }
+  .price-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,246,241,0.35); display: block; margin-bottom: 2px; }
   .price-note { margin-top: 48px; font-size: 14px; color: rgba(250,246,241,0.5); font-style: italic; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; }
   .price-note strong { color: var(--amber); }
 
@@ -237,7 +239,7 @@
     [style*="background-attachment:scroll"],
     [style*="background-attachment: scroll"] { background-attachment: scroll !important; }
     /* Fix price background fixed */
-    .price { background-attachment: scroll !important; background: linear-gradient(to bottom, rgba(26,20,16,0.7), rgba(26,20,16,0.85)), url('camp5.jpg') center/cover no-repeat !important; }
+    .price { background: var(--night) !important; }
     /* Sticky mobile apply button */
     .sticky-apply { display: block; }
     footer { padding-bottom: 90px; }
@@ -669,19 +671,28 @@ function toggleMenu() {
   </div>
   <div class="price-grid">
     <div class="price-card">
+      <div class="price-title">Single Room</div>
+      <span class="price-label">Standard</span>
       <div class="price-early"><span class="price-currency">€</span>1820</div>
+      <span class="price-label" style="margin-top:10px;">Early bird</span>
       <div class="price-amount"><span class="price-currency">€</span>1600</div>
-      <div class="price-room">Single room<br>Private bathroom</div>
+      <div class="price-room">Private bathroom</div>
     </div>
     <div class="price-card">
+      <div class="price-title">Twin Room</div>
+      <span class="price-label">Standard</span>
       <div class="price-early"><span class="price-currency">€</span>1640</div>
+      <span class="price-label" style="margin-top:10px;">Early bird</span>
       <div class="price-amount"><span class="price-currency">€</span>1400</div>
-      <div class="price-room">Twin room<br>Private bathroom</div>
+      <div class="price-room">Private bathroom</div>
     </div>
     <div class="price-card">
+      <div class="price-title">Dormitory</div>
+      <span class="price-label">Standard</span>
       <div class="price-early"><span class="price-currency">€</span>1560</div>
+      <span class="price-label" style="margin-top:10px;">Early bird</span>
       <div class="price-amount"><span class="price-currency">€</span>1350</div>
-      <div class="price-room">Dormitory (3 to 4 people)<br>Shared bathroom</div>
+      <div class="price-room">3 to 4 people · Shared bathroom</div>
     </div>
   </div>
   <p class="price-note"><strong>Early bird until September 1.</strong> After that date, standard prices apply.<br>50% transfer in advance to confirm registration.<br>Scholarship available on request.</p>
@@ -696,13 +707,13 @@ function toggleMenu() {
       <div class="included-box">
         <div class="included-box-title in">Included</div>
         <ul class="included-list">
-          <li>8 days of artistic practice and co-creation with facilitators</li>
-          <li>4 days nomadic desert trek with local guides</li>
+          <li>Artistic practice and co-creation throughout the residency</li>
+          <li>Guided nomadic desert trek with local guides</li>
           <li>Airport pickup and drop off on Day 1 and Day 12</li>
-          <li>Round trip transportation Marrakech to Desert and back</li>
+          <li>Round trip transportation Marrakech to desert and back</li>
           <li>Three vegetarian meals per day and drinking water</li>
-          <li>12 days / 11 nights accommodation: riad, fixed camp and nomadic bivouac</li>
-          <li>Performance documented by professional photographer</li>
+          <li>12 days accommodation: Marrakech, fixed camp and nomadic bivouac</li>
+          <li>Journey documented by a professional photographer</li>
         </ul>
       </div>
       <div class="included-box">
