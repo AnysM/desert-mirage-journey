@@ -69,8 +69,8 @@
   /* HERO */
   .hero { height: 100vh; height: 100dvh; min-height: 700px; position: relative; display: flex; align-items: center; overflow: hidden; padding-top: 20%; }
   .hero-bg { position: absolute; inset: 0; overflow: hidden; background: #1a1410; }
-  .hero-video-wrap { position: absolute; top: -2px; left: 0; right: 0; bottom: -2px; pointer-events: none; overflow: hidden; }
-  .hero-video-wrap iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: calc(100vh + 4px); min-width: 177.78vh; transform: translate(-50%, -50%); border: none; pointer-events: none; }
+  .hero-video-wrap { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; overflow: hidden; }
+  .hero-video-wrap iframe { position: absolute; top: 0; left: 50%; width: max(100vw, 177.78vh); height: max(56.25vw, 100%); min-height: 100%; transform: translateX(-50%); border: none; pointer-events: none; }
   .hero-video-fallback { position: absolute; inset: 0; background: url('hero2.jpg') center/cover no-repeat; transition: opacity 1s ease; }
   .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(26,20,16,0.35) 78%, rgba(26,20,16,0.9) 100%); z-index: 1; }
   .hero-video-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 55%; background: linear-gradient(to top, rgba(26,20,16,1) 0%, rgba(26,20,16,1) 30%, rgba(26,20,16,0.7) 58%, transparent 100%); z-index: 2; pointer-events: none; }
@@ -317,7 +317,7 @@ function toggleMenu() {
 <section class="hero">
   <div class="hero-bg">
     <div class="hero-video-wrap">
-      <iframe src="https://player.mediadelivery.net/embed/680447/579fe092-4ff9-4e78-a385-0b21c02d8eb9?autoplay=true&loop=true&muted=true&preload=true&responsive=true&controls=false" loading="lazy" style="border:0;position:absolute;top:50%;left:50%;width:max(100vw,177.78vh);height:max(56.25vw,100vh);transform:translate(-50%,-50%);pointer-events:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true"></iframe>
+      <iframe src="https://player.mediadelivery.net/embed/680447/579fe092-4ff9-4e78-a385-0b21c02d8eb9?autoplay=true&loop=true&muted=true&preload=true&responsive=true&controls=false" loading="lazy" style="border:0;position:absolute;top:0;left:50%;width:max(100vw,177.78vh);height:max(56.25vw,100%);min-height:100%;transform:translateX(-50%);pointer-events:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true"></iframe>
     </div>
     <div class="hero-video-mask"></div>
     <div class="hero-gradient"></div>
