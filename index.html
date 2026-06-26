@@ -248,6 +248,8 @@
     .midwife-row, .midwife-row.reverse { grid-template-columns: 1fr; gap: 24px; max-width: 420px; margin: 0 auto; }
     .midwife-row.reverse .midwife-photo { order: 1; }
     .midwife-row.reverse .midwife-text { order: 2; }
+    /* Hero video scale only on mobile to hide Bunny letterbox bar */
+    .hero-video-wrap iframe { transform: translateX(-50%) scale(1.18) !important; transform-origin: center center !important; }
     /* Parallax désactivé sur mobile iOS (zones vides) */
     .parallax { height: 50vw; min-height: 200px; }
     .parallax-band { background-attachment: scroll; height: 42vh; min-height: 260px; }
@@ -317,7 +319,7 @@ function toggleMenu() {
 <section class="hero">
   <div class="hero-bg">
     <div class="hero-video-wrap">
-      <iframe src="https://player.mediadelivery.net/embed/680447/579fe092-4ff9-4e78-a385-0b21c02d8eb9?autoplay=true&loop=true&muted=true&preload=true&responsive=true&controls=false" loading="lazy" style="border:0;position:absolute;top:0;left:50%;width:max(100vw,177.78vh);height:max(56.25vw,100%);min-height:100%;transform:translateX(-50%) scale(1.18);transform-origin:center center;pointer-events:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true"></iframe>
+      <iframe src="https://player.mediadelivery.net/embed/680447/579fe092-4ff9-4e78-a385-0b21c02d8eb9?autoplay=true&loop=true&muted=true&preload=true&responsive=true&controls=false" loading="lazy" style="border:0;position:absolute;top:0;left:50%;width:max(100vw,177.78vh);height:max(56.25vw,100%);min-height:100%;transform:translateX(-50%);pointer-events:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true"></iframe>
     </div>
     <div class="hero-video-mask"></div>
     <div class="hero-gradient"></div>
