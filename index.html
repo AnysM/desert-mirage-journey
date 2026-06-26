@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Desert Mirage Journey</title>
 <meta name="description" content="A 12-day cross-art residency in the Moroccan Sahara. December 10–21, 2026. A space of emergence around the concept of 間 Ma.">
 <meta property="og:title" content="Desert Mirage Journey">
@@ -46,7 +46,7 @@
   body { background: var(--night); color: var(--stars); font-family: 'Baskervville', serif; overflow-x: hidden; max-width: 100%; }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; background: transparent; transition: background 0.4s, padding 0.4s; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; padding-top: calc(20px + env(safe-area-inset-top)); display: flex; justify-content: space-between; align-items: center; background: transparent; transition: background 0.4s, padding 0.4s; }
   nav.scrolled { background: rgba(26,20,16,0.95); backdrop-filter: blur(8px); padding-top: 14px; padding-bottom: 14px; }
   .nav-logo { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 4px; color: var(--amber); text-transform: uppercase; }
   .nav-links { display: flex; gap: 40px; list-style: none; }
