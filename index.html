@@ -53,6 +53,8 @@
   .nav-links { display: flex; gap: 40px; list-style: none; }
   .nav-links a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sand-light); text-decoration: none; opacity: 0.75; transition: opacity 0.3s, color 0.3s; }
   .nav-links a:hover { opacity: 1; color: var(--amber); }
+  .nav-links a.nav-cta { border: 1px solid var(--amber); padding: 8px 20px; opacity: 1; color: var(--amber); border-radius: 2px; }
+  .nav-links a.nav-cta:hover { background: var(--amber); color: var(--night); }
 
   /* BURGER */
   .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; z-index: 110; }
@@ -281,7 +283,7 @@
     <li><a href="#guides">Facilities</a></li>
     <li><a href="#price">Price</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#register">Register</a></li>
+    <li><a href="#register" class="nav-cta">Register</a></li>
   </ul>
   <div class="burger" id="burger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -857,7 +859,7 @@ function toggleMenu() {
       </div>
 
       <div style="text-align:center;">
-        <button type="submit" class="btn" style="cursor:pointer;border:none;">Send inquiry</button>
+        <button type="submit" class="btn" style="cursor:pointer;border:1px solid var(--amber);background:var(--amber);color:var(--night);font-weight:600;">Send inquiry</button>
       </div>
     </form>
     <p style="margin-top:24px;font-size:13px;line-height:1.7;color:rgba(250,246,241,0.55);text-shadow:0 1px 12px rgba(0,0,0,0.5);text-align:center;">We will reply as soon as possible with the full details and registration.</p>
