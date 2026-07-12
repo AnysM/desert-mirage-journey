@@ -281,11 +281,19 @@
   }
   /* Chinese text needs slightly more line-height */
   .intro-body p, .exp-body, p { line-height: 1.95; }
-  /* Language switcher */
   .lang-switch { display: flex; gap: 6px; align-items: center; margin-left: 20px; }
   .lang-switch a { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; color: rgba(250,246,241,0.5); text-decoration: none; padding: 4px 8px; border: 1px solid transparent; transition: color .3s, border-color .3s; }
   .lang-switch a:hover { color: var(--amber); }
   .lang-switch a.active { color: var(--amber); border-color: rgba(232,177,83,0.4); }
+
+  /* Language switcher */
+  .lang-switch { display: flex; gap: 4px; align-items: center; margin-left: 18px; }
+  .lang-switch a { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 1px; color: rgba(250,246,241,0.45); text-decoration: none; padding: 3px 7px; border: 1px solid transparent; transition: color .3s, border-color .3s; }
+  .lang-switch a:hover { color: var(--amber); }
+  .lang-switch a.active { color: var(--amber); border-color: rgba(232,177,83,0.4); }
+  .mobile-lang { display: flex; gap: 10px; justify-content: center; margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(232,177,83,0.15); }
+  .mobile-lang a { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 2px; color: rgba(250,246,241,0.5); text-decoration: none; padding: 6px 14px; border: 1px solid transparent; }
+  .mobile-lang a.active { color: var(--amber); border-color: rgba(232,177,83,0.4); }
 </style>
 </head>
 <body>
@@ -303,7 +311,7 @@
     <li><a href="#price">费用</a></li>
     <li><a href="#faq">常见问题</a></li>
     <li><a href="#register" class="nav-cta">报名</a></li>
-  <li class="lang-switch"><a href="index.html">EN</a><a href="index-zh.html" class="active">中文</a></li>
+    <li class="lang-switch"><a href="index.html">EN</a><a href="index-fr.html">FR</a><a href="index-zh.html" class="active">中文</a></li>
   </ul>
   <div class="burger" id="burger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -312,7 +320,9 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <div onclick="toggleMenu()" style="position:absolute;top:24px;right:24px;cursor:pointer;font-size:24px;color:var(--amber);line-height:1;">✕</div>
+  <div onclick="toggleMenu()" style="position:absolute;top:24px;right:24px;cursor:pointer;font-size:24px;color:var(--amber);line-height:1;">✕
+  <div class="mobile-lang"><a href="index.html">EN</a><a href="index-fr.html">FR</a><a href="index-zh.html" class="active">中文</a></div>
+</div>
   <a href="#about" onclick="toggleMenu()">意图</a>
   <a href="#experience" onclick="toggleMenu()">旅程</a>
   <a href="#guides" onclick="toggleMenu()">生活与住宿</a>
