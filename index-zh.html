@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#1a1410">
-<title>Desert Mirage Journey</title>
-<meta name="description" content="A 12-day cross-art residency in the Moroccan Sahara. December 10–21, 2026. A space of emergence around the concept of 間 Ma.">
+<title>沙漠幻境之旅 Desert Mirage Journey</title>
+<meta name="description" content="为期12天的跨艺术驻留，位于摩洛哥撒哈拉沙漠。2026年12月10日至21日。围绕「間 Ma」的涌现之地。">
 <meta property="og:title" content="Desert Mirage Journey">
-<meta property="og:description" content="A 12-day cross-art residency in the Moroccan Sahara. December 10–21, 2026.">
+<meta property="og:description" content="为期12天的跨艺术驻留，摩洛哥撒哈拉沙漠。2026年12月10日至21日。">
 <meta property="og:image" content="https://desertmiragejourney.com/og-image.jpg">
 <meta property="og:image:secure_url" content="https://desertmiragejourney.com/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Desert Mirage Journey">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Desert Mirage Journey">
-<meta name="twitter:description" content="A 12-day cross-art residency in the Moroccan Sahara. December 10–21, 2026.">
+<meta name="twitter:description" content="为期12天的跨艺术驻留，摩洛哥撒哈拉沙漠。2026年12月10日至21日。">
 <meta name="twitter:image" content="https://desertmiragejourney.com/og-image.jpg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -27,7 +27,7 @@
 <link rel="apple-touch-icon" href="/apple-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --sand: #e3c89b;
@@ -269,6 +269,18 @@
   .sticky-apply { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: rgba(26,20,16,0.95); backdrop-filter: blur(8px); padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(232,177,83,0.2); }
   .sticky-apply a { display: block; text-align: center; background: var(--amber); color: var(--night); font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; padding: 14px; text-decoration: none; }
 
+  /* Chinese typography */
+  body, p, li, div, h1, h2, h3, span, a, summary, label, input, select, textarea, button {
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+  }
+  .section-label, .exp-number, .price-label, .price-title, .nav-links a, .btn, .footer-tagline, .mobile-menu a {
+    font-family: 'Cinzel', 'Noto Serif SC', serif;
+  }
+  .intro-question, .section-title, .exp-title, .hero-title {
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+  }
+  /* Chinese text needs slightly more line-height */
+  .intro-body p, .exp-body, p { line-height: 1.95; }
   /* Language switcher */
   .lang-switch { display: flex; gap: 6px; align-items: center; margin-left: 20px; }
   .lang-switch a { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; color: rgba(250,246,241,0.5); text-decoration: none; padding: 4px 8px; border: 1px solid transparent; transition: color .3s, border-color .3s; }
@@ -285,13 +297,13 @@
     <img src="logo.svg" style="height:56px;width:auto;" alt="Desert Mirage Journey">
   </div>
   <ul class="nav-links">
-    <li><a href="#about">Intention</a></li>
-    <li><a href="#experience">Program</a></li>
-    <li><a href="#guides">Facilities</a></li>
-    <li><a href="#price">Price</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#register" class="nav-cta">Register</a></li>
-  <li class="lang-switch"><a href="index.html" class="active">EN</a><a href="index-zh.html">中文</a></li>
+    <li><a href="#about">意图</a></li>
+    <li><a href="#experience">旅程</a></li>
+    <li><a href="#guides">生活与住宿</a></li>
+    <li><a href="#price">费用</a></li>
+    <li><a href="#faq">常见问题</a></li>
+    <li><a href="#register" class="nav-cta">报名</a></li>
+  <li class="lang-switch"><a href="index.html">EN</a><a href="index-zh.html" class="active">中文</a></li>
   </ul>
   <div class="burger" id="burger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -301,12 +313,12 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div onclick="toggleMenu()" style="position:absolute;top:24px;right:24px;cursor:pointer;font-size:24px;color:var(--amber);line-height:1;">✕</div>
-  <a href="#about" onclick="toggleMenu()">Intention</a>
-  <a href="#experience" onclick="toggleMenu()">Program</a>
-  <a href="#guides" onclick="toggleMenu()">Facilities</a>
-  <a href="#price" onclick="toggleMenu()">Price</a>
-  <a href="#faq" onclick="toggleMenu()">FAQ</a>
-  <a href="#register" onclick="toggleMenu()">Register</a>
+  <a href="#about" onclick="toggleMenu()">意图</a>
+  <a href="#experience" onclick="toggleMenu()">旅程</a>
+  <a href="#guides" onclick="toggleMenu()">生活与住宿</a>
+  <a href="#price" onclick="toggleMenu()">费用</a>
+  <a href="#faq" onclick="toggleMenu()">常见问题</a>
+  <a href="#register" onclick="toggleMenu()">报名</a>
 </div>
 
 <script>
@@ -335,12 +347,12 @@ function toggleMenu() {
     <div class="hero-gradient"></div>
   </div>
   <div class="hero-content">
-    <h1 class="hero-title" style="font-size:clamp(34px,4.5vw,62px);letter-spacing:0px;line-height:1.1;opacity:0;animation:fadeup 1s 0.3s forwards;">Desert Mirage <em>Journey</em></h1>
+    <h1 class="hero-title" style="font-size:clamp(34px,4.5vw,62px);letter-spacing:0px;line-height:1.1;opacity:0;animation:fadeup 1s 0.3s forwards;">沙漠幻境 <em>之旅</em></h1>
     <div style="margin-top:20px;opacity:0;animation:fadeup 1s 0.6s forwards;">
-      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,24px);font-weight:300;font-style:italic;color:rgba(250,246,241,0.75);margin-bottom:6px;">An artistic residency in the Moroccan Sahara</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.6vw,20px);font-weight:300;font-style:italic;color:rgba(250,246,241,0.5);margin-bottom:20px;">Exploring 間 Ma, the space in between</p>
-      <span style="font-family:'Cinzel',serif;font-size:clamp(14px,1.5vw,17px);letter-spacing:4px;color:var(--amber);text-transform:uppercase;display:block;font-weight:600;">December 10–21, 2026</span>
-      <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:rgba(250,246,241,0.6);text-transform:uppercase;display:block;margin-top:8px;">12 days · Departing from Marrakech, Morocco</span>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,24px);font-weight:300;font-style:italic;color:rgba(250,246,241,0.75);margin-bottom:6px;">摩洛哥撒哈拉沙漠中的艺术驻留</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.6vw,20px);font-weight:300;font-style:italic;color:rgba(250,246,241,0.5);margin-bottom:20px;">探索「間 Ma」，事物之间的空隙</p>
+      <span style="font-family:'Cinzel',serif;font-size:clamp(14px,1.5vw,17px);letter-spacing:4px;color:var(--amber);text-transform:uppercase;display:block;font-weight:600;">2026年12月10日 – 21日</span>
+      <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:rgba(250,246,241,0.6);text-transform:uppercase;display:block;margin-top:8px;">12天 · 从摩洛哥马拉喀什出发</span>
     </div>
   </div>
   <div class="hero-scroll">Scroll</div>
@@ -350,13 +362,13 @@ function toggleMenu() {
 <section class="intro" style="background:var(--night);">
   <div class="intro-grid" style="max-width:1200px;margin:0 auto;">
     <div class="intro-question">
-      A cross-art residency<br><span>in the Sahara.</span>
+      撒哈拉沙漠中的<br><span>跨艺术驻留。</span>
     </div>
     <div class="intro-body">
-      <p>For twelve days, a small group of artists walks into the Moroccan desert to <strong>live, practice, and create together</strong>. Far from the noise, in a landscape stripped to its essence.</p>
-      <p>This is <strong>a space of co-creation rather than instruction</strong>. Artists from every discipline come together to create side by side, and <strong>what emerges belongs to those who make it</strong>.</p>
-      <p>The desert offers something rare: space.</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.6;color:var(--sand);margin-top:16px;">Space to slow down, to listen, and to let something new take form.</p>
+      <p>为期十二天，一小群艺术家走进摩洛哥沙漠，<strong>共同生活、实践与创作</strong>。远离喧嚣，置身于褪去一切多余之物的风景之中。</p>
+      <p>这是<strong>一个共同创作的空间，而非教学的场所</strong>。来自不同领域的艺术家并肩创作，<strong>所涌现之物，属于创造它的人</strong>。</p>
+      <p>沙漠给予的，是一种稀有之物：空间。</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.6;color:var(--sand);margin-top:16px;">慢下来的空间，倾听的空间，让新事物成形的空间。</p>
     </div>
   </div>
 </section>
@@ -370,14 +382,14 @@ function toggleMenu() {
   <img src="logo.svg" style="position:absolute;right:-5%;top:50%;transform:translateY(-50%);height:140%;width:auto;opacity:0.08;pointer-events:none;z-index:0;">
   <div class="intro-grid" style="position:relative;z-index:1;">
     <div class="intro-question">
-      What wants to be born<br>but <span>can't find its way.</span>
+      那渴望诞生<br>却<span>找不到出路之物。</span>
     </div>
     <div class="intro-body">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:var(--amber);margin-bottom:24px;">This year's theme is 間 - Ma.</p>
-      <p>Ma is not emptiness but <strong>a living interval</strong>: the pause between movements, the silence between sounds, the unseen field from which forms emerge.</p>
-      <p>Throughout the residency, artists from different disciplines explore Ma not as a concept to understand, but as <strong>a space to inhabit</strong> through the body, perception, and creative practice.</p>
-      <p>As artists, we are surrounded by influences, references, techniques, information, aesthetics, and expectations. Layer upon layer accumulates until <strong>what seeks expression can no longer find space to become.</strong></p>
-      <p>The only thing that can allow the essence of what wants to emerge to actually take form is <strong>the space in between things. 間 Ma.</strong></p>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:var(--amber);margin-bottom:24px;">今年的主题是「間 - Ma」。</p>
+      <p>Ma 并非虚无，而是<strong>一段有生命的间隙</strong>：动作之间的停顿，声音之间的静默，形态由此涌现的不可见之场。</p>
+      <p>在整个驻留期间，来自不同领域的艺术家探索 Ma，不是作为一个需要理解的概念，而是作为<strong>一个可以栖居的空间</strong>，通过身体、感知与创作实践去进入。</p>
+      <p>作为艺术家，我们被影响、参照、技术、信息、美学与期待所包围。层层堆叠，直到<strong>那寻求表达之物，再也找不到成形的空间。</strong></p>
+      <p>唯一能让那渴望涌现之物真正成形的，是<strong>事物之间的空隙。間 Ma。</strong></p>
     </div>
   </div>
 </section>
@@ -390,16 +402,16 @@ function toggleMenu() {
 <section class="intro">
   <div class="intro-grid">
     <div class="intro-question">
-      Desert Mirage Journey is the <span>space you offer yourself.</span>
+      沙漠幻境之旅，是你 <span>给予自己的空间。</span>
     </div>
     <div class="intro-body">
-      <p>The desert itself is a vast field of 間 Ma. It holds far more than silence: <strong>the frequency beneath silence, the emergence of life from apparent nothingness</strong>, a presence not yet fully appeared, yet already here.</p>
-      <p>To let the mirage come alive. <strong>To give yourself room, real room, to be fully traversed by life.</strong> To free yourself, for a time, from the noise, the overflow, the constant pull of what you should be doing or becoming.</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.6;color:var(--amber);">In this journey, the only thing that will truly matter is <strong style="color:var(--amber);">listening</strong>. Listening to what asks to be expressed. To what asks to be born. Without judgment.</p>
+      <p>沙漠本身就是一片广阔的「間 Ma」之场。它所容纳的远不止静默：<strong>静默之下的频率，从看似虚无中涌现的生命</strong>，一种尚未完全显现、却已然在此的存在。</p>
+      <p>让幻境活过来。<strong>给自己空间，真正的空间，让生命完全穿越你。</strong>暂时从喧嚣、过载，以及那些「你应该做什么、应该成为什么」的持续拉扯中解放出来。</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.6;color:var(--amber);">在这段旅程中，唯一真正重要的，是<strong style="color:var(--amber);">倾听</strong>。倾听那渴望被表达之物。倾听那渴望诞生之物。不带评判。</p>
     </div>
   </div>
   <div style="text-align:center;margin-top:60px;">
-    <a href="#register" class="btn" style="text-decoration:none;">Begin the journey</a>
+    <a href="#register" class="btn" style="text-decoration:none;">开启旅程</a>
   </div>
 </section>
 
@@ -410,23 +422,23 @@ function toggleMenu() {
 <!-- PROCESS -->
 <section class="experiences" id="experience">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">The Journey</p>
-    <h2 class="section-title">A journey<br><em>into the unknown.</em></h2>
+    <p class="section-label">旅程</p>
+    <h2 class="section-title">一场走向<br><em>未知的旅程。</em></h2>
     <div class="exp-grid">
       <div class="exp-card">
         <div class="exp-number">01</div>
-        <div class="exp-title">Arriving</div>
-        <p class="exp-body">Marrakech. The medina, the culture, the noise. A first breath before the silence ahead. The body starts to land.</p>
+        <div class="exp-title">抵达</div>
+        <p class="exp-body">马拉喀什。老城、文化、喧嚣。在前方的静默之前，第一次呼吸。身体开始落地。</p>
       </div>
       <div class="exp-card">
         <div class="exp-number">02</div>
-        <div class="exp-title">Walking into the space in between</div>
-        <p class="exp-body">Nomadic walking, bivouac under stars, dunes, silence. The desert strips what is unnecessary. Space opens.</p>
+        <div class="exp-title">走入事物之间的空隙</div>
+        <p class="exp-body">游牧徒步，星空下露营，沙丘，静默。沙漠褪去一切多余之物。空间由此打开。</p>
       </div>
       <div class="exp-card">
         <div class="exp-number">03</div>
-        <div class="exp-title">What emerges</div>
-        <p class="exp-body">Embodied practices, co-creation, artistic exploration. Not a performance to produce. An encounter with what has been waiting.</p>
+        <div class="exp-title">涌现之物</div>
+        <p class="exp-body">身体实践、共同创作、艺术探索。不是为了产出一场演出。而是与那一直在等待之物的相遇。</p>
       </div>
     </div>
   </div>
@@ -439,33 +451,33 @@ function toggleMenu() {
 <!-- DATES -->
 <section class="schedule" id="schedule">
   <div style="max-width:700px;margin:0 auto;">
-    <p class="section-label">Dates</p>
-    <h2 class="section-title">December 10 – 21<br><span style="color:var(--amber);font-size:0.65em;">12 Days · From Marrakech to the Sahara</span></h2>
+    <p class="section-label">日期</p>
+    <h2 class="section-title">12月10日 – 21日<br><span style="color:var(--amber);font-size:0.65em;">12天 · 从马拉喀什到撒哈拉</span></h2>
     <div style="margin-top:40px;display:flex;flex-direction:column;gap:0;">
       <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
-        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">Day 1 · Dec 10</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">Arrival in Marrakech</div>
-        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">Airport pickup, residence in a traditional riad in the UNESCO World Heritage Medina of Marrakech. First contact with Morocco.</p>
+        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第1天 · 12月10日</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">抵达马拉喀什</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">机场接机，入住马拉喀什联合国教科文组织世界遗产老城中的传统里亚德庭院。与摩洛哥的初次接触。</p>
       </div>
       <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
-        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">Days 2–8 · Dec 11–17</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">Into the Desert</div>
-        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">Journey south through the Atlas Mountains into the Sahara. Nomadic trekking, bivouac, time at the Dune Hurlante, embodied practices, artistic exploration, co-creation, and silence.</p>
+        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第2–8天 · 12月11–17日</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">走入沙漠</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">穿越阿特拉斯山脉南下，进入撒哈拉。游牧徒步、露营、在「呼啸沙丘」的时光、身体实践、艺术探索、共同创作，以及静默。</p>
       </div>
       <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
-        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">Days 9–10 · Dec 18–19</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">Artistic Emergence &amp; Integration</div>
-        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">Returning to the Dune Hurlante, we enter a more settled phase of the journey. A space for artistic co-creation, self-initiated performance, reflection, integration, and allowing what has emerged in the desert to find its own form.</p>
+        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第9–10天 · 12月18–19日</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">艺术涌现与整合</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">回到「呼啸沙丘」，我们进入旅程中更为安定的阶段。一个用于艺术共创、自发演出、反思、整合的空间，让在沙漠中涌现之物找到属于它自己的形态。</p>
       </div>
       <div style="border-left:1px solid rgba(232,177,83,0.35);padding:24px 0 24px 32px;">
-        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">Days 11–12 · Dec 20–21</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">Return to Marrakech</div>
-        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">Journey back north to Marrakech. One final night in the medina. Departure on Dec 21.</p>
+        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第11–12天 · 12月20–21日</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">返回马拉喀什</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">北上返回马拉喀什。在老城度过最后一夜。12月21日离开。</p>
       </div>
     </div>
   </div>
   <div style="text-align:center;margin-top:60px;">
-    <a href="#register" class="btn" style="text-decoration:none;">Join us in the desert</a>
+    <a href="#register" class="btn" style="text-decoration:none;">与我们一同进入沙漠</a>
   </div>
 </section>
 
@@ -476,17 +488,17 @@ function toggleMenu() {
 <!-- DESERT SECTION -->
 <section class="camp-section" id="desert" style="background:var(--dusk);">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label" style="text-align:center;">The Sahara</p>
-    <h2 class="section-title" style="text-align:center;">Into <em>the desert.</em></h2>
+    <p class="section-label" style="text-align:center;">撒哈拉</p>
+    <h2 class="section-title" style="text-align:center;">走入 <em>沙漠。</em></h2>
     <div style="max-width:720px;margin:0 auto 60px;text-align:center;">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;line-height:1.6;color:var(--stars);margin-bottom:28px;">Within this 12-day journey, we will spend 8 days and 9 nights walking nomadically through the Sahara.</p>
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);">Nights beneath an infinite sky. Days moving with the rhythm of the desert.</p>
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">This is <span style="color:var(--sand);">not a tour of the Sahara, but an immersion into it.</span></p>
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">No screens. No notifications. No artificial light. No commerce. No itinerary crowded with destinations. No endless choices. No pressure to produce.</p>
-      <p style="font-size:19px;line-height:1.8;color:var(--amber);font-family:'Cormorant Garamond',serif;font-style:italic;margin-top:20px;">Only sky and earth. Silence and vastness. Simplicity and presence. The space between - Ma 間</p>
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">Living nomadically for days, the body gradually attunes to another tempo. Perception sharpens. Time loosens. What is unnecessary begins to fall away. <span style="color:var(--sand);">Become the unknown.</span></p>
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">Within such, new artistic impulses emerge. Artists are invited into a different relationship with time, body, imagination, and the invisible.</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.6;color:var(--sand);margin-top:20px;">This is not a retreat from creation, but a return to its source.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;line-height:1.6;color:var(--stars);margin-bottom:28px;">在这12天的旅程中，我们将以游牧的方式，在撒哈拉徒步行走8天9夜。</p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);">夜晚在无垠的天空之下。白日随沙漠的节奏而行。</p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">这不是<span style="color:var(--sand);">一次撒哈拉的观光，而是一次沉浸其中的进入。</span></p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">没有屏幕。没有通知。没有人造光。没有商业。没有塞满目的地的行程。没有无尽的选择。没有产出的压力。</p>
+      <p style="font-size:19px;line-height:1.8;color:var(--amber);font-family:'Cormorant Garamond',serif;font-style:italic;margin-top:20px;">只有天与地。静默与辽阔。简朴与临在。事物之间的空隙 - Ma 間</p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">连日的游牧生活中，身体逐渐调频到另一种节奏。感知变得敏锐。时间松弛下来。多余之物开始剥落。<span style="color:var(--sand);">成为未知。</span></p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">在此之中，新的艺术冲动开始涌现。艺术家被邀请进入一种与时间、身体、想象力以及不可见之物的全新关系。</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.6;color:var(--sand);margin-top:20px;">这不是从创作中的撤退，而是向其源头的回归。</p>
     </div>
     <div class="camp-grid">
       <div class="camp-img camp-img-wide">
@@ -509,22 +521,22 @@ function toggleMenu() {
 <!-- CAMP & GUIDES SECTION -->
 <section class="camp-section" id="camp" style="background:var(--dusk);">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">Racines du Désert</p>
-    <h2 class="section-title">Our hosts.<br><em>Born in the desert.</em></h2>
+    <p class="section-label">Racines du Désert（沙漠之根）</p>
+    <h2 class="section-title">我们的东道主。<br><em>生于沙漠。</em></h2>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px;">
       <div style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);">
-        <p>Racines du Désert was founded by <strong>Nomads from the Draa Valley</strong>, settled in M'Hamid after the desert where they were born dried up. Their culture draws from history, song, poetry, and the caravan trade. <strong>These are its roots.</strong></p>
+        <p>Racines du Désert 由<strong>来自德拉河谷的游牧民</strong>创立。他们出生的那片沙漠干涸之后，定居于姆哈米德。他们的文化源自历史、歌谣、诗歌与商队贸易。<strong>这些就是它的根。</strong></p>
         <div style="margin:32px 0;overflow:hidden;">
           <img src="nomad6.jpg" alt="The nomadic team" style="width:100%;display:block;filter:sepia(10%) contrast(1.05);">
         </div>
-        <p style="margin-top:20px;">Faysal, Abdallah, Ali, Mohamed, Bachir and their team (guides, camel handlers, cooks, drivers) will be with you every step of the way. Born in the desert, they will share their way of life with you: <strong>the fire made only from dead wood, the water never wasted, the traces left behind always erased.</strong></p>
+        <p style="margin-top:20px;">Faysal、Abdallah、Ali、Mohamed、Bachir 以及他们的团队（向导、驼夫、厨师、司机）将全程陪伴你。他们生于沙漠，会与你分享他们的生活方式：<strong>只用枯木生火，从不浪费一滴水，留下的痕迹总是被抹去。</strong></p>
         <p style="margin-top:20px;">This is not a tourist service. It is an invitation to share something that belongs to them, offered with generosity, humor, and quiet pride.</p>
       </div>
       <div style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.45);font-style:italic;border-left:1px solid rgba(232,177,83,0.2);padding-left:40px;">
-        <p style="font-size:20px;font-family:'Cormorant Garamond',serif;color:rgba(250,246,241,0.7);margin-bottom:24px;">"I grew up in an environment that unites the simplicity of nomads and their noble culture. Today, even settled, at the bottom of my heart I remain a Nomad."</p>
+        <p style="font-size:20px;font-family:'Cormorant Garamond',serif;color:rgba(250,246,241,0.7);margin-bottom:24px;">「我在一个融合了游牧民的简朴与其高贵文化的环境中长大。如今，即便已经定居，在我内心深处，我依然是一个游牧者。」</p>
         <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);">Faysal</span><br>
-        <span style="font-size:13px;color:rgba(250,246,241,0.3);">Desert guide, M'Hamid el Ghizlane</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.3);">沙漠向导，姆哈米德</span>
       </div>
     </div>
 
@@ -535,14 +547,14 @@ function toggleMenu() {
     </div>
 
     <div style="max-width:760px;margin:72px auto 0;text-align:center;">
-      <p class="section-label" style="text-align:center;">An encounter</p>
-      <h2 class="section-title" style="margin-bottom:28px;">A way of life,<br><em>shared.</em></h2>
-      <p style="font-size:17px;line-height:1.95;color:rgba(250,246,241,0.65);">Beyond the walking, the residency is <strong>a meeting with a living culture</strong>. Meals cooked over the fire and eaten together, tea poured slowly, songs and stories under the stars, <strong>the ancestral wisdom of those who read the dunes and the sky</strong>. The desert teaches simplicity, and the nomads carry it as an art. <strong>To travel with them is to remember how little is needed, and how much can be felt.</strong></p>
+      <p class="section-label" style="text-align:center;">一场相遇</p>
+      <h2 class="section-title" style="margin-bottom:28px;">一种<br><em>共享的生活方式。</em></h2>
+      <p style="font-size:17px;line-height:1.95;color:rgba(250,246,241,0.65);">除了行走，这次驻留更是<strong>一场与活着的文化的相遇</strong>。围着火堆烹煮、共同分享的餐食，缓缓斟下的茶，星空下的歌谣与故事，<strong>那些能读懂沙丘与天空之人的古老智慧</strong>。沙漠教导简朴，而游牧民将其视为一门艺术。<strong>与他们同行，是重新记起：所需之物如此之少，而可被感受之物如此之多。</strong></p>
     </div>
 
     <div style="margin-top:80px;">
       <p class="section-label">The Fixed Camp</p>
-      <h2 class="section-title" style="margin-bottom:32px;">Built by<br><em>nomad hands.</em></h2>
+      <h2 class="section-title" style="margin-bottom:32px;">由<br><em>游牧民之手建造。</em></h2>
       <p style="max-width:640px;font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-bottom:40px;">Adobe, earth, straw. A gathering place between treks, for meals, music, rest, and creation. At the foot of the Dune Hurlante.</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;">
         <div style="aspect-ratio:1;overflow:hidden;"><img src="camp1.jpg" style="width:100%;height:100%;object-fit:cover;filter:sepia(10%) contrast(1.05);display:block;"></div>
@@ -555,16 +567,16 @@ function toggleMenu() {
 
 <!-- ACCOMMODATION -->
 <section class="accommodation" id="accom">
-  <p class="section-label">Where You Sleep</p>
-  <h2 class="section-title" style="color:var(--night);">Accommodation</h2>
+  <p class="section-label">你在何处安睡</p>
+  <h2 class="section-title" style="color:var(--night);">住宿</h2>
   <div class="accom-grid">
     <div class="accom-card">
       <div class="accom-img">
         <img src="marrakech.jpg" alt="Riad">
       </div>
       <div class="accom-body">
-        <div class="accom-type">Marrakech, Nights 1 &amp; 12</div>
-        <div class="accom-title">Riad</div>
+        <div class="accom-type">马拉喀什，第1夜与第12夜</div>
+        <div class="accom-title">里亚德庭院</div>
         <p class="accom-desc">Traditional Moroccan architecture in the heart of the medina. Breakfast included, airport transfers included.</p>
       </div>
     </div>
@@ -573,8 +585,8 @@ function toggleMenu() {
         <img src="camp3.jpg" alt="Fixed Camp">
       </div>
       <div class="accom-body">
-        <div class="accom-type">Fixed Camp, Nights 2, 3, 10, 11</div>
-        <div class="accom-title">Fixed Bivouac</div>
+        <div class="accom-type">固定营地，第2、3、10、11夜</div>
+        <div class="accom-title">固定营地</div>
         <p class="accom-desc">Adobe buildings built by nomad hands in the dunes. Rooms of 4, some with private bathroom. Shared spaces, communal meals.</p>
       </div>
     </div>
@@ -583,8 +595,8 @@ function toggleMenu() {
         <img src="raul-fire1.jpg" alt="Nomadic Bivouac">
       </div>
       <div class="accom-body">
-        <div class="accom-type">Sahara, Nights 4 to 9</div>
-        <div class="accom-title">Nomadic Bivouac</div>
+        <div class="accom-type">撒哈拉，第4至9夜</div>
+        <div class="accom-title">游牧露营</div>
         <p class="accom-desc">Sleep under a shared nomad tent or under the Milky Way. Universe as roof, spacious desert as ground, silence as lullaby.</p>
       </div>
     </div>
@@ -598,14 +610,14 @@ function toggleMenu() {
 <!-- MIDWIFES -->
 <section class="presences" id="midwifes">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">A culture of midwifery</p>
-    <h2 class="section-title">The midwifes<br><em>who hold the space.</em></h2>
+    <p class="section-label">助产的文化</p>
+    <h2 class="section-title">持守空间的<br><em>助产者。</em></h2>
     <div style="max-width:680px;margin:32px 0 72px;">
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);">This residency is not organized around a central authority, teacher, or guide. Instead, we practice <span style="color:var(--sand);">mutual midwifery</span>.</p>
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">As organizers, we hold the structure and the safe space that allow the residency to unfold, so that <span style="color:var(--sand);">each of you can arrive, feel held, and let go</span>. The desert itself becomes the primary guide.</p>
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">And within that space, each participant carries their own agency, responsibility, and permission in the creative process. No one over-determines the outcome. <span style="color:var(--sand);">Together we create the conditions in which something can emerge.</span></p>
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">Not everyone comes to hold that role, and that is welcome too. Some come to give, some to receive.</p>
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">The role of the midwife is not to direct life. It is <span style="color:var(--sand);">to listen, to support, to channel, to witness</span>, and to recognize what is already seeking its way into form.</p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);">这次驻留并非围绕某一中心权威、导师或向导来组织。相反，我们实践的是<span style="color:var(--sand);">相互的助产</span>。</p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">作为组织者，我们持守让驻留得以展开的结构与安全空间，好让<span style="color:var(--sand);">每一位到来的人都能被承接，并得以放下</span>。而沙漠本身，成为最主要的向导。</p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">在这个空间之内，每一位参与者在创作过程中都拥有自己的主动性、责任与许可。没有人过度决定结果。<span style="color:var(--sand);">我们共同创造让某物得以涌现的条件。</span></p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">并非每个人都是为了承担这个角色而来，这同样是被欢迎的。有人为给予而来，有人为接受而来。</p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">助产者的角色不是指挥生命。而是<span style="color:var(--sand);">倾听、支持、承接、见证</span>，并辨认出那已经在寻找成形之路的事物。</p>
     </div>
     <div class="midwife-rows">
       <!-- YI: photo left, text right -->
@@ -616,15 +628,15 @@ function toggleMenu() {
             <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,20,16,0.85) 0%,transparent 55%);"></div>
             <div style="position:absolute;bottom:24px;left:28px;right:28px;">
               <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;color:var(--stars);margin-bottom:8px;">Yi Chen</div>
-              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--amber);line-height:1.6;">Dancer, performance artist,<br>facilitator &amp; curator</div>
+              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--amber);line-height:1.6;">舞者、行为艺术家、<br>引导者与策展人</div>
             </div>
           </div>
         </div>
         <div class="midwife-text">
-          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);">Born in China, Yi Chen is a <strong>Butoh-inspired dancer, performance artist, facilitator, and curator</strong>. Her work explores a dimensional space bridging the visible and invisible. Drawing from Qigong, Kalaripayattu, Noguchi Taiso, Ankoku Butoh, and the exploration of subconscious and subtle-body states, her practice investigates <strong>the body as a site of transformation, perception, and encounter</strong>.</p>
-          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.5);font-style:italic;margin-top:14px;">- Yi has co-directed and curated numerous international artistic gatherings, including the Space Between Butoh Festival in Bern, Switzerland, and several long-form Butoh residencies and performance laboratories in China. -</p>
-          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);margin-top:14px;">She is also a co-creator of the Desert Mirage Journey since its first edition. Having crossed this desert before, she knows that <strong>each journey reveals a different landscape, both outwardly and within</strong>.</p>
-          <p style="font-size:14px;font-style:italic;color:rgba(232,177,83,0.65);margin-top:20px;line-height:1.7;">"Butoh builds a bridge, in between the visible and invisible, an expanded life concept."</p>
+          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);">陈祎生于中国，是一位<strong>受舞踏启发的舞者、行为艺术家、引导者与策展人</strong>。她的作品探索一个连接可见与不可见的维度空间。她的实践汲取自气功、卡拉里帕亚特、野口体操、暗黑舞踏，以及对潜意识与微细身状态的探索，探究<strong>身体作为转化、感知与相遇之场域</strong>。</p>
+          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.5);font-style:italic;margin-top:14px;">- 祎曾共同策划并导演过多个国际艺术聚会，包括在瑞士伯尔尼举办的「之间之空间」舞踏节，以及在中国的多个长期舞踏驻留与表演实验室。 -</p>
+          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);margin-top:14px;">自第一届起，她便是「沙漠幻境之旅」的共同创作者。曾穿越过这片沙漠的她深知，<strong>每一次旅程都会揭示出不同的风景，无论是向外，还是向内</strong>。</p>
+          <p style="font-size:14px;font-style:italic;color:rgba(232,177,83,0.65);margin-top:20px;line-height:1.7;">「舞踏搭建起一座桥，在可见与不可见之间，一种被拓展的生命观。」</p>
         </div>
       </div>
 
@@ -636,13 +648,13 @@ function toggleMenu() {
             <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,20,16,0.85) 0%,transparent 55%);"></div>
             <div style="position:absolute;bottom:24px;left:28px;right:28px;">
               <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;color:var(--stars);margin-bottom:8px;">Anys</div>
-              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--amber);line-height:1.6;">Practitioner &amp;<br>initiatory guide</div>
+              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--amber);line-height:1.6;">实践者与<br>启程向导</div>
             </div>
           </div>
         </div>
         <div class="midwife-text">
-          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);">Painter, dancer, and guide of desert retreats and initiatory journeys. His work, on paper and through the body, draws from Butoh, Tao, calligraphy, and elemental movement. Each performance is conceived as a ritual: a psychomagical act that bridges the personal and the universal.</p>
-          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);margin-top:14px;">Franco-Moroccan, nomadic by nature. The Sahara is not a destination for him. It is a place of return.</p>
+          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);">画家、舞者，沙漠静修与启程之旅的向导。他的作品，无论是在纸上还是通过身体，都汲取自舞踏、道、书法与元素性的律动。每一场演出都被构思为一场仪式：一次连接个人与普遍的心理魔法行动。</p>
+          <p style="font-size:15px;line-height:1.85;color:rgba(250,246,241,0.55);margin-top:14px;">法国与摩洛哥双重血统，天性游牧。撒哈拉对他而言不是目的地。而是一处归返之地。</p>
         </div>
       </div>
     </div>
@@ -651,74 +663,74 @@ function toggleMenu() {
 
 <!-- PRICE -->
 <section class="price" id="price">
-  <h2 class="section-title">Price</h2>
+  <h2 class="section-title">费用</h2>
   <div style="background:rgba(232,177,83,0.1);border:1px solid rgba(232,177,83,0.3);max-width:600px;margin:0 auto 40px;padding:20px 32px;text-align:center;">
-    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:var(--amber);margin-bottom:8px;">EARLY BIRD UNTIL SEPTEMBER 1</p>
-    <p style="font-size:15px;color:rgba(250,246,241,0.7);">Save up to 15% on all room types. Limited spots.</p>
+    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:var(--amber);margin-bottom:8px;">早鸟优惠截止至9月1日</p>
+    <p style="font-size:15px;color:rgba(250,246,241,0.7);">所有房型最高可省15%。名额有限。</p>
   </div>
   <div class="price-grid">
     <div class="price-card">
-      <div class="price-title">Single Room</div>
-      <span class="price-label">Standard</span>
+      <div class="price-title">单人间</div>
+      <span class="price-label">标准价</span>
       <div class="price-early"><span class="price-currency">€</span>1820</div>
-      <span class="price-label" style="margin-top:10px;">Early bird</span>
+      <span class="price-label" style="margin-top:10px;">早鸟价</span>
       <div class="price-amount"><span class="price-currency">€</span>1640</div>
       <div class="price-room">&nbsp;</div>
     </div>
     <div class="price-card">
-      <div class="price-title">Twin Room</div>
-      <span class="price-label">Standard</span>
+      <div class="price-title">双人间</div>
+      <span class="price-label">标准价</span>
       <div class="price-early"><span class="price-currency">€</span>1640</div>
-      <span class="price-label" style="margin-top:10px;">Early bird</span>
+      <span class="price-label" style="margin-top:10px;">早鸟价</span>
       <div class="price-amount"><span class="price-currency">€</span>1450</div>
       <div class="price-room">&nbsp;</div>
     </div>
     <div class="price-card">
-      <div class="price-title">Dormitory</div>
-      <span class="price-label">Standard</span>
+      <div class="price-title">多人间</div>
+      <span class="price-label">标准价</span>
       <div class="price-early"><span class="price-currency">€</span>1560</div>
-      <span class="price-label" style="margin-top:10px;">Early bird</span>
+      <span class="price-label" style="margin-top:10px;">早鸟价</span>
       <div class="price-amount"><span class="price-currency">€</span>1350</div>
-      <div class="price-room">3 to 4 people · Shared bathroom</div>
+      <div class="price-room">3至4人 · 共用浴室</div>
     </div>
   </div>
-  <p class="price-note"><strong>Early bird until September 1.</strong> After that date, standard prices apply.<br>50% transfer in advance to confirm registration.</p>
+  <p class="price-note"><strong>早鸟优惠截止至9月1日。</strong>此后按标准价计算。<br>预付50%以确认报名。</p>
   <div style="text-align:center;margin-top:48px;">
-    <a href="#register" class="btn" style="text-decoration:none;">Apply for a spot</a>
+    <a href="#register" class="btn" style="text-decoration:none;">申请名额</a>
   </div>
   <div style="max-width:600px;margin:56px auto 0;padding:28px 32px;border:1px solid rgba(232,177,83,0.2);background:rgba(250,246,241,0.03);">
-    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:14px;">Accessibility &amp; Scholarships</p>
-    <p style="font-size:15px;line-height:1.8;color:rgba(250,246,241,0.6);">A limited number of partial scholarships are available. If financial support is essential to your participation, please contact us to request a scholarship application form.</p>
+    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:14px;">可及性与奖学金</p>
+    <p style="font-size:15px;line-height:1.8;color:rgba(250,246,241,0.6);">我们提供少量部分奖学金。如果经济支持对你的参与至关重要，请联系我们索取奖学金申请表。</p>
   </div>
 </section>
 
 <!-- INCLUDED -->
 <section class="included" id="included">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">Details</p>
-    <h2 class="section-title">Included &amp; Excluded</h2>
+    <p class="section-label">详情</p>
+    <h2 class="section-title">包含与不包含</h2>
     <div class="included-grid">
       <div class="included-box">
         <div class="included-box-title in">Included</div>
         <ul class="included-list">
-          <li>Artistic practice and co-creation throughout the residency</li>
-          <li>Guided nomadic desert trek with local guides</li>
-          <li>Airport pickup and drop off on Day 1 and Day 12</li>
-          <li>Round trip transportation Marrakech to desert and back</li>
-          <li>Three vegetarian meals per day and drinking water. Special diets on request</li>
-          <li>12 days accommodation: Marrakech, fixed camp and nomadic bivouac</li>
-          <li>Journey documented by a professional photographer</li>
+          <li>整个驻留期间的艺术实践与共同创作</li>
+          <li>由当地向导带领的游牧沙漠徒步</li>
+          <li>第1天与第12天的机场接送</li>
+          <li>马拉喀什与沙漠之间的往返交通</li>
+          <li>每日三餐素食及饮用水。特殊饮食需求可提前告知</li>
+          <li>12天住宿：马拉喀什、固定营地与游牧露营</li>
+          <li>由专业摄影师记录整个旅程</li>
         </ul>
       </div>
       <div class="included-box">
-        <div class="included-box-title ex">Excluded</div>
+        <div class="included-box-title ex">不包含</div>
         <ul class="included-list">
-          <li>Plane tickets</li>
-          <li>Extra private photo session in the desert</li>
-          <li>Travel insurance (required on arrival)</li>
-          <li>Individual care</li>
-          <li>Tips for guides and crew</li>
-          <li>Personal expenses</li>
+          <li>机票</li>
+          <li>沙漠中的额外私人摄影拍摄</li>
+          <li>旅行保险（抵达时需具备）</li>
+          <li>个人护理</li>
+          <li>给向导与团队的小费</li>
+          <li>个人消费</li>
         </ul>
         <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(232,177,83,0.1);">
           <p style="font-size:14px;color:rgba(250,246,241,0.4);font-style:italic;line-height:1.7;">Vegetarian cuisine prepared by local chefs. Priority on local, seasonal ingredients. If you have specific dietary needs, contact us before booking.</p>
@@ -731,37 +743,37 @@ function toggleMenu() {
 <!-- FAQ -->
 <section class="included" id="faq" style="background:var(--dusk);">
   <div style="max-width:820px;margin:0 auto;">
-    <p class="section-label">Before you come</p>
-    <h2 class="section-title" style="margin-bottom:48px;">Questions</h2>
+    <p class="section-label">出发之前</p>
+    <h2 class="section-title" style="margin-bottom:48px;">常见问题</h2>
 
     <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">Do I need to be an experienced artist?</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">No. This residency welcomes artists from any discipline and any level. What matters is the willingness to create, to listen, and to co-create with others. We hold a short call with each applicant to make sure the journey is right for you.</p>
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">我需要是一位有经验的艺术家吗？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">不需要。这次驻留欢迎来自任何领域、任何阶段的艺术家。重要的是创作的意愿、倾听的意愿，以及与他人共同创作的意愿。我们会与每一位申请者进行简短的通话，以确认这段旅程是否适合你。</p>
     </details>
 
     <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">What level of physical fitness is required?</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">The trek involves walking around 3 to 4 hours per day across sand, at a calm pace, with camels carrying the luggage. No specific training is needed, but you should be comfortable walking and spending full days outdoors. If you have any health concerns, tell us during the call.</p>
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">需要什么样的体能水平？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">徒步每天大约需要在沙地上行走3至4小时，节奏平缓，行李由骆驼驮运。无需特别训练，但你需要能够适应行走以及整日在户外活动。如有任何健康方面的顾虑，请在通话时告知我们。</p>
     </details>
 
     <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">What is the weather like in December?</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">December in the Sahara brings mild, sunny days (around 20°C) and cold nights that can drop near 0°C. Warm layers, a good sleeping bag, and a hat are essential. A full packing list is sent once you are registered.</p>
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">12月的天气如何？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">撒哈拉的12月白天温和晴朗（约20°C），夜晚寒冷，可能降至接近0°C。保暖衣物、一个好的睡袋和一顶帽子必不可少。报名确认后，我们会发送完整的行李清单。</p>
     </details>
 
     <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">What language is the residency in?</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">The residency is conducted entirely in English. Participants come from many countries.</p>
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">驻留使用什么语言？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">驻留全程以英语进行。参与者来自许多不同的国家。</p>
     </details>
 
     <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">How does payment work?</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">A 50% transfer confirms your registration, with the balance due before departure. Early bird prices apply until September 1. A scholarship is available on request. Payment details are shared after your call.</p>
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">如何付款？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">预付50%即可确认报名，余款在出发前结清。早鸟价适用至9月1日。奖学金可应要求申请。付款细节将在通话后告知。</p>
     </details>
 
     <details style="border-top:1px solid rgba(232,177,83,0.15);border-bottom:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">What is included in the price?</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">All accommodation from Marrakech to the desert, all meals during the journey, airport transfers, the full guided trek with the nomadic team, and the artistic residency itself. Flights to Marrakech and travel insurance are not included.</p>
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">费用包含哪些内容？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">从马拉喀什到沙漠的全部住宿、旅程期间的所有餐食、机场接送、由游牧团队带领的完整徒步行程，以及艺术驻留本身。不包含前往马拉喀什的机票与旅行保险。</p>
     </details>
   </div>
 </section>
@@ -769,9 +781,9 @@ function toggleMenu() {
 <!-- GUIDES / EDITIONS PRÉCÉDENTES -->
 <section class="facilitators" id="guides">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">Editions</p>
-    <h2 class="section-title">Each edition<br><em>a different form.</em></h2>
-    <p style="max-width:640px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.55);margin-bottom:48px;">The previous editions were built around a single master practitioner. This edition takes a different form: an open artistic residency, cross-disciplinary, where each participant brings their practice and co-creates the experience.</p>
+    <p class="section-label">历届</p>
+    <h2 class="section-title">每一届<br><em>都有不同的形态。</em></h2>
+    <p style="max-width:640px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.55);margin-bottom:48px;">此前的几届围绕一位大师级实践者展开。本届采取了不同的形式：一个开放的、跨学科的艺术驻留，每位参与者都带来自己的实践，并共同创造这段经历。</p>
 
     <div class="editions-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0;">
       <!-- 2026 -->
@@ -779,9 +791,9 @@ function toggleMenu() {
         <div style="position:absolute;inset:0;background:url('raul-camp2.jpg') 25% 35%/cover;filter:sepia(15%);"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,9,8,0.92) 0%, rgba(40,30,18,0.55) 50%, rgba(40,30,18,0.4) 100%);"></div>
         <div style="position:relative;">
-          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--amber);margin-bottom:12px;">2026 — OPEN</div>
+          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--amber);margin-bottom:12px;">2026 — 开放报名</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--stars);margin-bottom:6px;">Desert Mirage Journey</div>
-          <div style="font-size:12px;color:rgba(250,246,241,0.6);line-height:1.5;">Cross Art Residency<br>Yi Chen &amp; Anys<br>Dec 10–21</div>
+          <div style="font-size:12px;color:rgba(250,246,241,0.6);line-height:1.5;">跨艺术驻留<br>陈祎 与 Anys<br>12月10–21日</div>
         </div>
       </div>
       <!-- 2024 -->
@@ -791,7 +803,7 @@ function toggleMenu() {
         <div style="position:relative;">
           <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:rgba(232,177,83,0.7);margin-bottom:6px;">2024</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--stars);font-style:italic;">Imre Thormann</div>
-          <div style="font-size:12px;color:rgba(250,246,241,0.5);">Butoh &amp; Noguchi Taiso</div>
+          <div style="font-size:12px;color:rgba(250,246,241,0.5);">舞踏与野口体操</div>
         </div>
       </div>
       <!-- 2023 -->
@@ -801,7 +813,7 @@ function toggleMenu() {
         <div style="position:relative;">
           <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:rgba(232,177,83,0.7);margin-bottom:6px;">2023</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--stars);font-style:italic;">Yumiko Yoshioka</div>
-          <div style="font-size:12px;color:rgba(250,246,241,0.5);">Butoh Dancer &amp; Facilitator</div>
+          <div style="font-size:12px;color:rgba(250,246,241,0.5);">舞踏舞者与引导者</div>
         </div>
       </div>
     </div>
@@ -810,7 +822,7 @@ function toggleMenu() {
     <div style="margin-top:24px;text-align:center;">
       <a href="https://youtu.be/iCWNsOf8T8Y" target="_blank" style="display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(232,177,83,0.3);padding:12px 24px;text-decoration:none;color:rgba(250,246,241,0.6);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;transition:all 0.3s;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
-        Watch the 2023 edition
+        观看2023年影像
       </a>
     </div>
   </div>
@@ -819,23 +831,23 @@ function toggleMenu() {
 <!-- TESTIMONIALS -->
 <section class="testimonials">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">They have walked this desert</p>
-    <h2 class="section-title">Words from<br><em>past journeys</em></h2>
+    <p class="section-label">他们走过这片沙漠</p>
+    <h2 class="section-title">来自<br><em>过往旅程的话语</em></h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:60px;" class="testimonials-grid">
       <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"No noise, no cars, no TV, no radio, no lights, no signs, no phone. Nothing, just being there. Magnificent. Travelling with Anys is not a trip. It's an adventure."</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">「没有噪音，没有汽车，没有电视，没有广播，没有灯光，没有标识，没有手机。什么都没有，只是在那里。壮丽无比。与 Anys 同行不是一次旅行。而是一场冒险。」</p>
         <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Pascal Wagner</span>
-        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Desert journey, April 2024</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">沙漠之旅，2024年4月</span>
       </div>
       <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Each evening, I chose a dune to sleep under the stars with my bundle. A journey to the heart of the simple and the true. Anys knew how to accompany me through the inner desert while preserving my autonomy, with presence, gentleness, non-judgment."</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">「每个夜晚，我都会选一座沙丘，带着我的行囊在星空下入睡。一段通往简朴与真实核心的旅程。Anys 懂得如何陪伴我穿越内在的沙漠，同时保全我的自主。这是一份礼物。」</p>
         <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Sandrine Barrande</span>
-        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Initiatory desert journey, November 2023</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">启程沙漠之旅，2023年11月</span>
       </div>
       <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Before we left, Anys was precious in calming our concerns. Once we arrived, each of our needs, each sensitive state, found its place. I was struck by the range of approaches he was able to offer us, each one exactly right."</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">「出发之前，Anys 在安抚我们的顾虑上弥足珍贵。抵达之后，我们的每一个需求、每一种敏感的状态，都找到了它的位置。他能够提供的方法之广泛让我印象深刻，无论是身体上的还是心理上的，且始终带着善意。」</p>
         <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Céline Mercatello</span>
-        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Desert retreat</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">沙漠静修</span>
       </div>
       <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
         <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">"Anys took time with each of us. Time to care. Time to listen when we needed it. Time to let us be free, to laugh, to cry, to be silent. Sacred spaces of sharing. A harmony of rhythms. Very precious days."</p>
@@ -844,7 +856,7 @@ function toggleMenu() {
       </div>
     </div>
     <div style="text-align:center;margin-top:60px;">
-      <a href="#register" class="btn" style="text-decoration:none;">Walk with us</a>
+      <a href="#register" class="btn" style="text-decoration:none;">与我们同行</a>
     </div>
   </div>
 </section>
@@ -854,49 +866,49 @@ function toggleMenu() {
   <div style="position:absolute;inset:0;background:url('raul-perf1.jpg') center 55%/cover;filter:blur(2px);"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(10,9,8,0.92), rgba(10,9,8,0.95));"></div>
   <div class="contact-inner" style="position:relative;">
-    <p class="section-label" style="color:var(--amber);text-align:center;">Get in touch</p>
-    <h2 class="section-title" style="text-align:center;text-shadow:0 2px 24px rgba(0,0,0,0.6);">Are You Ready?</h2>
-    <p style="font-size:15px;line-height:1.8;color:rgba(250,246,241,0.7);font-style:italic;text-shadow:0 2px 16px rgba(0,0,0,0.5);">Send us a message and we will get back to you with all the details and the next steps. This is a shared journey, and we want to meet each person who joins.</p>
+    <p class="section-label" style="color:var(--amber);text-align:center;">联系我们</p>
+    <h2 class="section-title" style="text-align:center;text-shadow:0 2px 24px rgba(0,0,0,0.6);">你准备好了吗？</h2>
+    <p style="font-size:15px;line-height:1.8;color:rgba(250,246,241,0.7);font-style:italic;text-shadow:0 2px 16px rgba(0,0,0,0.5);">给我们发送一条讯息，我们会回复你所有的细节与后续步骤。这是一段共同的旅程，我们希望认识每一位加入的人。</p>
 
     <form action="https://formspree.io/f/mwvdygqg" method="POST" style="margin-top:40px;text-align:left;max-width:520px;margin-left:auto;margin-right:auto;">
       <input type="hidden" name="_subject" value="New inquiry — Desert Mirage Journey">
       <input type="text" name="_gotcha" style="display:none;">
 
       <div style="margin-bottom:20px;">
-        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Name</label>
+        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">姓名</label>
         <input type="text" name="name" required style="width:100%;padding:12px 14px;background:rgba(250,246,241,0.06);border:1px solid rgba(232,177,83,0.25);color:var(--stars);font-family:'Cormorant Garamond',serif;font-size:16px;">
       </div>
 
       <div style="margin-bottom:20px;">
-        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Email</label>
+        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">电子邮箱</label>
         <input type="email" name="email" required style="width:100%;padding:12px 14px;background:rgba(250,246,241,0.06);border:1px solid rgba(232,177,83,0.25);color:var(--stars);font-family:'Cormorant Garamond',serif;font-size:16px;">
       </div>
 
       <div style="margin-bottom:20px;">
-        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">WhatsApp (optional)</label>
+        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">WhatsApp（选填）</label>
         <input type="tel" name="whatsapp" placeholder="+..." style="width:100%;padding:12px 14px;background:rgba(250,246,241,0.06);border:1px solid rgba(232,177,83,0.25);color:var(--stars);font-family:'Cormorant Garamond',serif;font-size:16px;">
       </div>
 
       <div style="margin-bottom:20px;">
-        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Accommodation preference</label>
+        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">住宿偏好</label>
         <select name="accommodation" style="width:100%;padding:12px 14px;background:rgba(250,246,241,0.06);border:1px solid rgba(232,177,83,0.25);color:var(--stars);font-family:'Cormorant Garamond',serif;font-size:16px;">
-          <option value="Single room">Single room</option>
-          <option value="Twin room">Twin room</option>
-          <option value="Dormitory">Dormitory</option>
-          <option value="Not sure yet">Not sure yet</option>
+          <option value="Single room">单人间</option>
+          <option value="Twin room">双人间</option>
+          <option value="Dormitory">多人间</option>
+          <option value="Not sure yet">尚未确定</option>
         </select>
       </div>
 
       <div style="margin-bottom:28px;">
-        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Your message (optional)</label>
+        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">你的留言（选填）</label>
         <textarea name="message" rows="4" style="width:100%;padding:12px 14px;background:rgba(250,246,241,0.06);border:1px solid rgba(232,177,83,0.25);color:var(--stars);font-family:'Cormorant Garamond',serif;font-size:16px;resize:vertical;"></textarea>
       </div>
 
       <div style="text-align:center;">
-        <button type="submit" class="btn" style="cursor:pointer;border:1px solid var(--amber);background:var(--amber);color:var(--night);font-weight:600;">Send inquiry</button>
+        <button type="submit" class="btn" style="cursor:pointer;border:1px solid var(--amber);background:var(--amber);color:var(--night);font-weight:600;">发送咨询</button>
       </div>
     </form>
-    <p style="margin-top:24px;font-size:13px;line-height:1.7;color:rgba(250,246,241,0.55);text-shadow:0 1px 12px rgba(0,0,0,0.5);text-align:center;">We will reply as soon as possible with the full details and registration.</p>
+    <p style="margin-top:24px;font-size:13px;line-height:1.7;color:rgba(250,246,241,0.55);text-shadow:0 1px 12px rgba(0,0,0,0.5);text-align:center;">我们会尽快回复你，并附上完整细节与报名方式。</p>
   </div>
 </section>
 
@@ -906,13 +918,13 @@ function toggleMenu() {
     <span>Desert Mirage Journey</span>
     <img src="logo.svg" style="height:48px;width:auto;" alt="">
   </div>
-  <div class="footer-tagline">Ma · Cross Art Residency · Sahara · Dec 2026</div>
-  <div class="footer-credit">Photos: <a href="https://www.instagram.com/raul.bartolome/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Raúl Bartolome</a> · <a href="https://www.instagram.com/marian_photographie/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Marian Perchet</a><br>© 2026 Desert Mirage Journey</div>
+  <div class="footer-tagline">間 Ma · 跨艺术驻留 · 撒哈拉 · 2026年12月</div>
+  <div class="footer-credit">摄影：<a href="https://www.instagram.com/raul.bartolome/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Raúl Bartolome</a> · <a href="https://www.instagram.com/marian_photographie/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Marian Perchet</a><br>© 2026 Desert Mirage Journey</div>
 </footer>
 
 <!-- STICKY MOBILE APPLY -->
 <div class="sticky-apply">
-  <a href="#register">Apply</a>
+  <a href="#register">申请</a>
 </div>
 
 </body>
