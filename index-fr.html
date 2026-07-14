@@ -44,11 +44,13 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+  section[id], div[id] { scroll-margin-top: 110px; }
+  @media (max-width: 768px) { section[id], div[id] { scroll-margin-top: 90px; } }
   body { background: var(--night); color: var(--stars); font-family: 'Baskervville', serif; overflow-x: hidden; max-width: 100%; }
 
   /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; padding-top: calc(20px + env(safe-area-inset-top)); display: flex; justify-content: space-between; align-items: center; background: transparent; transition: background 0.4s, padding 0.4s; }
-  nav.scrolled { background: rgba(26,20,16,0.95); backdrop-filter: blur(8px); padding-top: 14px; padding-bottom: 14px; }
+  nav.scrolled { background: rgba(26,20,16,0.55); backdrop-filter: blur(14px); padding-top: 14px; padding-bottom: 14px; }
   .nav-logo { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 4px; color: var(--amber); text-transform: uppercase; }
   .nav-links { display: flex; gap: 40px; list-style: none; }
   .nav-links a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sand-light); text-decoration: none; opacity: 0.75; transition: opacity 0.3s, color 0.3s; }
@@ -295,7 +297,7 @@
   <ul class="nav-links">
     <li><a href="#about">Intention</a></li>
     <li><a href="#experience">Parcours</a></li>
-    <li><a href="#guides">Sur place</a></li>
+    <li><a href="#camp">Le camp</a></li>
     <li><a href="#price">Tarifs</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#register" class="nav-cta">S'inscrire</a></li>
@@ -313,7 +315,7 @@
 </div>
   <a href="#about" onclick="toggleMenu()">Intention</a>
   <a href="#experience" onclick="toggleMenu()">Parcours</a>
-  <a href="#guides" onclick="toggleMenu()">Sur place</a>
+  <a href="#camp" onclick="toggleMenu()">Le camp</a>
   <a href="#price" onclick="toggleMenu()">Tarifs</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="#register" onclick="toggleMenu()">S'inscrire</a>
@@ -339,7 +341,7 @@ function toggleMenu() {
 <section class="hero">
   <div class="hero-bg">
     <div class="hero-video-wrap">
-      <iframe src="https://player.mediadelivery.net/embed/680447/579fe092-4ff9-4e78-a385-0b21c02d8eb9?autoplay=true&loop=true&muted=true&preload=true&responsive=true&controls=false" loading="lazy" style="border:0;position:absolute;top:0;left:50%;width:max(100vw,177.78vh);height:max(56.25vw,100%);min-height:100%;transform:translateX(-50%);pointer-events:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true"></iframe>
+      <iframe src="https://player.mediadelivery.net/embed/680447/579fe092-4ff9-4e78-a385-0b21c02d8eb9?autoplay=true&loop=true&muted=true&preload=true&responsive=true&controls=false&playsinline=true" style="border:0;position:absolute;top:0;left:50%;width:max(100vw,177.78vh);height:max(56.25vw,100%);min-height:100%;transform:translateX(-50%);pointer-events:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true"></iframe>
     </div>
     <div class="hero-video-mask"></div>
     <div class="hero-gradient"></div>
