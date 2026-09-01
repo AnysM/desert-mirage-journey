@@ -302,6 +302,34 @@
   @media (max-width: 900px) { .gallery-grid { columns: 2; } }
   @media (max-width: 768px) { .gallery-section { padding: 80px 20px; } .lightbox .lb-arrow { font-size: 30px; padding: 12px; } }
 
+
+  /* GALLERY PREVIEW + LIGHTBOX */
+  .gallery-preview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 32px; }
+  .gallery-preview .gp-cell { position: relative; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
+  .gallery-preview img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.9) brightness(0.9); transition: transform 0.6s ease, filter 0.6s ease; display: block; }
+  .gallery-preview .gp-cell:hover img { transform: scale(1.05); filter: saturate(1.05) brightness(1.05); }
+  .gallery-preview .gp-more { position: absolute; inset: 0; background: rgba(10,9,8,0.72); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.4s; }
+  .gallery-preview .gp-more:hover { background: rgba(10,9,8,0.6); }
+  .gp-more .gp-plus { font-family: 'Cormorant Garamond', serif; font-size: 34px; color: var(--amber); line-height: 1; }
+  .gp-more .gp-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px; color: var(--sand-light); text-transform: uppercase; }
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(10,7,5,0.96); z-index: 200; align-items: center; justify-content: center; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 90vw; max-height: 86vh; border-radius: 2px; box-shadow: 0 20px 80px rgba(0,0,0,0.6); }
+  .lightbox .lb-close { position: absolute; top: 28px; right: 34px; font-size: 30px; color: var(--amber); cursor: pointer; line-height: 1; }
+  .lightbox .lb-arrow { position: absolute; top: 50%; transform: translateY(-50%); font-family: 'Cinzel', serif; font-size: 40px; color: var(--sand-light); cursor: pointer; user-select: none; padding: 20px; opacity: 0.6; transition: opacity 0.3s; }
+  .lightbox .lb-arrow:hover { opacity: 1; color: var(--amber); }
+  .lightbox .lb-prev { left: 12px; } .lightbox .lb-next { right: 12px; }
+  .lightbox .lb-count { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 3px; color: rgba(250,246,241,0.6); }
+  /* VIDEO LIGHTBOX */
+  .vbox { display: none; position: fixed; inset: 0; background: rgba(10,7,5,0.97); z-index: 210; align-items: center; justify-content: center; }
+  .vbox.open { display: flex; }
+  .vbox .vb-frame { position: relative; width: min(92vw, 1100px); aspect-ratio: 16/9; }
+  .vbox .vb-frame iframe { width: 100%; height: 100%; border: 0; border-radius: 3px; box-shadow: 0 20px 80px rgba(0,0,0,0.7); }
+  .vbox .vb-close { position: absolute; top: 28px; right: 34px; font-size: 30px; color: var(--amber); cursor: pointer; line-height: 1; }
+  .edition-play { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; cursor: pointer; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; color: var(--amber); text-transform: uppercase; opacity: 0.85; transition: opacity 0.3s; }
+  .edition-play:hover { opacity: 1; }
+  @media (max-width: 768px) { .gallery-preview { grid-template-columns: repeat(2, 1fr); } .lightbox .lb-arrow { font-size: 30px; padding: 12px; } }
+
 </style>
 
 <script>
@@ -338,7 +366,6 @@
     <li><a href="#camp">Our hosts</a></li>
     <li><a href="#price">Price</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#register" class="nav-cta">Register</a></li>
     <li class="lang-switch"><a href="index.html" class="active">EN</a><a href="index-fr.html">FR</a><a href="index-zh.html">中文</a></li>
   </ul>
@@ -357,7 +384,6 @@
   <a href="#camp" onclick="toggleMenu()">Our hosts</a>
   <a href="#price" onclick="toggleMenu()">Price</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
-  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
   <a href="#register" onclick="toggleMenu()">Register</a>
 </div>
 
@@ -824,6 +850,21 @@ function toggleMenu() {
     <h2 class="section-title">Each edition<br><em>a different form.</em></h2>
     <p style="max-width:640px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.55);margin-bottom:48px;">The previous editions were built around a single master practitioner. This edition takes a different form: an open artistic residency, cross-disciplinary, where each participant brings their practice and co-creates the experience.</p>
 
+    <p style="max-width:640px;font-size:14px;line-height:1.7;color:rgba(250,246,241,0.45);margin-top:40px;font-style:italic;">Photographs from previous editions in the Sahara.</p>
+    <div class="gallery-preview">
+      <div class="gp-cell" onclick="lbOpen(0)"><img src="raul-hands.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(1)"><img src="desert3.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(2)"><img src="camp7.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(3)"><img src="raul-dune1.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(4)"><img src="perf1.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(5)"><img src="tuareg.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(6)"><img src="raul-fire2.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(7)"><img src="flower1.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(8)"><img src="raul-caravan.jpg" alt="" loading="lazy">
+        <div class="gp-more"><span class="gp-plus">+35</span><span class="gp-label">See all</span></div>
+      </div>
+    </div>
+
     <div class="editions-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0;">
       <!-- 2026 -->
       <div style="position:relative;padding:24px;border:1px solid rgba(232,177,83,0.5);overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;">
@@ -843,6 +884,7 @@ function toggleMenu() {
           <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:rgba(232,177,83,0.7);margin-bottom:6px;">2024</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--stars);font-style:italic;">Imre Thormann</div>
           <div style="font-size:12px;color:rgba(250,246,241,0.5);">Butoh &amp; Noguchi Taiso</div>
+          <div class="edition-play" onclick="event.stopPropagation();vbOpen('imre')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>Watch the film</div>
         </div>
       </div>
       <!-- 2023 -->
@@ -853,6 +895,7 @@ function toggleMenu() {
           <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:rgba(232,177,83,0.7);margin-bottom:6px;">2023</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--stars);font-style:italic;">Yumiko Yoshioka</div>
           <div style="font-size:12px;color:rgba(250,246,241,0.5);">Butoh Dancer &amp; Facilitator</div>
+          <div class="edition-play" onclick="event.stopPropagation();vbOpen('yumi')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>Watch the film</div>
         </div>
       </div>
     </div>
@@ -900,66 +943,6 @@ function toggleMenu() {
   </div>
 </section>
 
-
-<!-- GALLERY -->
-<section class="gallery-section" id="gallery">
-  <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">Gallery</p>
-    <h2 class="section-title">Traces<br><em>of the desert.</em></h2>
-    <div class="gallery-grid">
-      <img src="desert1.jpg" alt="" loading="lazy" onclick="lbOpen(0)">
-      <img src="desert3.jpg" alt="" loading="lazy" onclick="lbOpen(1)">
-      <img src="desert4.jpg" alt="" loading="lazy" onclick="lbOpen(2)">
-      <img src="desert5.jpg" alt="" loading="lazy" onclick="lbOpen(3)">
-      <img src="desert6.jpg" alt="" loading="lazy" onclick="lbOpen(4)">
-      <img src="desert2.jpg" alt="" loading="lazy" onclick="lbOpen(5)">
-      <img src="raul-caravan.jpg" alt="" loading="lazy" onclick="lbOpen(6)">
-      <img src="raul-dune1.jpg" alt="" loading="lazy" onclick="lbOpen(7)">
-      <img src="raul-dune2.jpg" alt="" loading="lazy" onclick="lbOpen(8)">
-      <img src="raul-dune-dance.jpg" alt="" loading="lazy" onclick="lbOpen(9)">
-      <img src="raul-tree.jpg" alt="" loading="lazy" onclick="lbOpen(10)">
-      <img src="raul-fire1.jpg" alt="" loading="lazy" onclick="lbOpen(11)">
-      <img src="raul-fire2.jpg" alt="" loading="lazy" onclick="lbOpen(12)">
-      <img src="raul-hands.jpg" alt="" loading="lazy" onclick="lbOpen(13)">
-      <img src="raul-storm.jpg" alt="" loading="lazy" onclick="lbOpen(14)">
-      <img src="perf1.jpg" alt="" loading="lazy" onclick="lbOpen(15)">
-      <img src="perf2.jpg" alt="" loading="lazy" onclick="lbOpen(16)">
-      <img src="tuareg.jpg" alt="" loading="lazy" onclick="lbOpen(17)">
-      <img src="nomad1.jpg" alt="" loading="lazy" onclick="lbOpen(18)">
-      <img src="nomad2.jpg" alt="" loading="lazy" onclick="lbOpen(19)">
-      <img src="nomad3.jpg" alt="" loading="lazy" onclick="lbOpen(20)">
-      <img src="nomad4.jpg" alt="" loading="lazy" onclick="lbOpen(21)">
-      <img src="nomad6.jpg" alt="" loading="lazy" onclick="lbOpen(22)">
-      <img src="nomad7.jpg" alt="" loading="lazy" onclick="lbOpen(23)">
-      <img src="nomad8.jpg" alt="" loading="lazy" onclick="lbOpen(24)">
-      <img src="nomad9.jpg" alt="" loading="lazy" onclick="lbOpen(25)">
-      <img src="nomad10.jpg" alt="" loading="lazy" onclick="lbOpen(26)">
-      <img src="camp1.jpg" alt="" loading="lazy" onclick="lbOpen(27)">
-      <img src="camp2.jpg" alt="" loading="lazy" onclick="lbOpen(28)">
-      <img src="camp3.jpg" alt="" loading="lazy" onclick="lbOpen(29)">
-      <img src="camp4.jpg" alt="" loading="lazy" onclick="lbOpen(30)">
-      <img src="camp5.jpg" alt="" loading="lazy" onclick="lbOpen(31)">
-      <img src="camp6.jpg" alt="" loading="lazy" onclick="lbOpen(32)">
-      <img src="camp7.jpg" alt="" loading="lazy" onclick="lbOpen(33)">
-      <img src="camp8.jpg" alt="" loading="lazy" onclick="lbOpen(34)">
-      <img src="camp-fixe.jpg" alt="" loading="lazy" onclick="lbOpen(35)">
-      <img src="bivouac-mobile.jpg" alt="" loading="lazy" onclick="lbOpen(36)">
-      <img src="flower1.jpg" alt="" loading="lazy" onclick="lbOpen(37)">
-      <img src="flower2.jpg" alt="" loading="lazy" onclick="lbOpen(38)">
-      <img src="marrakech.jpg" alt="" loading="lazy" onclick="lbOpen(39)">
-      <img src="riad.jpg" alt="" loading="lazy" onclick="lbOpen(40)">
-      <img src="hero2.jpg" alt="" loading="lazy" onclick="lbOpen(41)">
-      <img src="hero3.jpg" alt="" loading="lazy" onclick="lbOpen(42)">
-    </div>
-  </div>
-</section>
-<div class="lightbox" id="lightbox" onclick="if(event.target.id==='lightbox')lbClose()">
-  <span class="lb-close" onclick="lbClose()">&#10005;</span>
-  <span class="lb-arrow lb-prev" onclick="lbStep(-1)">&#8249;</span>
-  <img id="lbImg" src="" alt="">
-  <span class="lb-arrow lb-next" onclick="lbStep(1)">&#8250;</span>
-  <div class="lb-count" id="lbCount"></div>
-</div>
 
 <!-- REGISTER -->
 <section class="contact" id="register" style="position:relative;overflow:hidden;">
@@ -1032,6 +1015,20 @@ function toggleMenu() {
 </div>
 
 
+
+
+<div class="lightbox" id="lightbox" onclick="if(event.target.id==='lightbox')lbClose()">
+  <span class="lb-close" onclick="lbClose()">&#10005;</span>
+  <span class="lb-arrow lb-prev" onclick="lbStep(-1)">&#8249;</span>
+  <img id="lbImg" src="" alt="">
+  <span class="lb-arrow lb-next" onclick="lbStep(1)">&#8250;</span>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+<div class="vbox" id="vbox" onclick="if(event.target.id==='vbox')vbClose()">
+  <span class="vb-close" onclick="vbClose()">&#10005;</span>
+  <div class="vb-frame"><iframe id="vbFrame" src="" allow="autoplay;encrypted-media;fullscreen;picture-in-picture" allowfullscreen></iframe></div>
+</div>
+
 <script>
   const lbPhotos = ["desert1.jpg", "desert3.jpg", "desert4.jpg", "desert5.jpg", "desert6.jpg", "desert2.jpg", "raul-caravan.jpg", "raul-dune1.jpg", "raul-dune2.jpg", "raul-dune-dance.jpg", "raul-tree.jpg", "raul-fire1.jpg", "raul-fire2.jpg", "raul-hands.jpg", "raul-storm.jpg", "perf1.jpg", "perf2.jpg", "tuareg.jpg", "nomad1.jpg", "nomad2.jpg", "nomad3.jpg", "nomad4.jpg", "nomad6.jpg", "nomad7.jpg", "nomad8.jpg", "nomad9.jpg", "nomad10.jpg", "camp1.jpg", "camp2.jpg", "camp3.jpg", "camp4.jpg", "camp5.jpg", "camp6.jpg", "camp7.jpg", "camp8.jpg", "camp-fixe.jpg", "bivouac-mobile.jpg", "flower1.jpg", "flower2.jpg", "marrakech.jpg", "riad.jpg", "hero2.jpg", "hero3.jpg"];
   let lbIndex = 0;
@@ -1039,7 +1036,13 @@ function toggleMenu() {
   function lbClose(){ document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
   function lbStep(d){ lbIndex=(lbIndex+d+lbPhotos.length)%lbPhotos.length; lbRender(); }
   function lbRender(){ document.getElementById('lbImg').src=lbPhotos[lbIndex]; document.getElementById('lbCount').textContent=(lbIndex+1)+' / '+lbPhotos.length; }
-  document.addEventListener('keydown',function(e){ if(!document.getElementById('lightbox').classList.contains('open'))return; if(e.key==='Escape')lbClose(); if(e.key==='ArrowLeft')lbStep(-1); if(e.key==='ArrowRight')lbStep(1); });
+  const vbUrls = { imre:'https://player.mediadelivery.net/embed/680447/97bd1b70-0696-47a1-96ee-d363fad84ff6?autoplay=true&preload=true&responsive=true', yumi:'https://player.mediadelivery.net/embed/680447/b19253a9-623c-4113-8850-eb08ca18283d?autoplay=true&preload=true&responsive=true' };
+  function vbOpen(k){ document.getElementById('vbFrame').src=vbUrls[k]; document.getElementById('vbox').classList.add('open'); document.body.style.overflow='hidden'; }
+  function vbClose(){ document.getElementById('vbFrame').src=''; document.getElementById('vbox').classList.remove('open'); document.body.style.overflow=''; }
+  document.addEventListener('keydown',function(e){
+    if(document.getElementById('lightbox').classList.contains('open')){ if(e.key==='Escape')lbClose(); if(e.key==='ArrowLeft')lbStep(-1); if(e.key==='ArrowRight')lbStep(1); }
+    if(document.getElementById('vbox').classList.contains('open') && e.key==='Escape')vbClose();
+  });
 </script>
 
 </body>
