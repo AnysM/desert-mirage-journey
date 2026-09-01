@@ -826,22 +826,21 @@ function toggleMenu() {
 <!-- GUIDES / EDITIONS PRÉCÉDENTES -->
 <section class="facilitators" id="guides">
   <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">Éditions</p>
-    <h2 class="section-title">Chaque édition<br><em>une forme différente.</em></h2>
-    <p style="max-width:640px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.55);margin-bottom:48px;">Les éditions précédentes étaient construites autour d'un maître unique. Cette édition prend une autre forme : une résidence artistique ouverte, pluridisciplinaire, où chaque participant amène sa pratique et co-crée l'expérience.</p>
+    <p class="section-label">Éditions précédentes</p>
+    <h2 class="section-title">Le désert<br><em>se souvient.</em></h2>
+    <p style="max-width:640px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.55);margin-bottom:8px;">Images des voyages qui ont précédé : la marche, le feu, les performances, la table partagée. Ce que le désert a déjà porté.</p>
 
-    <p style="max-width:640px;font-size:14px;line-height:1.7;color:rgba(250,246,241,0.45);margin-top:40px;font-style:italic;">Photographies des éditions précédentes dans le Sahara.</p>
-    <div class="gallery-preview">
-      <div class="gp-cell" onclick="lbOpen(0)"><img src="raul-hands.jpg" alt="" loading="lazy"></div>
-      <div class="gp-cell" onclick="lbOpen(1)"><img src="desert3.jpg" alt="" loading="lazy"></div>
-      <div class="gp-cell" onclick="lbOpen(2)"><img src="camp7.jpg" alt="" loading="lazy"></div>
-      <div class="gp-cell" onclick="lbOpen(3)"><img src="raul-dune1.jpg" alt="" loading="lazy"></div>
-      <div class="gp-cell" onclick="lbOpen(4)"><img src="perf1.jpg" alt="" loading="lazy"></div>
-      <div class="gp-cell" onclick="lbOpen(5)"><img src="tuareg.jpg" alt="" loading="lazy"></div>
-      <div class="gp-cell" onclick="lbOpen(6)"><img src="raul-fire2.jpg" alt="" loading="lazy"></div>
-      <div class="gp-cell" onclick="lbOpen(7)"><img src="flower1.jpg" alt="" loading="lazy"></div>
-      <div class="gp-cell" onclick="lbOpen(8)"><img src="raul-caravan.jpg" alt="" loading="lazy">
-        <div class="gp-more"><span class="gp-plus">+35</span><span class="gp-label">Tout voir</span></div>
+    <div class="gallery-preview" style="margin-bottom:64px;">
+      <div class="gp-cell" onclick="lbOpen(11)"><img src="https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-35.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(27)"><img src="https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-31.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(0)"><img src="https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-3.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(31)"><img src="https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-46.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(14)"><img src="https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-44.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(37)"><img src="https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_desertflower-8.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(33)"><img src="https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-56.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(18)"><img src="https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-68.jpg" alt="" loading="lazy"></div>
+      <div class="gp-cell" onclick="lbOpen(21)"><img src="https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-13.jpg" alt="" loading="lazy">
+        <div class="gp-more"><span class="gp-plus">+31</span><span class="gp-label">Tout voir</span></div>
       </div>
     </div>
 
@@ -857,66 +856,27 @@ function toggleMenu() {
         </div>
       </div>
       <!-- 2024 -->
-      <div style="position:relative;padding:24px;border:1px solid rgba(250,246,241,0.06);overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;">
+      <div onclick="vbOpen('imre')" style="position:relative;padding:24px;border:1px solid rgba(250,246,241,0.06);overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;">
         <div style="position:absolute;inset:0;background:url('imre-thormann.jpg') center 25%/cover;filter:sepia(20%);"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,9,8,0.92) 0%, rgba(10,9,8,0.55) 50%, rgba(10,9,8,0.35) 100%);"></div>
         <div style="position:relative;">
           <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:rgba(232,177,83,0.7);margin-bottom:6px;">2024</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--stars);font-style:italic;">Imre Thormann</div>
           <div style="font-size:12px;color:rgba(250,246,241,0.5);">Butoh &amp; Noguchi Taiso</div>
-          <div class="edition-play" onclick="event.stopPropagation();vbOpen('imre')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>Voir le film</div>
         </div>
       </div>
       <!-- 2023 -->
-      <div style="position:relative;padding:24px;border:1px solid rgba(250,246,241,0.06);overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;">
+      <div onclick="vbOpen('yumi')" style="position:relative;padding:24px;border:1px solid rgba(250,246,241,0.06);overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;">
         <div style="position:absolute;inset:0;background:url('yukiko-yoshioka.jpg') center 30%/cover;filter:sepia(20%);"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,9,8,0.92) 0%, rgba(10,9,8,0.55) 50%, rgba(10,9,8,0.35) 100%);"></div>
         <div style="position:relative;">
           <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:rgba(232,177,83,0.7);margin-bottom:6px;">2023</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--stars);font-style:italic;">Yumiko Yoshioka</div>
           <div style="font-size:12px;color:rgba(250,246,241,0.5);">Danseuse butoh et facilitatrice</div>
-          <div class="edition-play" onclick="event.stopPropagation();vbOpen('yumi')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>Voir le film</div>
         </div>
       </div>
     </div>
 
-    <!-- LIEN VIDÉO 2023 -->
-    <div style="margin-top:24px;text-align:center;">
-      <a href="https://youtu.be/iCWNsOf8T8Y" target="_blank" style="display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(232,177,83,0.3);padding:12px 24px;text-decoration:none;color:rgba(250,246,241,0.6);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;transition:all 0.3s;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
-        Voir l'édition 2023
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">Celles et ceux qui ont marché ici</p>
-    <h2 class="section-title">Paroles<br><em>de voyages passés</em></h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:60px;" class="testimonials-grid">
-      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">« Pas de bruit, pas de voitures, pas de télé, pas de radio, pas de lumières, pas de panneaux, pas de téléphone. Rien, juste être là. Magnifique. Voyager avec Anys, ce n'est pas un voyage. C'est une aventure. »</p>
-        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Pascal Wagner</span>
-        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Voyage dans le désert, avril 2024</span>
-      </div>
-      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">« Chaque soir, je choisissais une dune pour dormir à la belle étoile avec mon baluchon. Un voyage au cœur du simple et du vrai. Anys a su m'accompagner dans le désert intérieur tout en préservant mon autonomie. Un cadeau. »</p>
-        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Sandrine Barrande</span>
-        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Voyage initiatique dans le désert, novembre 2023</span>
-      </div>
-      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">« Avant le départ, Anys a été précieux pour apaiser nos inquiétudes. Une fois sur place, chacun de nos besoins, chaque état sensible, a trouvé sa place. J'ai été frappée par la palette d'approches qu'il a su nous proposer, tant physiques que psychologiques, toujours avec bienveillance. »</p>
-        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Céline Mercatello</span>
-        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">Retraite dans le désert</span>
-      </div>
-      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">« Anys a pris le temps avec chacun de nous. Le temps de prendre soin. Le temps d'écouter quand nous en avions besoin. Le temps de nous laisser libres, de rire, de pleurer, de nous taire. Des espaces sacrés de partage. Une harmonie de rythmes. Des jours très précieux. »</p>
-        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Joséphina Bos</span>
-        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">5 jours dans le désert marocain</span>
-      </div>
-    </div>
     <div style="text-align:center;margin-top:60px;">
       <a href="#register" class="btn" style="text-decoration:none;">Marcher avec nous</a>
     </div>
@@ -1010,7 +970,7 @@ function toggleMenu() {
 </div>
 
 <script>
-  const lbPhotos = ["desert1.jpg", "desert3.jpg", "desert4.jpg", "desert5.jpg", "desert6.jpg", "desert2.jpg", "raul-caravan.jpg", "raul-dune1.jpg", "raul-dune2.jpg", "raul-dune-dance.jpg", "raul-tree.jpg", "raul-fire1.jpg", "raul-fire2.jpg", "raul-hands.jpg", "raul-storm.jpg", "perf1.jpg", "perf2.jpg", "tuareg.jpg", "nomad1.jpg", "nomad2.jpg", "nomad3.jpg", "nomad4.jpg", "nomad6.jpg", "nomad7.jpg", "nomad8.jpg", "nomad9.jpg", "nomad10.jpg", "camp1.jpg", "camp2.jpg", "camp3.jpg", "camp4.jpg", "camp5.jpg", "camp6.jpg", "camp7.jpg", "camp8.jpg", "camp-fixe.jpg", "bivouac-mobile.jpg", "flower1.jpg", "flower2.jpg", "marrakech.jpg", "riad.jpg", "hero2.jpg", "hero3.jpg"];
+  const lbPhotos = ["https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-3.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-4.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-9.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-13.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-14.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-15.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-21.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-22.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-26.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-31.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-33.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-35.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-38.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-39.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-44.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-45.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-50.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-55.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-68.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-70.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-71.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-13.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-21.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-23.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-25.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-29.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-30.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-31.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-38.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-40.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-41.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-46.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-47.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-56.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-58.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-59.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-60.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_desertflower-8.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_desertflower-9.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_desertflower-10.jpg"];
   let lbIndex = 0;
   function lbOpen(i){ lbIndex=i; lbRender(); document.getElementById('lightbox').classList.add('open'); document.body.style.overflow='hidden'; }
   function lbClose(){ document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
