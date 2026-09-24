@@ -361,7 +361,7 @@
 
 <style>
   /* LANDING (ads) */
-  .lp-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: linear-gradient(rgba(26,20,16,0.85), rgba(26,20,16,0)); }
+  .lp-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: rgba(26,20,16,0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(232,177,83,0.12); }
   .lp-nav a.btn { padding: 10px 24px; }
   .lp-wrap { max-width: 1100px; margin: 0 auto; }
   .lp-sec { padding: 96px 40px; }
@@ -395,6 +395,38 @@
   .lp-incl { margin-top: 32px; text-align: center; font-size: 14px; line-height: 1.8; color: rgba(250,246,241,0.6); }
   .lp-more { display: block; text-align: center; margin-top: 36px; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; color: var(--sand); text-decoration: none; text-transform: uppercase; }
   .lp-more:hover { color: var(--amber); }
+  /* MA INTRO (scroll-revealed) */
+  .ma { position: relative; padding: 18vh 24px 20vh; text-align: center; overflow: hidden; }
+  .ma-bg { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0.9); font-size: min(70vw, 620px); line-height: 1; color: var(--amber); opacity: 0; filter: blur(30px); transition: opacity 2.4s ease, filter 2.4s ease, transform 2.4s ease; pointer-events: none; font-family: serif; }
+  .ma.lit .ma-bg { opacity: 0.06; filter: blur(0); transform: translate(-50%,-50%) scale(1); }
+  .ma-line { position: relative; max-width: 760px; margin: 0 auto 13vh; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(24px, 3.4vw, 42px); line-height: 1.3; color: var(--stars); opacity: 0; transform: translateY(24px); filter: blur(8px); transition: opacity 1.4s ease, transform 1.4s ease, filter 1.4s ease; }
+  .ma-line.in { opacity: 1; transform: none; filter: none; }
+  .ma-line em { color: var(--amber); }
+  .ma-line.small { font-size: clamp(18px, 2vw, 24px); font-style: italic; color: rgba(250,246,241,0.7); }
+  .ma-layers span { display: inline-block; opacity: 0; transition: opacity 0.8s ease; }
+  .ma-line.in.ma-layers span { opacity: 1; }
+  .ma-word { font-size: clamp(90px, 16vw, 200px); line-height: 1; color: var(--amber); letter-spacing: 0.4em; margin-right: -0.4em; transition: opacity 2s ease, filter 2s ease, letter-spacing 2.6s ease, transform 2s ease; }
+  .ma-word.in { letter-spacing: 0.05em; margin-right: -0.05em; }
+  .ma-word small { display: block; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 6px; color: var(--sand); margin-top: 18px; text-transform: uppercase; }
+  .ma-line:last-child { margin-bottom: 0; }
+  @media (prefers-reduced-motion: reduce) { .ma-line, .ma-bg, .ma-layers span { transition: none !important; opacity: 1 !important; filter: none !important; transform: none !important; } .ma-bg { opacity: 0.06 !important; transform: translate(-50%,-50%) !important; } }
+  /* NOMADS */
+  .nomads { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .nomads-img { position: relative; aspect-ratio: 4/5; overflow: hidden; }
+  .nomads-img img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.08); transition: transform 2.5s ease; }
+  .nomads-img.in img { transform: scale(1); }
+  .nomads p { font-size: 17px; line-height: 1.85; color: rgba(250,246,241,0.72); margin-bottom: 18px; }
+  .nomads blockquote { margin-top: 28px; border-left: 1px solid rgba(232,177,83,0.35); padding-left: 24px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; line-height: 1.55; color: var(--stars); }
+  .nomads cite { display: block; margin-top: 10px; font-style: normal; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px; color: var(--amber); }
+  .nomads-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 56px; }
+  .nomads-row img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+  @media (max-width: 768px) {
+    .ma { padding: 14vh 20px 16vh; }
+    .ma-line { margin-bottom: 11vh; }
+    .nomads { grid-template-columns: 1fr; gap: 32px; }
+    .nomads-img { aspect-ratio: 4/3; }
+    .nomads-row { margin-top: 32px; }
+  }
   @media (max-width: 768px) {
     .lp-nav { padding: 14px 16px; }
     .lp-nav .nav-logo-text { display: none; }
@@ -449,6 +481,18 @@
   
 </section>
 
+<!-- MA: the core idea, revealed line by line -->
+<section class="ma" id="ma">
+  <div class="ma-bg" aria-hidden="true">間</div>
+  <p class="ma-line small">As artists, we are surrounded by</p>
+  <p class="ma-line ma-layers"><span>influences,</span> <span>references,</span> <span>techniques,</span> <span>information,</span> <span>aesthetics,</span> <span>expectations.</span></p>
+  <p class="ma-line">Layer upon layer accumulates, until <em>what wants to be born can't find its way.</em></p>
+  <p class="ma-line ma-word">間<small>Ma · the space in between</small></p>
+  <p class="ma-line">Not emptiness, but <em>a living interval</em>: the pause between movements, the silence between sounds, the unseen field from which forms emerge.</p>
+  <p class="ma-line">The desert is a vast field of Ma.<br>Desert Mirage Journey is <em>the space you offer yourself.</em></p>
+  <div class="ma-line" style="font-size:inherit;"><a href="#register" class="btn" data-cta="ma-intro" style="text-decoration:none;">Offer yourself this space</a></div>
+</section>
+
 <!-- AT A GLANCE -->
 <section class="lp-sec">
   <div class="lp-wrap">
@@ -478,12 +522,34 @@
 <section class="lp-sec" style="background:var(--dusk);">
   <div class="lp-wrap">
     <p class="lp-kicker">The journey</p>
-    <h2 class="lp-h2">Theme of the year: <em>間 Ma</em>,<br>the space in between.</h2>
+    <h2 class="lp-h2">Twelve days,<br><em>from Marrakech to the Sahara.</em></h2>
     <div class="steps">
       <div class="step"><small>Day 1</small><h3>Marrakech</h3><p>Airport pickup, a night in a riad of the medina.</p></div>
       <div class="step"><small>Days 2–8</small><h3>Into the desert</h3><p>Across the Atlas to the Sahara. Nomadic trekking, bivouac under the stars, embodied practice, silence.</p></div>
       <div class="step"><small>Days 9–10</small><h3>What emerges</h3><p>At the fixed camp: co-creation, performance, integration.</p></div>
       <div class="step"><small>Days 11–12</small><h3>Return</h3><p>Back to Marrakech. Departure on December 21.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOMADS -->
+<section class="lp-sec">
+  <div class="lp-wrap">
+    <div class="nomads">
+      <div class="nomads-img reveal"><img src="nomad6.jpg" alt="The nomad team of Racines du Désert" loading="lazy"></div>
+      <div>
+        <p class="lp-kicker" style="text-align:left;">Racines du Désert</p>
+        <h2 class="lp-h2" style="text-align:left;margin-bottom:28px;">Walking with <em>the nomads.</em></h2>
+        <p>Our hosts are nomads from the Draa Valley, born in the desert. Faysal, Abdallah, Ali, Mohamed, Bachir and their team walk, cook and live with you every step of the way.</p>
+        <p>They share their way of life: the fire made only from dead wood, the water never wasted, the traces left behind always erased. Tea poured slowly, songs and stories under the stars.</p>
+        <p style="color:var(--sand);">This is not a tourist service. It is an invitation into a living culture.</p>
+        <blockquote>"I grew up in an environment that unites the simplicity of nomads and their noble culture. Today, even settled, at the bottom of my heart I remain a Nomad."<cite>Faysal · Desert guide, M'Hamid el Ghizlane</cite></blockquote>
+      </div>
+    </div>
+    <div class="nomads-row">
+      <img src="nomad1.jpg" alt="" loading="lazy">
+      <img src="camp1.jpg" alt="" loading="lazy">
+      <img src="nomad2.jpg" alt="" loading="lazy">
     </div>
   </div>
 </section>
@@ -616,6 +682,24 @@
 <div class="sticky-apply"><a href="#register">Apply</a></div>
 
 <script>
+  // Scroll reveal for the Ma intro and the nomads photo
+  (function(){
+    var els = document.querySelectorAll('.ma-line, .reveal');
+    var ma = document.getElementById('ma');
+    if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); ma.classList.add('lit'); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in'); io.unobserve(e.target);
+        if (e.target.classList.contains('ma-word')) ma.classList.add('lit');
+        if (e.target.querySelector && e.target.querySelector('[data-cta="ma-intro"]') && window.track) track('Intro Read');
+      });
+    }, { threshold: 0.5, rootMargin: '0px 0px -10% 0px' });
+    els.forEach(function(e){ io.observe(e); });
+    // stagger the layers word by word
+    document.querySelectorAll('.ma-layers span').forEach(function(sp, i){ sp.style.transitionDelay = (0.25 * i) + 's'; });
+  })();
+
   // Standard prices after the early-bird deadline
   if (new Date() > new Date('2026-10-11T00:00:00')) {
     document.querySelectorAll('.lp-price .amt').forEach(function(el){ el.textContent = '€' + el.dataset.std; });
