@@ -361,7 +361,8 @@
 
 <style>
   /* LANDING (ads) */
-  .lp-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: rgba(26,20,16,0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(232,177,83,0.12); }
+  .lp-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: transparent; border-bottom: 1px solid transparent; transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease; }
+  .lp-nav.scrolled { background: rgba(26,20,16,0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom-color: rgba(232,177,83,0.12); }
   .lp-nav a.btn { padding: 10px 24px; }
   .lp-wrap { max-width: 1100px; margin: 0 auto; }
   .lp-sec { padding: 96px 40px; }
@@ -976,6 +977,14 @@
     });
   });
   if (window.track) document.getElementById('deeper').querySelector('a').addEventListener('click', function(){ track('Go Deeper'); });
+</script>
+<script>
+  // Nav: transparent over the hero, solid once scrolling
+  (function(){
+    var nav = document.querySelector('.lp-nav');
+    function upd(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
+    window.addEventListener('scroll', upd, { passive: true }); upd();
+  })();
 </script>
 <script>
   // Scroll reveal for the Ma intro and the nomads photo
