@@ -402,7 +402,7 @@
   .ma-line { position: relative; max-width: 760px; margin: 0 auto 13vh; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(24px, 3.4vw, 42px); line-height: 1.3; color: var(--stars); opacity: 0; transform: translateY(24px); filter: blur(8px); transition: opacity 1.4s ease, transform 1.4s ease, filter 1.4s ease; }
   .ma-line.in { opacity: 1; transform: none; filter: none; }
   .ma-line em { color: var(--amber); }
-  .ma-line.small { font-size: clamp(18px, 2vw, 24px); font-style: italic; color: rgba(250,246,241,0.7); }
+  .ma-line.small { font-size: clamp(27px, 3.6vw, 44px); font-style: italic; color: rgba(250,246,241,0.88); }
   .ma-layers span { display: inline-block; opacity: 0; transition: opacity 0.8s ease; }
   .ma-line.in.ma-layers span { opacity: 1; }
   .ma-word { font-size: clamp(90px, 16vw, 200px); line-height: 1; color: var(--amber); letter-spacing: 0.4em; margin-right: -0.4em; transition: opacity 2s ease, filter 2s ease, letter-spacing 2.6s ease, transform 2s ease; }
@@ -655,12 +655,10 @@
 </section>
 
 
-<section class="lp-sec" style="padding-top:0;background:var(--night);">
-  <div class="lp-wrap" style="text-align:center;">
-    <p class="strip-quote" style="font-size:clamp(20px,2.4vw,28px);">Living nomadically for days, the body gradually attunes to another tempo. Perception sharpens. Time loosens. What is unnecessary begins to fall away.</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--sand);">This is not a retreat from creation, but a return to its source.</p>
-  </div>
-</section>
+<div class="parallax-band" style="background-image:url('raul-storm.jpg');background-position:center 40%;height:75vh;">
+  <div class="pb-overlay"></div>
+  <p class="pb-quote">Living nomadically for days, the body attunes to another tempo. Perception sharpens. Time loosens.<span class="pb-ma">Not a retreat from creation, but a return to its source</span></p>
+</div>
 
 <!-- NOMADS -->
 <section class="lp-sec">
@@ -683,6 +681,48 @@
     </div>
   </div>
 </section>
+
+<!-- ACCOMMODATION -->
+<section class="accommodation" id="accom">
+  <p class="section-label">Where You Sleep</p>
+  <h2 class="section-title" style="color:var(--night);">Accommodation</h2>
+  <div class="accom-grid">
+    <div class="accom-card">
+      <div class="accom-img">
+        <img src="riad.jpg" alt="Riad">
+      </div>
+      <div class="accom-body">
+        <div class="accom-type">Marrakech, Nights 1 &amp; 12</div>
+        <div class="accom-title">Riad</div>
+        <p class="accom-desc">Traditional Moroccan architecture in the heart of the medina. Breakfast included, airport transfers included.</p>
+      </div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-img">
+        <img src="camp-fixe.jpg" alt="Fixed Camp">
+      </div>
+      <div class="accom-body">
+        <div class="accom-type">Fixed Camp, Nights 2, 3, 10, 11</div>
+        <div class="accom-title">Fixed Bivouac</div>
+        <p class="accom-desc">Adobe buildings built by nomad hands in the dunes. Rooms of 4, some with private bathroom. Shared spaces, communal meals.</p>
+      </div>
+    </div>
+    <div class="accom-card">
+      <div class="accom-img">
+        <img src="bivouac-mobile.jpg" alt="Nomadic Bivouac">
+      </div>
+      <div class="accom-body">
+        <div class="accom-type">Sahara, Nights 4 to 9</div>
+        <div class="accom-title">Nomadic Bivouac</div>
+        <p class="accom-desc">Sleep under a shared nomad tent or under the Milky Way. Universe as roof, spacious desert as ground, silence as lullaby.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="parallax-band" style="background-image:url('raul-hands.jpg');background-position:center 75%;">
+  <div class="pb-overlay"></div>
+</div>
 
 <!-- ORGANISERS (full) -->
 <section class="lp-sec">
@@ -738,6 +778,7 @@
   <div class="lp-wrap">
     <p class="lp-kicker">Previous editions</p>
     <h2 class="lp-h2">What the desert <em>has already held.</em></h2>
+    <div class="gallery-preview" id="galleryPreview" style="margin-bottom:40px;"></div>
     <div class="films">
       <div class="film" onclick="vbOpen('imre')"><div style="background-image:url('imre-thormann.jpg');background-position:center 25%;"></div><div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#faf6f1"><polygon points="8,5 19,12 8,19"/></svg></div><div class="cap"><small>2024 · Film</small><b>Imre Thormann</b><span>Butoh &amp; Noguchi Taiso</span></div></div>
       <div class="film" onclick="vbOpen('yumi')"><div style="background-image:url('yukiko-yoshioka.jpg');background-position:center 30%;"></div><div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#faf6f1"><polygon points="8,5 19,12 8,19"/></svg></div><div class="cap"><small>2023 · Film</small><b>Yumiko Yoshioka</b><span>Butoh dancer &amp; facilitator</span></div></div>
@@ -883,6 +924,13 @@
 
 <div class="sticky-apply"><a href="#register">Apply</a></div>
 
+<div class="lightbox" id="lightbox" onclick="if(event.target.id==='lightbox')lbClose()">
+  <span class="lb-close" onclick="lbClose()">&#10005;</span>
+  <span class="lb-arrow lb-prev" onclick="lbStep(-1)">&#8249;</span>
+  <img id="lbImg" src="" alt="">
+  <span class="lb-arrow lb-next" onclick="lbStep(1)">&#8250;</span>
+  <div class="lb-count" id="lbCount"></div>
+</div>
 <div class="vbox" id="vbox" onclick="if(event.target.id==='vbox')vbClose()">
   <span class="vb-close" onclick="vbClose()">&#10005;</span>
   <div class="vb-frame"><iframe id="vbFrame" src="" allow="autoplay;encrypted-media;fullscreen;picture-in-picture" allowfullscreen></iframe></div>
@@ -892,7 +940,34 @@
   const vbUrls = { imre:'https://player.mediadelivery.net/embed/680447/97bd1b70-0696-47a1-96ee-d363fad84ff6?autoplay=true&preload=true&responsive=true', yumi:'https://player.mediadelivery.net/embed/680447/b19253a9-623c-4113-8850-eb08ca18283d?autoplay=true&preload=true&responsive=true' };
   function vbOpen(k){ document.getElementById('vbFrame').src=vbUrls[k]; document.getElementById('vbox').classList.add('open'); document.body.style.overflow='hidden'; }
   function vbClose(){ document.getElementById('vbFrame').src=''; document.getElementById('vbox').classList.remove('open'); document.body.style.overflow=''; }
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') vbClose(); });
+  const galleryAll = ["https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-3.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-4.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-9.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-13.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-14.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-15.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-21.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-22.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-26.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-31.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-33.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-35.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-38.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-39.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-44.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-45.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-50.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-55.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-68.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-70.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-71.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-13.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-21.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-23.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-25.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-29.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-30.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-31.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-38.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-40.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-41.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-46.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-47.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-56.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-58.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-59.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_performance-60.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_desertflower-8.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_desertflower-9.jpg", "https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_desertflower-10.jpg"];
+  function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+  let lbPhotos = shuffle(galleryAll);
+  (function buildGallery(){
+    const wrap = document.getElementById('galleryPreview');
+    if(!wrap) return;
+    const n = Math.min(window.innerWidth <= 768 ? 8 : 9, lbPhotos.length);
+    const more = lbPhotos.length - n;
+    let html = '';
+    for(let i=0;i<n;i++){
+      if(i < n-1){
+        html += '<div class="gp-cell" onclick="lbOpen('+i+')"><img src="'+lbPhotos[i]+'" alt="" loading="lazy"></div>';
+      } else {
+        html += '<div class="gp-cell" onclick="lbOpen('+i+')"><img src="'+lbPhotos[i]+'" alt="" loading="lazy">'+
+                '<div class="gp-more"><span class="gp-plus">+'+more+'</span><span class="gp-label">See all</span></div></div>';
+      }
+    }
+    wrap.innerHTML = html;
+  })();
+  let lbIndex = 0;
+  function lbOpen(i){ lbIndex=i; lbRender(); document.getElementById('lightbox').classList.add('open'); document.body.style.overflow='hidden'; }
+  function lbClose(){ document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+  function lbStep(d){ lbIndex=(lbIndex+d+lbPhotos.length)%lbPhotos.length; lbRender(); }
+  function lbRender(){ document.getElementById('lbImg').src=lbPhotos[lbIndex]; document.getElementById('lbCount').textContent=(lbIndex+1)+' / '+lbPhotos.length; }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { vbClose(); lbClose(); }
+    if (document.getElementById('lightbox').classList.contains('open')) { if (e.key === 'ArrowLeft') lbStep(-1); if (e.key === 'ArrowRight') lbStep(1); }
+  });
   // From level 2, "Apply" buttons lead to the closest form (the one at the end)
   document.querySelectorAll('a[href="#register"]').forEach(function(a){
     a.addEventListener('click', function(ev){
