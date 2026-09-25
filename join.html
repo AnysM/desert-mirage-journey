@@ -345,7 +345,7 @@
 </style>
 
 <!-- Umami Analytics (free, cookieless, no consent banner needed) -->
-<script defer src="https://cloud.umami.is/script.js" data-website-id="REPLACE-WITH-UMAMI-WEBSITE-ID"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="590f9104-a44a-4373-81b8-b2058b487cbc"></script>
 <script>
   // Queue events until Umami has loaded
   window.track = function(name, data) {
@@ -396,6 +396,9 @@
   .lp-incl { margin-top: 32px; text-align: center; font-size: 14px; line-height: 1.8; color: rgba(250,246,241,0.6); }
   .lp-more { display: block; text-align: center; margin-top: 36px; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; color: var(--sand); text-decoration: none; text-transform: uppercase; }
   .lp-more:hover { color: var(--amber); }
+  .lp-lang { display: flex; gap: 2px; }
+  .lp-lang a { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 1px; color: rgba(250,246,241,0.55); text-decoration: none; padding: 4px 6px; border: 1px solid transparent; }
+  .lp-lang a.active { color: var(--amber); border-color: rgba(232,177,83,0.4); }
   /* MA INTRO (scroll-revealed) */
   .ma { position: relative; padding: 18vh 24px 20vh; text-align: center; overflow: hidden; }
   .ma-bg { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0.9); font-size: min(70vw, 620px); line-height: 1; color: var(--amber); opacity: 0; filter: blur(30px); transition: opacity 2.4s ease, filter 2.4s ease, transform 2.4s ease; pointer-events: none; font-family: serif; }
@@ -478,7 +481,10 @@
     <img src="logo.svg" style="height:44px;width:auto;" alt="Desert Mirage Journey">
     <span class="nav-logo-text">Desert Mirage Journey</span>
   </div>
-  <a href="#register" class="btn btn-solid" data-cta="nav">Apply</a>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="lp-lang"><a href="join.html" class="active">EN</a><a href="join-fr.html">FR</a><a href="join-zh.html">中文</a></div>
+    <a href="#register" class="btn btn-solid" data-cta="nav">Apply</a>
+  </div>
 </nav>
 
 <!-- ================= LEVEL 1 : the shot ================= -->
