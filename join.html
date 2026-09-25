@@ -344,6 +344,20 @@
   @media (max-width: 768px) { .hero-cta .btn { width: 100%; text-align: center; padding: 16px 20px; } }
 </style>
 
+<script>
+(function() {
+  // Ads all point to /join: send French and Chinese browsers to their version, once, keeping UTM params
+  try {
+    if (window.location.search.indexOf('nolang') !== -1) return;
+    if (sessionStorage.getItem('langRedirected')) return;
+    sessionStorage.setItem('langRedirected', '1');
+    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    var target = lang.indexOf('zh') === 0 ? 'join-zh.html' : lang.indexOf('fr') === 0 ? 'join-fr.html' : null;
+    if (target) window.location.replace(target + window.location.search + window.location.hash);
+  } catch (e) {}
+})();
+</script>
+
 <!-- Umami Analytics (free, cookieless, no consent banner needed) -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="590f9104-a44a-4373-81b8-b2058b487cbc"></script>
 <script>
