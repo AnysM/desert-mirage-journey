@@ -437,7 +437,8 @@
   .ma-line.in.ma-layers span { opacity: 1; }
   .ma-word { font-size: clamp(90px, 16vw, 200px); line-height: 1; color: var(--amber); transform: scale(0.8); transition: opacity 2s ease, filter 2s ease, transform 2.6s ease; }
   .ma-word.in { transform: none; }
-  .ma-word small { display: block; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 6px; color: var(--sand); margin-top: 18px; text-transform: uppercase; }
+  .ma-name { display: block; margin-top: 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: clamp(44px, 6vw, 72px); line-height: 1; color: var(--stars); }
+  .ma-word small { display: block; font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 5px; color: var(--sand); margin-top: 14px; text-transform: uppercase; }
   .ma-line:last-child { margin-bottom: 0; }
   @media (prefers-reduced-motion: reduce) { .ma-line, .ma-bg, .ma-layers span { transition: none !important; opacity: 1 !important; filter: none !important; transform: none !important; } .ma-bg { opacity: 0.06 !important; transform: translate(-50%,-50%) !important; } }
   /* NOMADS */
@@ -544,7 +545,8 @@
   <p class="ma-line small">As artists, we are surrounded by</p>
   <p class="ma-line ma-layers"><span>influences,</span> <span>references,</span> <span>techniques,</span> <span>information,</span> <span>aesthetics,</span> <span>expectations.</span></p>
   <p class="ma-line">Layer upon layer accumulates, until <em>what wants to be born can't find its way.</em></p>
-  <p class="ma-line ma-word">間<small>Ma · the space in between</small></p>
+  <p class="ma-line small">In Japanese, there is a word for this missing space.</p>
+  <p class="ma-line ma-word">間<span class="ma-name">Ma</span><small>the space in between</small></p>
   <p class="ma-line">Not emptiness, but <em>a living interval</em>: the pause between movements, the silence between sounds, the unseen field from which forms emerge.</p>
   <p class="ma-line">The desert is a vast field of Ma.<br>Desert Mirage Journey is <em>the space you offer yourself.</em></p>
   <div class="ma-line" style="font-size:inherit;"><a href="#register" class="btn" data-cta="ma-intro" style="text-decoration:none;">Offer yourself this space</a></div>
