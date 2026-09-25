@@ -373,8 +373,8 @@
   .fact { background: var(--night); padding: 28px 24px; }
   .fact b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 28px; color: var(--amber); line-height: 1.1; margin-bottom: 6px; }
   .fact span { font-size: 14px; line-height: 1.5; color: rgba(250,246,241,0.65); }
-  .strip { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4px; height: 62vh; min-height: 380px; }
-  .strip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .strip { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4px; overflow: hidden; }
+  .strip img { width: 100%; height: 62vh; min-height: 380px; object-fit: cover; display: block; }
   .strip-quote { text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(24px, 3vw, 36px); line-height: 1.35; color: var(--stars); max-width: 760px; margin: 0 auto 48px; }
   .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
   .step small { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px; color: var(--amber); text-transform: uppercase; }
@@ -409,8 +409,8 @@
   .ma-line.small { font-size: clamp(27px, 3.6vw, 44px); font-style: italic; color: rgba(250,246,241,0.88); }
   .ma-layers span { display: inline-block; opacity: 0; transition: opacity 0.8s ease; }
   .ma-line.in.ma-layers span { opacity: 1; }
-  .ma-word { font-size: clamp(90px, 16vw, 200px); line-height: 1; color: var(--amber); letter-spacing: 0.4em; margin-right: -0.4em; transition: opacity 2s ease, filter 2s ease, letter-spacing 2.6s ease, transform 2s ease; }
-  .ma-word.in { letter-spacing: 0.05em; margin-right: -0.05em; }
+  .ma-word { font-size: clamp(90px, 16vw, 200px); line-height: 1; color: var(--amber); transform: scale(0.8); transition: opacity 2s ease, filter 2s ease, transform 2.6s ease; }
+  .ma-word.in { transform: none; }
   .ma-word small { display: block; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 6px; color: var(--sand); margin-top: 18px; text-transform: uppercase; }
   .ma-line:last-child { margin-bottom: 0; }
   @media (prefers-reduced-motion: reduce) { .ma-line, .ma-bg, .ma-layers span { transition: none !important; opacity: 1 !important; filter: none !important; transform: none !important; } .ma-bg { opacity: 0.06 !important; transform: translate(-50%,-50%) !important; } }
@@ -438,8 +438,8 @@
     .facts { grid-template-columns: 1fr 1fr; }
     .fact { padding: 20px 16px; }
     .fact b { font-size: 22px; }
-    .strip { grid-template-columns: 1fr 1fr; height: auto; min-height: 0; }
-    .strip img { aspect-ratio: 1; height: auto; }
+    .strip { grid-template-columns: 1fr 1fr; }
+    .strip img { aspect-ratio: 1; height: auto; min-height: 0; }
     .strip img:first-child { grid-column: span 2; aspect-ratio: 16/10; }
     .steps, .people, .quotes, .lp-prices { grid-template-columns: 1fr; gap: 28px; }
     .lp-prices { gap: 10px; }
@@ -549,7 +549,7 @@
   </div>
 </section>
 
-<section class="lp-sec" style="padding-top:0;padding-bottom:0;">
+<section class="lp-sec" style="padding-top:24px;padding-bottom:0;">
   <div class="lp-wrap quotes" style="grid-template-columns:1fr;max-width:720px;">
     <blockquote>« Pas de bruit, pas de voitures, pas de télé, pas de radio, pas de lumières, pas de panneaux, pas de téléphone. Rien, juste être là. Magnifique. Voyager avec Anys, ce n'est pas un voyage. C'est une aventure. »<cite>Pascal Wagner · Avril 2024</cite></blockquote>
   </div>
@@ -664,7 +664,7 @@
 
 <div class="parallax-band" style="background-image:url('raul-storm.jpg');background-position:center 40%;height:75vh;">
   <div class="pb-overlay"></div>
-  <p class="pb-quote">À vivre en nomade pendant des jours, le corps s'accorde à un autre tempo. La perception s'affine. Le temps se relâche.<span class="pb-ma">Pas un retrait hors de la création, mais un retour à sa source</span></p>
+  <p class="pb-quote">À vivre en nomade pendant des jours, le corps s'accorde à un autre tempo. La perception s'affine. Le temps se relâche.</p>
 </div>
 
 <!-- NOMADS -->
