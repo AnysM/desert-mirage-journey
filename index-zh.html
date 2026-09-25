@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" href="/apple-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Noto+Serif+SC:wght@300;400;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --sand: #e3c89b;
@@ -343,7 +343,36 @@
   .edition-play:hover { opacity: 1; }
   @media (max-width: 768px) { .gallery-preview { grid-template-columns: repeat(2, 1fr); } .lightbox .lb-arrow { font-size: 30px; padding: 12px; } }
 
+
+  /* Buttons in a clean sans-serif (Chinese falls back to a system sans) */
+  .btn, button.btn, .sticky-apply a, .nav-links a.nav-cta { font-family: 'Jost', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif !important; font-weight: 500 !important; letter-spacing: 2.5px !important; }
+  .btn, button.btn, .sticky-apply a { font-size: 13px !important; }
+  .nav-links a.nav-cta { font-size: 12px !important; }
+  /* CONVERSION */
+  .hero-cta { margin-top: 36px; opacity: 0; animation: fadeup 1s 0.9s forwards; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+  .btn-solid { background: var(--amber); color: var(--night); text-decoration: none; }
+  .btn-solid:hover { background: transparent; color: var(--amber); }
+  .hero-cta-note { font-family: 'Cinzel', 'Noto Serif SC', serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(250,246,241,0.6); }
+  .form-reassure { margin-top: 14px; font-size: 13px; line-height: 1.6; color: rgba(250,246,241,0.55); text-align: center; }
+  .form-success { display: none; margin-top: 40px; padding: 32px; border: 1px solid rgba(232,177,83,0.35); background: rgba(232,177,83,0.08); text-align: center; }
+  .form-success p { color: rgba(250,246,241,0.8); line-height: 1.7; }
+  .form-error { display: none; margin-top: 12px; font-size: 14px; color: #e8a07a; text-align: center; }
+  @media (max-width: 768px) { .hero-cta .btn { width: 100%; text-align: center; padding: 16px 20px; } }
 </style>
+
+<!-- Umami Analytics (free, cookieless, no consent banner needed) -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="590f9104-a44a-4373-81b8-b2058b487cbc"></script>
+<script>
+  // Queue events until Umami has loaded
+  window.track = function(name, data) {
+    if (window.umami && window.umami.track) return window.umami.track(name, data);
+    (window.__trackQ = window.__trackQ || []).push([name, data]);
+  };
+  window.addEventListener('load', function() {
+    var q = window.__trackQ || []; window.__trackQ = [];
+    q.forEach(function(e) { window.track(e[0], e[1]); });
+  });
+</script>
 </head>
 <body>
 
@@ -355,12 +384,12 @@
   </div>
   <ul class="nav-links">
     <li><a href="#about">意图</a></li>
-    <li><a href="#experience">旅程</a></li>
+    <li><a href="#schedule">旅程</a></li>
     <li><a href="#camp">我们的东道主</a></li>
     <li><a href="#price">费用</a></li>
     <li><a href="#faq">常见问题</a></li>
     <li><a href="#register" class="nav-cta">报名</a></li>
-    <li class="lang-switch"><a href="index.html">EN</a><a href="index-fr.html">FR</a><a href="index-zh.html" class="active">中文</a></li>
+    <li class="lang-switch"><a href="index.html?nolang=1">EN</a><a href="index-fr.html">FR</a><a href="index-zh.html" class="active">中文</a></li>
   </ul>
   <div class="burger" id="burger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -370,10 +399,10 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div onclick="toggleMenu()" style="position:absolute;top:24px;right:24px;cursor:pointer;font-size:24px;color:var(--amber);line-height:1;">✕
-  <div class="mobile-lang"><a href="index.html">EN</a><a href="index-fr.html">FR</a><a href="index-zh.html" class="active">中文</a></div>
+  <div class="mobile-lang"><a href="index.html?nolang=1">EN</a><a href="index-fr.html">FR</a><a href="index-zh.html" class="active">中文</a></div>
 </div>
   <a href="#about" onclick="toggleMenu()">意图</a>
-  <a href="#experience" onclick="toggleMenu()">旅程</a>
+  <a href="#schedule" onclick="toggleMenu()">旅程</a>
   <a href="#camp" onclick="toggleMenu()">我们的东道主</a>
   <a href="#price" onclick="toggleMenu()">费用</a>
   <a href="#faq" onclick="toggleMenu()">常见问题</a>
@@ -413,6 +442,10 @@ function toggleMenu() {
       <span style="font-family:'Cinzel',serif;font-size:clamp(14px,1.5vw,17px);letter-spacing:4px;color:var(--amber);text-transform:uppercase;display:block;font-weight:600;">2026年12月10日 – 21日</span>
       <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:rgba(250,246,241,0.6);text-transform:uppercase;display:block;margin-top:8px;">12天 · 从摩洛哥马拉喀什出发</span>
     </div>
+    <div class="hero-cta">
+      <a href="#register" class="btn btn-solid" data-cta="hero">申请名额</a>
+      <span class="hero-cta-note">限 14 位参与者<span class="eb-only"> · 早鸟优惠至 10 月 10 日</span></span>
+    </div>
   </div>
   <div class="hero-scroll">Scroll</div>
 </section>
@@ -446,30 +479,12 @@ function toggleMenu() {
     <div class="intro-body">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:var(--amber);margin-bottom:24px;">今年的主题是「間 - Ma」。</p>
       <p>Ma 并非虚无，而是<strong>一段有生命的间隙</strong>：动作之间的停顿，声音之间的静默，形态由此涌现的不可见之场。</p>
-      <p>在整个驻留期间，来自不同领域的艺术家探索 Ma，不是作为一个需要理解的概念，而是作为<strong>一个可以栖居的空间</strong>，通过身体、感知与创作实践去进入。</p>
       <p>作为艺术家，我们被影响、参照、技术、信息、美学与期待所包围。层层堆叠，直到<strong>那寻求表达之物，再也找不到成形的空间。</strong></p>
-      <p>唯一能让那渴望涌现之物真正成形的，是<strong>事物之间的空隙。間 Ma。</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- PARALLAX BAND (between intentions) -->
-<div class="parallax-band" style="background-image:url('raul-tree.jpg');background-position:center 55%;">
-</div>
-
-<!-- INTENTION 2 -->
-<section class="intro">
-  <div class="intro-grid">
-    <div class="intro-question">
-      沙漠幻境之旅，<br>是你 <span>给予自己的空间。</span>
-    </div>
-    <div class="intro-body">
-      <p>沙漠本身就是一片广阔的「間 Ma」之场。它所容纳的远不止静默：<strong>静默之下的频率，从看似虚无中涌现的生命</strong>，一种尚未完全显现、却已然在此的存在。</p>
-      <p>让幻境活过来。<strong>给自己空间，真正的空间，让生命完全穿越你。</strong>暂时从喧嚣、过载，以及那些「你应该做什么、应该成为什么」的持续拉扯中解放出来。</p>
+      <p>沙漠本身就是一片广阔的「間 Ma」之场。在那里，来自各个领域的艺术家探索它，不是作为一个需要理解的概念，而是作为<strong>一个可以栖居的空间</strong>，通过身体、感知与创作实践去进入。<strong>给自己空间，真正的空间，让生命完全穿越你。</strong></p>
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.6;color:var(--amber);">在这段旅程中，唯一真正重要的，是<strong style="color:var(--amber);">倾听</strong>。倾听那渴望被表达之物。倾听那渴望诞生之物。不带评判。</p>
     </div>
   </div>
-  <div style="text-align:center;margin-top:60px;">
+  <div style="text-align:center;margin-top:60px;position:relative;z-index:1;">
     <a href="#register" class="btn" style="text-decoration:none;">开启旅程</a>
   </div>
 </section>
@@ -478,54 +493,28 @@ function toggleMenu() {
 <div class="parallax-band" style="background-image:url('raul-silhouette.jpg');background-position:center 50%;">
 </div>
 
-<!-- PROCESS -->
-<section class="experiences" id="experience">
-  <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">旅程</p>
-    <h2 class="section-title">一场走向<br><em>未知的旅程。</em></h2>
-    <div class="exp-grid">
-      <div class="exp-card">
-        <div class="exp-number">01</div>
-        <div class="exp-title">抵达</div>
-        <p class="exp-body">马拉喀什。老城、文化、喧嚣。在前方的静默之前，第一次呼吸。身体开始落地。</p>
-      </div>
-      <div class="exp-card">
-        <div class="exp-number">02</div>
-        <div class="exp-title">走入事物之间的空隙</div>
-        <p class="exp-body">游牧徒步，星空下露营，沙丘，静默。沙漠褪去一切多余之物。空间由此打开。</p>
-      </div>
-      <div class="exp-card">
-        <div class="exp-number">03</div>
-        <div class="exp-title">涌现之物</div>
-        <p class="exp-body">身体实践、共同创作、艺术探索。不是为了产出一场演出。而是与那一直在等待之物的相遇。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PARALLAX BAND 2 -->
-<div class="parallax-band" style="background-image:url('raul-dancer.jpg');">
-</div>
-
 <!-- DATES -->
 <section class="schedule" id="schedule">
   <div style="max-width:700px;margin:0 auto;">
-    <p class="section-label">日期</p>
+    <p class="section-label">旅程</p>
     <h2 class="section-title">12月10日 – 21日<br><span style="color:var(--amber);font-size:0.65em;">12天 · 从马拉喀什到撒哈拉</span></h2>
     <div style="margin-top:40px;display:flex;flex-direction:column;gap:0;">
       <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
         <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第1天 · 12月10日</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">抵达马拉喀什</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:1.6;color:var(--sand);margin-bottom:8px;">老城、文化、喧嚣。在前方的静默之前，第一次呼吸。</p>
         <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">机场接机，入住马拉喀什联合国教科文组织世界遗产老城中的传统里亚德庭院。与摩洛哥的初次接触。</p>
       </div>
       <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
         <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第2–8天 · 12月11–17日</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">走入沙漠</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:1.6;color:var(--sand);margin-bottom:8px;">沙漠褪去一切多余之物。空间由此打开。</p>
         <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">穿越阿特拉斯山脉南下，进入撒哈拉。游牧徒步、露营、在「呼啸沙丘」的时光、身体实践、艺术探索、共同创作，以及静默。</p>
       </div>
       <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
         <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第9–10天 · 12月18–19日</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">艺术涌现与整合</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:1.6;color:var(--sand);margin-bottom:8px;">不是为了产出一场演出。而是与那一直在等待之物的相遇。</p>
         <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">回到固定营地，我们进入旅程中更为安定的阶段。一个用于艺术共创、自发演出、反思、整合的空间，让在沙漠中涌现之物找到属于它自己的形态。</p>
       </div>
       <div style="border-left:1px solid rgba(232,177,83,0.35);padding:24px 0 24px 32px;">
@@ -554,9 +543,7 @@ function toggleMenu() {
       <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);">夜晚在无垠的天空之下。白日随沙漠的节奏而行。</p>
       <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">这不是<span style="color:var(--sand);">一次撒哈拉的观光，而是一次沉浸其中的进入。</span></p>
       <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">没有屏幕。没有通知。没有人造光。没有商业。没有塞满目的地的行程。没有无尽的选择。没有产出的压力。</p>
-      <p style="font-size:19px;line-height:1.8;color:var(--amber);font-family:'Cormorant Garamond',serif;font-style:italic;margin-top:20px;">只有天与地。静默与辽阔。简朴与临在。事物之间的空隙 - Ma 間</p>
       <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">连日的游牧生活中，身体逐渐调频到另一种节奏。感知变得敏锐。时间松弛下来。多余之物开始剥落。<span style="color:var(--sand);">成为未知。</span></p>
-      <p style="font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-top:20px;">在此之中，新的艺术冲动开始涌现。艺术家被邀请进入一种与时间、身体、想象力以及不可见之物的全新关系。</p>
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.6;color:var(--sand);margin-top:20px;">这不是从创作中的撤退，而是向其源头的回归。</p>
     </div>
     <div class="camp-grid">
@@ -572,10 +559,6 @@ function toggleMenu() {
     </div>
   </div>
 </section>
-
-<!-- PARALLAX BAND 5 -->
-<div class="parallax-band" style="background-image:url('raul-fire2.jpg');background-position:center 55%;">
-</div>
 
 <!-- CAMP & GUIDES SECTION -->
 <section class="camp-section" id="camp" style="background:var(--dusk);">
@@ -611,16 +594,6 @@ function toggleMenu() {
       <p style="font-size:17px;line-height:1.95;color:rgba(250,246,241,0.65);">除了行走，这次驻留更是<strong>一场与活着的文化的相遇</strong>。围着火堆烹煮、共同分享的餐食，缓缓斟下的茶，星空下的歌谣与故事，<strong>那些能读懂沙丘与天空之人的古老智慧</strong>。沙漠教导简朴，而游牧民将其视为一门艺术。<strong>与他们同行，是重新记起：所需之物如此之少，而可被感受之物如此之多。</strong></p>
     </div>
 
-    <div style="margin-top:80px;">
-      <p class="section-label">The Fixed Camp</p>
-      <h2 class="section-title" style="margin-bottom:32px;">由<br><em>游牧民之手建造。</em></h2>
-      <p style="max-width:640px;font-size:17px;line-height:1.9;color:rgba(250,246,241,0.65);margin-bottom:40px;">土坯、泥土、稻草。徒步之间的聚会之所，用于用餐、音乐、休息与创作。</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;">
-        <div style="aspect-ratio:1;overflow:hidden;"><img src="camp1.jpg" style="width:100%;height:100%;object-fit:cover;filter:sepia(10%) contrast(1.05);display:block;"></div>
-        <div style="aspect-ratio:1;overflow:hidden;"><img src="raul-flower2.jpg" style="width:100%;height:100%;object-fit:cover;filter:sepia(10%) contrast(1.05);display:block;"></div>
-        <div style="aspect-ratio:1;overflow:hidden;"><img src="camp6.jpg" style="width:100%;height:100%;object-fit:cover;filter:sepia(10%) contrast(1.05);display:block;"></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -719,123 +692,6 @@ function toggleMenu() {
   </div>
 </section>
 
-<!-- PRICE -->
-<section class="price" id="price">
-  <h2 class="section-title">费用</h2>
-  <div style="background:rgba(232,177,83,0.1);border:1px solid rgba(232,177,83,0.3);max-width:600px;margin:0 auto 40px;padding:20px 32px;text-align:center;">
-    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:var(--amber);margin-bottom:8px;">早鸟优惠截止至10月10日</p>
-    <p style="font-size:15px;color:rgba(250,246,241,0.7);">所有房型最高可省15%。名额有限。</p>
-  </div>
-  <div class="price-grid">
-    <div class="price-card">
-      <div class="price-title">单人间</div>
-      <span class="price-label">标准价</span>
-      <div class="price-early"><span class="price-currency">¥</span>14960</div>
-      <span class="price-label" style="margin-top:10px;">早鸟价</span>
-      <div class="price-amount"><span class="price-currency">¥</span>13600</div>
-      <div class="price-room">&nbsp;</div>
-    </div>
-    <div class="price-card">
-      <div class="price-title">双人间</div>
-      <span class="price-label">标准价</span>
-      <div class="price-early"><span class="price-currency">¥</span>13500</div>
-      <span class="price-label" style="margin-top:10px;">早鸟价</span>
-      <div class="price-amount"><span class="price-currency">¥</span>11900</div>
-      <div class="price-room">&nbsp;</div>
-    </div>
-    <div class="price-card">
-      <div class="price-title">多人间</div>
-      <span class="price-label">标准价</span>
-      <div class="price-early"><span class="price-currency">¥</span>12880</div>
-      <span class="price-label" style="margin-top:10px;">早鸟价</span>
-      <div class="price-amount"><span class="price-currency">¥</span>10900</div>
-      <div class="price-room">3至4人 · 共用浴室</div>
-    </div>
-  </div>
-  <p class="price-note"><strong>早鸟优惠截止至10月10日。</strong>此后按标准价计算。<br>预付50%以确认报名。</p>
-  <div style="text-align:center;margin-top:48px;">
-    <a href="#register" class="btn" style="text-decoration:none;">申请名额</a>
-  </div>
-  <div style="max-width:600px;margin:56px auto 0;padding:28px 32px;border:1px solid rgba(232,177,83,0.2);background:rgba(250,246,241,0.03);">
-    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:14px;">可及性与奖学金</p>
-    <p style="font-size:15px;line-height:1.8;color:rgba(250,246,241,0.6);">我们提供少量部分奖学金。如果经济支持对你的参与至关重要，请联系我们索取奖学金申请表。</p>
-  </div>
-</section>
-
-<!-- INCLUDED -->
-<section class="included" id="included">
-  <div style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">详情</p>
-    <h2 class="section-title">包含与不包含</h2>
-    <div class="included-grid">
-      <div class="included-box">
-        <div class="included-box-title in">Included</div>
-        <ul class="included-list">
-          <li>整个驻留期间的艺术实践与共同创作</li>
-          <li>由当地向导带领的游牧沙漠徒步</li>
-          <li>第1天与第12天的机场接送</li>
-          <li>马拉喀什与沙漠之间的往返交通</li>
-          <li>除抵达与离开马拉喀什当天外，旅程期间的所有素食餐食及饮用水均已包含。特殊饮食需求可提前告知</li>
-          <li>12天住宿：马拉喀什、固定营地与游牧露营</li>
-          <li>由专业摄影师记录整个旅程</li>
-        </ul>
-      </div>
-      <div class="included-box">
-        <div class="included-box-title ex">不包含</div>
-        <ul class="included-list">
-          <li>机票</li>
-          <li>沙漠中的额外私人摄影拍摄</li>
-          <li>旅行保险（抵达时需具备）</li>
-          <li>个人护理</li>
-          <li>给向导与团队的小费</li>
-          <li>个人消费</li>
-        </ul>
-        <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(232,177,83,0.1);">
-          <p style="font-size:14px;color:rgba(250,246,241,0.4);font-style:italic;line-height:1.7;">由当地厨师烹制的素食料理。优先选用本地时令食材。如有特殊饮食需求，请在预订前联系我们。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="included" id="faq" style="background:var(--dusk);">
-  <div style="max-width:820px;margin:0 auto;">
-    <p class="section-label">出发之前</p>
-    <h2 class="section-title" style="margin-bottom:48px;">常见问题</h2>
-
-    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">我需要是一位有经验的艺术家吗？</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">不需要。这次驻留欢迎来自任何领域、任何阶段的艺术家。重要的是创作的意愿、倾听的意愿，以及与他人共同创作的意愿。我们会与每一位申请者进行简短的通话，以确认这段旅程是否适合你。</p>
-    </details>
-
-    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">需要什么样的体能水平？</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">徒步每天大约需要在沙地上行走3至4小时，节奏平缓，行李由骆驼驮运。无需特别训练，但你需要能够适应行走以及整日在户外活动。如有任何健康方面的顾虑，请在通话时告知我们。</p>
-    </details>
-
-    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">12月的天气如何？</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">撒哈拉的12月白天温和晴朗（约20°C），夜晚寒冷，可能降至接近0°C。保暖衣物、一个好的睡袋和一顶帽子必不可少。报名确认后，我们会发送完整的行李清单。</p>
-    </details>
-
-    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">驻留使用什么语言？</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">这是一场国际性的聚会，驻留全程以英语进行。参与者来自许多不同的国家。你需要能够用英语自在地表达自己并理解他人，因为我们将以此来分享、创作，并共同持守这个空间。</p>
-    </details>
-
-    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">如何付款？</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">预付50%即可确认报名，余款在出发前结清。早鸟价适用至10月10日。奖学金可应要求申请。付款细节将在通话后告知。</p>
-    </details>
-
-    <details style="border-top:1px solid rgba(232,177,83,0.15);border-bottom:1px solid rgba(232,177,83,0.15);padding:24px 0;">
-      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">费用包含哪些内容？</summary>
-      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">从马拉喀什到沙漠的全部住宿、机场接送、由游牧团队带领的完整徒步行程，以及艺术驻留本身。除抵达与离开马拉喀什当天外，旅程期间的所有餐食均已包含。不包含前往马拉喀什的机票与旅行保险。</p>
-    </details>
-  </div>
-</section>
-
 <!-- GUIDES / EDITIONS PRÉCÉDENTES -->
 <section class="facilitators" id="guides">
   <div style="max-width:1200px;margin:0 auto;">
@@ -899,6 +755,147 @@ function toggleMenu() {
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">他们曾走过这片沙漠</p>
+    <h2 class="section-title">来自<br><em>往届旅程的话语</em></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:60px;" class="testimonials-grid">
+      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">「没有噪音，没有汽车，没有电视，没有收音机，没有灯光，没有路标，没有手机。什么都没有，只是在那里。壮美。与 Anys 同行不是一趟旅行，而是一场冒险。」</p>
+        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Pascal Wagner</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">沙漠之旅，2024年4月</span>
+      </div>
+      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">「每个傍晚，我带着自己的铺盖，选一座沙丘，在星空下入睡。一段通往简单与真实之核心的旅程。Anys 懂得如何陪伴我穿越内在的沙漠，同时保有我的自主，带着临在、温柔与不评判。」</p>
+        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Sandrine Barrande</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">沙漠启程之旅，2023年11月</span>
+      </div>
+      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">「出发之前，Anys 细心地化解了我们的种种顾虑。抵达之后，我们每一个需要、每一种敏感的状态，都找到了自己的位置。他能为我们提供如此多样的方式，而每一种都恰到好处，这让我深受触动。」</p>
+        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Céline Mercatello</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">沙漠静修</span>
+      </div>
+      <div style="border-left:1px solid rgba(232,177,83,0.25);padding:0 0 0 36px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.75;color:rgba(250,246,241,0.8);margin-bottom:28px;">「Anys 为我们每一个人付出时间。照料的时间。在我们需要时倾听的时间。让我们自由、欢笑、哭泣、沉默的时间。神圣的分享空间。节奏的和谐。无比珍贵的日子。」</p>
+        <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--amber);display:block;">Joséphina Bos</span>
+        <span style="font-size:13px;color:rgba(250,246,241,0.35);font-style:italic;">摩洛哥沙漠五日</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price" id="price">
+  <h2 class="section-title">费用</h2>
+  <div class="eb-only" style="background:rgba(232,177,83,0.1);border:1px solid rgba(232,177,83,0.3);max-width:600px;margin:0 auto 40px;padding:20px 32px;text-align:center;">
+    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:var(--amber);margin-bottom:8px;">早鸟优惠截至10月10日</p>
+    <p style="font-size:15px;color:rgba(250,246,241,0.7);">所有房型最高可省15%。仅限14位参与者。</p>
+  </div>
+  <div class="price-grid">
+    <div class="price-card">
+      <div class="price-title">单人间</div>
+      <span class="price-label">标准价</span>
+      <div class="price-early"><span class="price-currency">¥</span>14960</div>
+      <span class="price-label" style="margin-top:10px;">早鸟价</span>
+      <div class="price-amount"><span class="price-currency">¥</span>13600</div>
+      <div class="price-room">&nbsp;</div>
+    </div>
+    <div class="price-card">
+      <div class="price-title">双人间</div>
+      <span class="price-label">标准价</span>
+      <div class="price-early"><span class="price-currency">¥</span>13500</div>
+      <span class="price-label" style="margin-top:10px;">早鸟价</span>
+      <div class="price-amount"><span class="price-currency">¥</span>11900</div>
+      <div class="price-room">&nbsp;</div>
+    </div>
+    <div class="price-card">
+      <div class="price-title">多人间</div>
+      <span class="price-label">标准价</span>
+      <div class="price-early"><span class="price-currency">¥</span>12880</div>
+      <span class="price-label" style="margin-top:10px;">早鸟价</span>
+      <div class="price-amount"><span class="price-currency">¥</span>10900</div>
+      <div class="price-room">3至4人 · 共用浴室</div>
+    </div>
+  </div>
+  <p class="price-note"><strong>早鸟优惠截至10月10日。</strong>此后按标准价计算。<br>预付50%以确认报名。</p>
+  <div style="text-align:center;margin-top:48px;">
+    <a href="#register" class="btn" style="text-decoration:none;">申请名额</a>
+  </div>
+  <div style="max-width:600px;margin:56px auto 0;padding:28px 32px;border:1px solid rgba(232,177,83,0.2);background:rgba(250,246,241,0.03);">
+    <p style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:14px;">可及性与奖学金</p>
+    <p style="font-size:15px;line-height:1.8;color:rgba(250,246,241,0.6);">我们提供少量部分奖学金。如果经济支持对你的参与至关重要，请联系我们索取奖学金申请表。</p>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="included" id="included">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">详情</p>
+    <h2 class="section-title">包含与不包含</h2>
+    <div class="included-grid">
+      <div class="included-box">
+        <div class="included-box-title in">包含</div>
+        <ul class="included-list">
+          <li>整个驻留期间的艺术实践与共同创作</li>
+          <li>由当地向导带领的游牧沙漠徒步</li>
+          <li>第1天与第12天的机场接送</li>
+          <li>马拉喀什与沙漠之间的往返交通</li>
+          <li>除抵达与离开马拉喀什当天外，旅程期间的所有素食餐食及饮用水均已包含。特殊饮食需求可提前告知</li>
+          <li>12天住宿：马拉喀什、固定营地与游牧露营</li>
+          <li>由专业摄影师记录整个旅程</li>
+        </ul>
+      </div>
+      <div class="included-box">
+        <div class="included-box-title ex">不包含</div>
+        <ul class="included-list">
+          <li>机票</li>
+          <li>沙漠中的额外私人摄影拍摄</li>
+          <li>旅行保险（抵达时需具备）</li>
+          <li>个人护理</li>
+          <li>给向导与团队的小费</li>
+          <li>个人消费</li>
+        </ul>
+        <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(232,177,83,0.1);">
+          <p style="font-size:14px;color:rgba(250,246,241,0.4);font-style:italic;line-height:1.7;">由当地厨师烹制的素食料理。优先选用本地时令食材。如有特殊饮食需求，请在预订前联系我们。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="included" id="faq" style="background:var(--dusk);">
+  <div style="max-width:820px;margin:0 auto;">
+    <p class="section-label">出发之前</p>
+    <h2 class="section-title" style="margin-bottom:48px;">常见问题</h2>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">我需要是一位有经验的艺术家吗？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">不需要。这次驻留欢迎来自任何领域、任何阶段的艺术家。重要的是创作的意愿、倾听的意愿，以及与他人共同创作的意愿。我们会与每一位申请者进行简短的通话，以确认这段旅程是否适合你。</p>
+    </details>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">需要什么样的体能水平？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">徒步每天大约需要在沙地上行走3至4小时，节奏平缓，行李由骆驼驮运。无需特别训练，但你需要能够适应行走以及整日在户外活动。如有任何健康方面的顾虑，请在通话时告知我们。</p>
+    </details>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">12月的天气如何？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">撒哈拉的12月白天温和晴朗（约20°C），夜晚寒冷，可能降至接近0°C。保暖衣物、一个好的睡袋和一顶帽子必不可少。报名确认后，我们会发送完整的行李清单。</p>
+    </details>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">驻留使用什么语言？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">这是一场国际性的聚会，驻留全程以英语进行。参与者来自许多不同的国家。你需要能够用英语自在地表达自己并理解他人，因为我们将以此来分享、创作，并共同持守这个空间。</p>
+    </details>
+
+    <details style="border-top:1px solid rgba(232,177,83,0.15);border-bottom:1px solid rgba(232,177,83,0.15);padding:24px 0;">
+      <summary style="cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--stars);list-style:none;">如何付款？</summary>
+      <p style="margin-top:16px;font-size:16px;line-height:1.85;color:rgba(250,246,241,0.6);">预付50%即可确认报名，余款在出发前结清。早鸟价适用至10月10日。奖学金可应要求申请。付款细节将在通话后告知。</p>
+    </details>
+  </div>
+</section>
 
 <!-- REGISTER -->
 <section class="contact" id="register" style="position:relative;overflow:hidden;">
@@ -909,7 +906,7 @@ function toggleMenu() {
     <h2 class="section-title" style="text-align:center;text-shadow:0 2px 24px rgba(0,0,0,0.6);">你准备好了吗？</h2>
     <p style="font-size:15px;line-height:1.8;color:rgba(250,246,241,0.7);font-style:italic;text-shadow:0 2px 16px rgba(0,0,0,0.5);">给我们发送一条讯息，我们会回复你所有的细节与后续步骤。这是一段共同的旅程，我们希望认识每一位加入的人。</p>
 
-    <form action="https://formspree.io/f/mwvdygqg" method="POST" style="margin-top:40px;text-align:left;max-width:520px;margin-left:auto;margin-right:auto;">
+    <form id="applyForm" action="https://formspree.io/f/mwvdygqg" method="POST" style="margin-top:40px;text-align:left;max-width:520px;margin-left:auto;margin-right:auto;">
       <input type="hidden" name="_subject" value="New inquiry · Desert Mirage Journey">
       <input type="text" name="_gotcha" style="display:none;">
 
@@ -944,9 +941,15 @@ function toggleMenu() {
       </div>
 
       <div style="text-align:center;">
-        <button type="submit" class="btn" style="cursor:pointer;border:1px solid var(--amber);background:var(--amber);color:var(--night);font-weight:600;">发送咨询</button>
+        <button type="submit" class="btn" style="cursor:pointer;border:1px solid var(--amber);background:var(--amber);color:var(--night);font-weight:600;">申请我的名额</button>
+        <p class="form-reassure">此阶段无需付款。下一步：一次简短的通话，确认这段旅程是否适合你。</p>
+        <p class="form-error" id="formError">发送未成功。请再试一次，或通过 Instagram 给我们留言。</p>
       </div>
     </form>
+    <div class="form-success" id="formSuccess">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--amber);margin-bottom:12px;">谢谢你。</p>
+      <p>我们已收到你的申请。我们很快会给你写信，附上完整的细节，并约定一次简短的通话。</p>
+    </div>
     <p style="margin-top:24px;font-size:13px;line-height:1.7;color:rgba(250,246,241,0.55);text-shadow:0 1px 12px rgba(0,0,0,0.5);text-align:center;">我们会尽快回复你，并附上完整细节与报名方式。</p>
   </div>
 </section>
@@ -967,7 +970,7 @@ function toggleMenu() {
 
 <!-- STICKY MOBILE APPLY -->
 <div class="sticky-apply">
-  <a href="#register">申请</a>
+  <a href="#register">报名</a>
 </div>
 
 
@@ -1017,6 +1020,67 @@ function toggleMenu() {
     if(document.getElementById('lightbox').classList.contains('open')){ if(e.key==='Escape')lbClose(); if(e.key==='ArrowLeft')lbStep(-1); if(e.key==='ArrowRight')lbStep(1); }
     if(document.getElementById('vbox').classList.contains('open') && e.key==='Escape')vbClose();
   });
+</script>
+
+<script>
+(function(){
+  // Early-bird mentions disappear automatically after the deadline
+  if (new Date() > new Date('2026-10-11T00:00:00')) {
+    document.querySelectorAll('.eb-only').forEach(function(el){ el.style.display = 'none'; });
+  }
+
+  // Which CTA brought people to the form
+  document.querySelectorAll('a[href="#register"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var pos = a.dataset.cta;
+      if (!pos) {
+        if (a.closest('.sticky-apply')) pos = 'sticky-mobile';
+        else if (a.closest('#mobileMenu')) pos = 'mobile-menu';
+        else if (a.closest('nav')) pos = 'nav';
+        else { var sec = a.closest('section'); pos = sec && sec.id ? sec.id : 'section'; }
+      }
+      track('CTA Click', { position: pos });
+    });
+  });
+
+  // Funnel: price seen -> form seen -> form started -> sent
+  var seen = {};
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting && !seen[e.target.id]) { seen[e.target.id] = 1; track(e.target.id === 'price' ? 'Price Viewed' : 'Form Viewed'); }
+      });
+    }, { threshold: 0.3 });
+    ['price', 'register'].forEach(function(id){ var el = document.getElementById(id); if (el) io.observe(el); });
+  }
+
+  var form = document.getElementById('applyForm');
+  if (!form) return;
+  var started = false;
+  form.addEventListener('focusin', function(){ if (!started) { started = true; track('Form Started'); } });
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    var err = document.getElementById('formError');
+    btn.disabled = true; err.style.display = 'none';
+    var data = new FormData(form);
+    fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function(r){
+        if (!r.ok) throw new Error('status ' + r.status);
+        track('Inquiry Sent', { accommodation: data.get('accommodation') || '' });
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      })
+      .catch(function(){ err.style.display = 'block'; btn.disabled = false; });
+  });
+
+  // Secondary engagement
+  document.querySelectorAll('#faq details').forEach(function(d){
+    d.addEventListener('toggle', function(){ if (d.open) track('FAQ Open', { question: d.querySelector('summary').textContent.trim() }); });
+  });
+  var _vbOpen = window.vbOpen;
+  if (_vbOpen) window.vbOpen = function(k){ track('Film Played', { edition: k }); return _vbOpen(k); };
+})();
 </script>
 
 </body>
