@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" href="/apple-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --sand: #e3c89b;
@@ -332,6 +332,10 @@
   @media (max-width: 768px) { .gallery-preview { grid-template-columns: repeat(2, 1fr); } .lightbox .lb-arrow { font-size: 30px; padding: 12px; } }
 
 
+  /* Buttons in a clean sans-serif */
+  .btn, button.btn, .sticky-apply a, .nav-links a.nav-cta { font-family: 'Jost', sans-serif !important; font-weight: 500 !important; letter-spacing: 2.5px !important; }
+  .btn, button.btn, .sticky-apply a { font-size: 13px !important; }
+  .nav-links a.nav-cta { font-size: 12px !important; }
   /* CONVERSION */
   .hero-cta { margin-top: 36px; opacity: 0; animation: fadeup 1s 0.9s forwards; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
   .btn-solid { background: var(--amber); color: var(--night); text-decoration: none; }
