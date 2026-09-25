@@ -349,13 +349,22 @@
 
 <script>
 (function() {
-  // Ads all point to /join: send French and Chinese browsers to their version, once, keeping UTM params
+  // Language redirect: an explicit choice (lang switch) wins, otherwise the visitor's preferred browser languages
   try {
-    if (window.location.search.indexOf('nolang') !== -1) return;
-    if (sessionStorage.getItem('langRedirected')) return;
-    sessionStorage.setItem('langRedirected', '1');
-    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-    var target = lang.indexOf('zh') === 0 ? 'join-zh.html' : lang.indexOf('fr') === 0 ? 'join-fr.html' : null;
+    // all ads point to /join
+    if (window.location.search.indexOf('nolang') !== -1) { localStorage.setItem('langChoice', 'en'); return; }
+    var choice = localStorage.getItem('langChoice');
+    var pick = choice;
+    if (!pick) {
+      var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || navigator.userLanguage || '']);
+      for (var i = 0; i < langs.length && !pick; i++) {
+        var l = (langs[i] || '').toLowerCase();
+        if (l.indexOf('fr') === 0) pick = 'fr';
+        else if (l.indexOf('zh') === 0) pick = 'zh';
+        else if (l.indexOf('en') === 0) pick = 'en';
+      }
+    }
+    var target = pick === 'fr' ? 'join-fr.html' : pick === 'zh' ? 'join-zh.html' : null;
     if (target) window.location.replace(target + window.location.search + window.location.hash);
   } catch (e) {}
 })();
@@ -1098,5 +1107,14 @@
 })();
 </script>
 
+<script>
+  // Remember the language the visitor picks by hand
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest && e.target.closest('.lang-switch a, .mobile-lang a, .lp-lang a');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    try { localStorage.setItem('langChoice', h.indexOf('-fr') !== -1 ? 'fr' : h.indexOf('-zh') !== -1 ? 'zh' : 'en'); } catch (err) {}
+  });
+</script>
 </body>
 </html>

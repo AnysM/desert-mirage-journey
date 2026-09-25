@@ -1088,5 +1088,14 @@
 })();
 </script>
 
+<script>
+  // Remember the language the visitor picks by hand
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest && e.target.closest('.lang-switch a, .mobile-lang a, .lp-lang a');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    try { localStorage.setItem('langChoice', h.indexOf('-fr') !== -1 ? 'fr' : h.indexOf('-zh') !== -1 ? 'zh' : 'en'); } catch (err) {}
+  });
+</script>
 </body>
 </html>
