@@ -370,8 +370,8 @@
   try {
     var path = window.location.pathname;
     if (!(path === '/' || path === '/index.html' || path === '/index' || path === '')) return;
-    if (window.location.search.indexOf('nolang') !== -1) { localStorage.setItem('langChoice', 'en'); return; }
-    var choice = localStorage.getItem('langChoice');
+    if (window.location.search.indexOf('nolang') !== -1) return;
+    var choice = localStorage.getItem('dmjLang');
     var pick = choice;
     if (!pick) {
       var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || navigator.userLanguage || '']);
@@ -1106,7 +1106,7 @@ function toggleMenu() {
     var a = e.target.closest && e.target.closest('.lang-switch a, .mobile-lang a, .lp-lang a');
     if (!a) return;
     var h = a.getAttribute('href') || '';
-    try { localStorage.setItem('langChoice', h.indexOf('-fr') !== -1 ? 'fr' : h.indexOf('-zh') !== -1 ? 'zh' : 'en'); } catch (err) {}
+    try { localStorage.setItem('dmjLang', h.indexOf('-fr') !== -1 ? 'fr' : h.indexOf('-zh') !== -1 ? 'zh' : 'en'); } catch (err) {}
   });
 </script>
 </body>
