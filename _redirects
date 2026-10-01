@@ -1,0 +1,7 @@
+# The ads landing page became the homepage (Oct 2026); old /join links keep working, query strings (UTM) are passed through
+/join          /                301
+/join.html     /                301
+/join-fr       /index-fr.html   301
+/join-fr.html  /index-fr.html   301
+/join-zh       /index-zh.html   301
+/join-zh.html  /index-zh.html   301
