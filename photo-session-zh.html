@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1a1410">
+<title>与 Hugo Martial 的沙漠摄影 | Desert Mirage Journey</title>
+<meta name="description" content="Desert Mirage Journey 驻留期间（2026 年 12 月 10 日至 21 日）的可选项目：与摄影师 Hugo Martial 在沙漠中进行一小时的个人拍摄。">
+<meta property="og:title" content="与 Hugo Martial 的沙漠摄影 | Desert Mirage Journey">
+<meta property="og:description" content="Desert Mirage Journey 驻留期间（2026 年 12 月 10 日至 21 日）的可选项目：与摄影师 Hugo Martial 在沙漠中进行一小时的个人拍摄。">
+<meta property="og:image" content="https://desertmiragejourney.com/raul-dune-dance.jpg">
+<meta property="og:url" content="https://desertmiragejourney.com/photo-session-zh.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Desert Mirage Journey">
+<link rel="alternate" hreflang="en" href="https://desertmiragejourney.com/photo-session.html">
+<link rel="alternate" hreflang="fr" href="https://desertmiragejourney.com/photo-session-fr.html">
+<link rel="alternate" hreflang="zh" href="https://desertmiragejourney.com/photo-session-zh.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --sand: #e3c89b; --night: #1a1410; --dusk: #2d2318; --stars: #faf6f1; --amber: #e8b153; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--night); color: var(--stars); font-family: 'Baskervville', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; overflow-x: hidden; }
+
+  .lp-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 40px; transition: background 0.4s ease; }
+  .lp-nav.scrolled { background: rgba(26,20,16,0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 4px; color: var(--amber); text-transform: uppercase; text-decoration: none; }
+  .nav-right { display: flex; align-items: center; gap: 18px; }
+  .nav-home { font-family: 'Cinzel', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--stars); text-decoration: none; border: 1px solid rgba(232,177,83,0.5); padding: 8px 14px; }
+  .nav-home:hover { border-color: var(--amber); color: var(--amber); }
+  .lp-lang { display: flex; gap: 2px; }
+  .lp-lang a { font-family: 'Jost', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; font-size: 11px; letter-spacing: 1px; color: rgba(250,246,241,0.55); text-decoration: none; padding: 4px 6px; border: 1px solid transparent; }
+  .lp-lang a.active { color: var(--amber); border-color: rgba(232,177,83,0.4); }
+
+  .ps-hero { position: relative; height: 92vh; height: 92dvh; min-height: 560px; display: flex; align-items: flex-end; overflow: hidden; }
+  .ps-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 62%; }
+  .ps-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,20,16,0.45) 0%, transparent 25%, rgba(26,20,16,0.55) 62%, var(--night) 100%); }
+  .ps-hero-text { position: relative; z-index: 2; width: 100%; text-align: center; padding: 0 20px 64px; }
+  .kicker { font-family: 'Cinzel', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; text-align: center; }
+  h1 { font-family: 'Cormorant Garamond', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-weight: 300; font-size: clamp(40px, 6vw, 76px); line-height: 1.05; }
+  h1 em { color: var(--amber); }
+  .ps-sub { margin-top: 20px; font-family: 'Cormorant Garamond', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-style: italic; font-size: clamp(18px, 2vw, 23px); line-height: 1.5; color: rgba(250,246,241,0.85); }
+
+  .sec { padding: 80px 24px; }
+  .wrap { max-width: 960px; margin: 0 auto; }
+
+  .why { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(232,177,83,0.18); border: 1px solid rgba(232,177,83,0.18); }
+  .why li { background: var(--night); padding: 28px 22px; font-family: 'Cormorant Garamond', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-size: 22px; line-height: 1.3; color: var(--stars); }
+  .why li span { display: block; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; color: var(--amber); margin-bottom: 12px; }
+
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .fact { border: 1px solid rgba(232,177,83,0.3); padding: 28px 16px; text-align: center; }
+  .fact b { display: block; font-family: 'Cormorant Garamond', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-weight: 300; font-size: 46px; line-height: 1; color: var(--amber); margin-bottom: 8px; }
+  .fact span { font-family: 'Cinzel', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,246,241,0.65); }
+  .notes { list-style: none; max-width: 600px; margin: 32px auto 0; text-align: center; }
+  .notes li { font-size: 15px; line-height: 1.6; color: rgba(250,246,241,0.75); padding: 9px 0; border-bottom: 1px solid rgba(232,177,83,0.12); }
+  .notes li:last-child { border-bottom: 0; }
+
+  .hugo { display: grid; grid-template-columns: 220px 1fr; gap: 36px; align-items: center; max-width: 760px; margin: 0 auto; }
+  .hugo img { width: 220px; height: 275px; object-fit: cover; object-position: 60% center; }
+  .hugo b { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 3px; color: var(--amber); display: block; font-weight: 400; }
+  .hugo small { display: block; font-family: 'Cormorant Garamond', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-style: italic; font-size: 18px; color: rgba(250,246,241,0.6); margin: 4px 0 14px; }
+  .hugo p { font-size: 15px; line-height: 1.75; color: rgba(250,246,241,0.72); }
+
+  #regard { scroll-margin-top: 70px; }
+  .gal { columns: 3; column-gap: 6px; max-width: 1200px; margin: 0 auto; }
+  .gal img { width: 100%; display: block; margin-bottom: 6px; break-inside: avoid; }
+  .gal-note { text-align: center; margin-top: 16px; font-family: 'Cormorant Garamond', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-style: italic; font-size: 16px; color: rgba(250,246,241,0.5); }
+
+  .cta { display: flex; flex-direction: column; align-items: center; gap: 22px; padding: 16px 20px 88px; text-align: center; }
+  .btn { display: inline-block; padding: 16px 40px; border: 1px solid var(--amber); background: var(--amber); color: var(--night); font-family: 'Cinzel', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; transition: background .3s, color .3s; }
+  .btn:hover { background: transparent; color: var(--amber); }
+  .link { font-family: 'Cinzel', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sand); text-decoration: none; border-bottom: 1px solid rgba(227,200,155,0.4); padding-bottom: 3px; }
+  .link:hover { color: var(--amber); }
+
+  footer { background: var(--dusk); padding: 36px 20px; text-align: center; font-size: 12px; color: rgba(250,246,241,0.4); line-height: 1.8; }
+
+  @media (max-width: 900px) { .why { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 768px) {
+    .lp-nav { padding: 12px 16px; }
+    .nav-logo span { display: none; }
+    .nav-right { gap: 8px; }
+    .nav-home { padding: 7px 10px; letter-spacing: 1px; }
+    .sec { padding: 56px 16px; }
+    .why li { padding: 20px 16px; font-size: 19px; }
+    .facts { gap: 8px; }
+    .fact { padding: 20px 6px; }
+    .fact b { font-size: 32px; }
+    .fact span { font-size: 10px; letter-spacing: 1px; }
+    .hugo { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+    .hugo img { margin: 0 auto; width: 180px; height: 225px; }
+    .gal { columns: 2; column-gap: 4px; }
+    .gal img { margin-bottom: 4px; }
+  }
+</style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="590f9104-a44a-4373-81b8-b2058b487cbc"></script>
+</head>
+<body>
+
+<nav class="lp-nav">
+  <a class="nav-logo" href="index-zh.html"><img src="logo.svg" style="height:44px;width:auto;" alt="Desert Mirage Journey"><span>Desert Mirage Journey</span></a>
+  <div class="nav-right">
+    <a class="nav-home" href="index-zh.html">查看驻留</a>
+    <div class="lp-lang"><a href="photo-session.html">EN</a><a href="photo-session-fr.html">FR</a><a href="photo-session-zh.html" class="active">中文</a></div>
+  </div>
+</nav>
+
+<header class="ps-hero">
+  <img src="raul-dune-dance.jpg" alt="撒哈拉沙丘上的舞者">
+  <div class="ps-hero-text">
+    <p class="kicker">Desert Mirage Journey · 可选项目</p>
+    <h1>一次<em>沙漠中的拍摄</em></h1>
+    <p class="ps-sub">与驻留摄影师 Hugo Martial 一起。<br>旅程期间的可选项目，2026 年 12 月 10 日至 21 日。</p>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <p class="kicker">你将带走</p>
+    <ul class="why">
+      <li><span>01</span>被定格的艺术创作</li>
+      <li><span>02</span>被记录的旅程</li>
+      <li><span>03</span>适合社交媒体的影像</li>
+      <li><span>04</span>或许还有一段短视频</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0;">
+  <div class="wrap">
+    <p class="kicker">实用信息</p>
+    <div class="facts">
+      <div class="fact"><b>1 小时</b><span>拍摄时长</span></div>
+      <div class="fact"><b>8 至 12 张</b><span>精修照片</span></div>
+      <div class="fact"><b>150 欧元</b><span>每次拍摄</span></div>
+    </div>
+    <ul class="notes">
+      <li>不含在驻留费用内，仅面向驻留参与者。</li>
+      <li>仅限四个名额。</li>
+      <li>直接与 Hugo 预约并付款。</li>
+      <li>视频：视情况而定，与 Hugo 商量。</li>
+      <li>拍摄之外：旅程中拍到你的照片，每张 15 欧元。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:24px;">
+  <div class="hugo">
+    <img src="images/hugo/hugo-portrait.jpg" alt="Hugo Martial">
+    <div>
+      <b>Hugo Martial</b>
+      <small>摄影师 · 影像创作者</small>
+      <p>Hugo 曾修读造型艺术，创立了 vivres，一个介于艺术、觉知与自然之间的驻留之地，并多年用照片与影像记录它的故事。他将随 Desert Mirage Journey 同行，记录整段旅程。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="regard" style="padding-top:24px;">
+  <p class="kicker">他的目光</p>
+  <div class="gal">
+    <img src="images/hugo/hugo-01.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-11.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-04.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-07.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-12.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-02.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-13.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-06.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-14.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-03.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-17.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-15.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-05.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-18.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-16.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-08.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-19.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-09.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-20.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-10.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-21.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+    <img src="images/hugo/hugo-00.jpg" alt="Hugo Martial 摄影作品" loading="lazy">
+  </div>
+  <p class="gal-note">Hugo Martial 的摄影作品，拍摄于沙漠之前。</p>
+</section>
+
+<div class="cta">
+  <a class="btn" href="index-zh.html#register" data-cta="photo-page">报名参加驻留</a>
+  <a class="link" href="index-zh.html">了解驻留</a>
+</div>
+
+<footer>首图：Raúl Bartolome · 摄影：Hugo Martial<br>© 2026 Desert Mirage Journey</footer>
+
+<script>
+  window.addEventListener('scroll', function() { document.querySelector('.lp-nav').classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest && e.target.closest('.lp-lang a');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    try { localStorage.setItem('dmjLang', h.indexOf('-fr') !== -1 ? 'fr' : h.indexOf('-zh') !== -1 ? 'zh' : 'en'); } catch (err) {}
+  });
+</script>
+</body>
+</html>

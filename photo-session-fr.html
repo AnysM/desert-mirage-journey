@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1a1410">
+<title>Session photo avec Hugo Martial | Desert Mirage Journey</title>
+<meta name="description" content="En option pendant la résidence Desert Mirage Journey, du 10 au 21 décembre 2026 : une session photo d'une heure dans le désert avec Hugo Martial.">
+<meta property="og:title" content="Session photo avec Hugo Martial | Desert Mirage Journey">
+<meta property="og:description" content="En option pendant la résidence Desert Mirage Journey, du 10 au 21 décembre 2026 : une session photo d'une heure dans le désert avec Hugo Martial.">
+<meta property="og:image" content="https://desertmiragejourney.com/raul-dune-dance.jpg">
+<meta property="og:url" content="https://desertmiragejourney.com/photo-session-fr.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Desert Mirage Journey">
+<link rel="alternate" hreflang="en" href="https://desertmiragejourney.com/photo-session.html">
+<link rel="alternate" hreflang="fr" href="https://desertmiragejourney.com/photo-session-fr.html">
+<link rel="alternate" hreflang="zh" href="https://desertmiragejourney.com/photo-session-zh.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --sand: #e3c89b; --night: #1a1410; --dusk: #2d2318; --stars: #faf6f1; --amber: #e8b153; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--night); color: var(--stars); font-family: 'Baskervville', serif; overflow-x: hidden; }
+
+  .lp-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 40px; transition: background 0.4s ease; }
+  .lp-nav.scrolled { background: rgba(26,20,16,0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 4px; color: var(--amber); text-transform: uppercase; text-decoration: none; }
+  .nav-right { display: flex; align-items: center; gap: 18px; }
+  .nav-home { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--stars); text-decoration: none; border: 1px solid rgba(232,177,83,0.5); padding: 8px 14px; }
+  .nav-home:hover { border-color: var(--amber); color: var(--amber); }
+  .lp-lang { display: flex; gap: 2px; }
+  .lp-lang a { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 1px; color: rgba(250,246,241,0.55); text-decoration: none; padding: 4px 6px; border: 1px solid transparent; }
+  .lp-lang a.active { color: var(--amber); border-color: rgba(232,177,83,0.4); }
+
+  .ps-hero { position: relative; height: 92vh; height: 92dvh; min-height: 560px; display: flex; align-items: flex-end; overflow: hidden; }
+  .ps-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 62%; }
+  .ps-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,20,16,0.45) 0%, transparent 25%, rgba(26,20,16,0.55) 62%, var(--night) 100%); }
+  .ps-hero-text { position: relative; z-index: 2; width: 100%; text-align: center; padding: 0 20px 64px; }
+  .kicker { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; text-align: center; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(40px, 6vw, 76px); line-height: 1.05; }
+  h1 em { color: var(--amber); }
+  .ps-sub { margin-top: 20px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 2vw, 23px); line-height: 1.5; color: rgba(250,246,241,0.85); }
+
+  .sec { padding: 80px 24px; }
+  .wrap { max-width: 960px; margin: 0 auto; }
+
+  .why { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(232,177,83,0.18); border: 1px solid rgba(232,177,83,0.18); }
+  .why li { background: var(--night); padding: 28px 22px; font-family: 'Cormorant Garamond', serif; font-size: 22px; line-height: 1.3; color: var(--stars); }
+  .why li span { display: block; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; color: var(--amber); margin-bottom: 12px; }
+
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .fact { border: 1px solid rgba(232,177,83,0.3); padding: 28px 16px; text-align: center; }
+  .fact b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 46px; line-height: 1; color: var(--amber); margin-bottom: 8px; }
+  .fact span { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,246,241,0.65); }
+  .notes { list-style: none; max-width: 600px; margin: 32px auto 0; text-align: center; }
+  .notes li { font-size: 15px; line-height: 1.6; color: rgba(250,246,241,0.75); padding: 9px 0; border-bottom: 1px solid rgba(232,177,83,0.12); }
+  .notes li:last-child { border-bottom: 0; }
+
+  .hugo { display: grid; grid-template-columns: 220px 1fr; gap: 36px; align-items: center; max-width: 760px; margin: 0 auto; }
+  .hugo img { width: 220px; height: 275px; object-fit: cover; object-position: 60% center; }
+  .hugo b { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 3px; color: var(--amber); display: block; font-weight: 400; }
+  .hugo small { display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: rgba(250,246,241,0.6); margin: 4px 0 14px; }
+  .hugo p { font-size: 15px; line-height: 1.75; color: rgba(250,246,241,0.72); }
+
+  #regard { scroll-margin-top: 70px; }
+  .gal { columns: 3; column-gap: 6px; max-width: 1200px; margin: 0 auto; }
+  .gal img { width: 100%; display: block; margin-bottom: 6px; break-inside: avoid; }
+  .gal-note { text-align: center; margin-top: 16px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: rgba(250,246,241,0.5); }
+
+  .cta { display: flex; flex-direction: column; align-items: center; gap: 22px; padding: 16px 20px 88px; text-align: center; }
+  .btn { display: inline-block; padding: 16px 40px; border: 1px solid var(--amber); background: var(--amber); color: var(--night); font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; transition: background .3s, color .3s; }
+  .btn:hover { background: transparent; color: var(--amber); }
+  .link { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sand); text-decoration: none; border-bottom: 1px solid rgba(227,200,155,0.4); padding-bottom: 3px; }
+  .link:hover { color: var(--amber); }
+
+  footer { background: var(--dusk); padding: 36px 20px; text-align: center; font-size: 12px; color: rgba(250,246,241,0.4); line-height: 1.8; }
+
+  @media (max-width: 900px) { .why { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 768px) {
+    .lp-nav { padding: 12px 16px; }
+    .nav-logo span { display: none; }
+    .nav-right { gap: 8px; }
+    .nav-home { padding: 7px 10px; letter-spacing: 1px; }
+    .sec { padding: 56px 16px; }
+    .why li { padding: 20px 16px; font-size: 19px; }
+    .facts { gap: 8px; }
+    .fact { padding: 20px 6px; }
+    .fact b { font-size: 32px; }
+    .fact span { font-size: 10px; letter-spacing: 1px; }
+    .hugo { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+    .hugo img { margin: 0 auto; width: 180px; height: 225px; }
+    .gal { columns: 2; column-gap: 4px; }
+    .gal img { margin-bottom: 4px; }
+  }
+</style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="590f9104-a44a-4373-81b8-b2058b487cbc"></script>
+</head>
+<body>
+
+<nav class="lp-nav">
+  <a class="nav-logo" href="index-fr.html"><img src="logo.svg" style="height:44px;width:auto;" alt="Desert Mirage Journey"><span>Desert Mirage Journey</span></a>
+  <div class="nav-right">
+    <a class="nav-home" href="index-fr.html">Voir la résidence</a>
+    <div class="lp-lang"><a href="photo-session.html">EN</a><a href="photo-session-fr.html" class="active">FR</a><a href="photo-session-zh.html">中文</a></div>
+  </div>
+</nav>
+
+<header class="ps-hero">
+  <img src="raul-dune-dance.jpg" alt="Danseuse sur une dune du Sahara">
+  <div class="ps-hero-text">
+    <p class="kicker">Desert Mirage Journey · En option</p>
+    <h1>Une session photo <em>dans le désert</em></h1>
+    <p class="ps-sub">Avec Hugo Martial, photographe de la résidence.<br>En option pendant le voyage, du 10 au 21 décembre 2026.</p>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <p class="kicker">Pour repartir avec</p>
+    <ul class="why">
+      <li><span>01</span>Ta création artistique, immortalisée</li>
+      <li><span>02</span>Ton voyage, documenté</li>
+      <li><span>03</span>Des images pour tes réseaux</li>
+      <li><span>04</span>Pourquoi pas une courte vidéo</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0;">
+  <div class="wrap">
+    <p class="kicker">En pratique</p>
+    <div class="facts">
+      <div class="fact"><b>1 h</b><span>de session</span></div>
+      <div class="fact"><b>8 à 12</b><span>photos retouchées</span></div>
+      <div class="fact"><b>150 €</b><span>la session</span></div>
+    </div>
+    <ul class="notes">
+      <li>En plus du prix de la résidence, réservé aux participants.</li>
+      <li>Quatre sessions seulement.</li>
+      <li>Réservation et règlement directement avec Hugo.</li>
+      <li>Vidéo : au cas par cas, à voir avec Hugo.</li>
+      <li>Hors session : 15 € la photo de toi prise pendant le voyage.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:24px;">
+  <div class="hugo">
+    <img src="images/hugo/hugo-portrait.jpg" alt="Hugo Martial">
+    <div>
+      <b>Hugo Martial</b>
+      <small>Photographe et vidéaste</small>
+      <p>Formé aux arts plastiques, Hugo a fondé vivres, un lieu de résidence entre art, conscience et nature, dont il a photographié et filmé l'aventure pendant des années. Il accompagne Desert Mirage Journey et documente le voyage.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="regard" style="padding-top:24px;">
+  <p class="kicker">Son regard</p>
+  <div class="gal">
+    <img src="images/hugo/hugo-01.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-11.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-04.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-07.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-12.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-02.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-13.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-06.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-14.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-03.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-17.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-15.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-05.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-18.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-16.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-08.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-19.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-09.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-20.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-10.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-21.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+    <img src="images/hugo/hugo-00.jpg" alt="Photographie de Hugo Martial" loading="lazy">
+  </div>
+  <p class="gal-note">Photos de Hugo Martial, prises avant le désert.</p>
+</section>
+
+<div class="cta">
+  <a class="btn" href="index-fr.html#register" data-cta="photo-page">Je m'inscris à la résidence</a>
+  <a class="link" href="index-fr.html">Découvrir la résidence</a>
+</div>
+
+<footer>Photo d'ouverture : Raúl Bartolome · Photos : Hugo Martial<br>© 2026 Desert Mirage Journey</footer>
+
+<script>
+  window.addEventListener('scroll', function() { document.querySelector('.lp-nav').classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest && e.target.closest('.lp-lang a');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    try { localStorage.setItem('dmjLang', h.indexOf('-fr') !== -1 ? 'fr' : h.indexOf('-zh') !== -1 ? 'zh' : 'en'); } catch (err) {}
+  });
+</script>
+</body>
+</html>
