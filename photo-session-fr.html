@@ -77,6 +77,20 @@
   .link { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sand); text-decoration: none; border-bottom: 1px solid rgba(227,200,155,0.4); padding-bottom: 3px; }
   .link:hover { color: var(--amber); }
 
+  .contact { padding: 96px 24px; }
+  .contact-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .section-label { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 6px; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; opacity: 0.8; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 58px); font-weight: 300; line-height: 1.2; color: var(--stars); margin-bottom: 24px; }
+  .apply-form input, .apply-form select, .apply-form textarea { border-radius: 0; }
+  .form-reassure { margin-top: 14px; font-size: 13px; line-height: 1.6; color: rgba(250,246,241,0.55); text-align: center; }
+  .form-success { display: none; margin-top: 40px; padding: 32px; border: 1px solid rgba(232,177,83,0.35); background: rgba(232,177,83,0.08); text-align: center; }
+  .form-success p { color: rgba(250,246,241,0.8); line-height: 1.7; }
+  .form-error { display: none; margin-top: 12px; font-size: 14px; color: #e8a07a; text-align: center; }
+  .back-band { position: relative; background-size: cover; background-position: center 55%; padding: 140px 24px; text-align: center; }
+  .back-band::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, var(--dusk) 0%, rgba(26,20,16,0.55) 25%, rgba(26,20,16,0.55) 75%, var(--dusk) 100%); }
+  .back-in { position: relative; max-width: 640px; margin: 0 auto; }
+  .back-line { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(24px, 3vw, 36px); line-height: 1.35; color: var(--stars); margin-bottom: 36px; text-shadow: 0 2px 24px rgba(0,0,0,0.5); }
+  .back-band .btn { padding: 18px 44px; font-size: 13px; }
   footer { background: var(--dusk); padding: 36px 20px; text-align: center; font-size: 12px; color: rgba(250,246,241,0.4); line-height: 1.8; }
 
   @media (max-width: 900px) { .why { grid-template-columns: 1fr 1fr; } }
@@ -95,6 +109,9 @@
     .hugo img { margin: 0 auto; width: 180px; height: 225px; }
     .gal { columns: 2; column-gap: 4px; }
     .gal img { margin-bottom: 4px; }
+    .contact { padding: 64px 16px; }
+    .back-band { padding: 96px 16px; }
+    .back-band .btn { padding: 16px 28px; }
   }
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="590f9104-a44a-4373-81b8-b2058b487cbc"></script>
@@ -166,7 +183,6 @@
     <img src="images/hugo/hugo-11.jpg" alt="Photographie de Hugo Martial" loading="lazy">
     <img src="images/hugo/hugo-04.jpg" alt="Photographie de Hugo Martial" loading="lazy">
     <img src="images/hugo/hugo-07.jpg" alt="Photographie de Hugo Martial" loading="lazy">
-    <img src="images/hugo/hugo-12.jpg" alt="Photographie de Hugo Martial" loading="lazy">
     <img src="images/hugo/hugo-02.jpg" alt="Photographie de Hugo Martial" loading="lazy">
     <img src="images/hugo/hugo-13.jpg" alt="Photographie de Hugo Martial" loading="lazy">
     <img src="images/hugo/hugo-06.jpg" alt="Photographie de Hugo Martial" loading="lazy">
@@ -188,15 +204,116 @@
   <p class="gal-note">Photos de Hugo Martial, prises avant le désert.</p>
 </section>
 
-<div class="cta">
-  <a class="btn" href="index-fr.html#register" data-cta="photo-page">Je m'inscris à la résidence</a>
-  <a class="link" href="index-fr.html">Découvrir la résidence</a>
-</div>
+<section class="sec" style="padding-top:24px;">
+  <div class="wrap">
+    <p class="kicker">En pratique</p>
+    <div class="facts">
+      <div class="fact"><b>1 h</b><span>de session</span></div>
+      <div class="fact"><b>8 à 12</b><span>photos retouchées</span></div>
+      <div class="fact"><b>150 €</b><span>la session</span></div>
+    </div>
+    <ul class="notes">
+      <li>En plus du prix de la résidence, réservé aux participants.</li>
+      <li>Quatre sessions seulement.</li>
+      <li>Réservation et règlement directement avec Hugo.</li>
+      <li>Vidéo : au cas par cas, à voir avec Hugo.</li>
+      <li>Hors session : 15 € la photo de toi prise pendant le voyage.</li>
+    </ul>
+  </div>
+</section>
 
-<footer>Photos : Hugo Martial<br>© 2026 Desert Mirage Journey</footer>
+<section class="contact" id="register" style="background:var(--dusk);">
+  <div class="contact-inner" style="max-width:640px;margin:0 auto;text-align:center;">
+    <p class="section-label">14 places</p>
+    <h2 class="section-title">Es-tu prêt·e ?</h2>
+    <p style="font-size:16px;line-height:1.7;color:rgba(250,246,241,0.7);">Laisse-nous tes coordonnées. Nous te répondons avec toutes les informations et convenons d'un court appel pour faire ta connaissance.</p>
+    <form class="apply-form" action="https://formspree.io/f/mwvdygqg" method="POST" style="margin-top:40px;text-align:left;max-width:520px;margin-left:auto;margin-right:auto;">
+      <input type="hidden" name="_subject" value="Nouvelle demande (page session photo FR) · Desert Mirage Journey">
+      <input type="hidden" name="page" value="photo-session-fr">
+      <input type="text" name="_gotcha" style="display:none;">
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Nom</label>
+        <input type="text" name="name" required style="width:100%;padding:12px 14px;background:rgba(250,246,241,0.06);border:1px solid rgba(232,177,83,0.25);color:var(--stars);font-family:'Cormorant Garamond',serif;font-size:16px;">
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Email</label>
+        <input type="email" name="email" required style="width:100%;padding:12px 14px;background:rgba(250,246,241,0.06);border:1px solid rgba(232,177,83,0.25);color:var(--stars);font-family:'Cormorant Garamond',serif;font-size:16px;">
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">WhatsApp (facultatif)</label>
+        <input type="tel" name="whatsapp" placeholder="+..." style="width:100%;padding:12px 14px;background:rgba(250,246,241,0.06);border:1px solid rgba(232,177,83,0.25);color:var(--stars);font-family:'Cormorant Garamond',serif;font-size:16px;">
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Hébergement souhaité</label>
+        <select name="accommodation" style="width:100%;padding:12px 14px;background:rgba(250,246,241,0.06);border:1px solid rgba(232,177,83,0.25);color:var(--stars);font-family:'Cormorant Garamond',serif;font-size:16px;">
+          <option value="Single room">Chambre simple</option>
+          <option value="Twin room">Chambre double</option>
+          <option value="Dormitory">Dortoir</option>
+          <option value="Not sure yet">Je ne sais pas encore</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label class="photo-opt" style="display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.45;color:rgba(250,246,241,0.85);">
+          <input type="checkbox" name="photo_session" value="Yes" checked style="margin-top:4px;width:18px;height:18px;flex-shrink:0;accent-color:#e8b153;cursor:pointer;">
+          <span>Je suis intéressé·e par une session photo individuelle avec Hugo, le photographe de la résidence (en option, en plus du prix)</span>
+        </label>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <label style="display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Ton message (facultatif)</label>
+        <textarea name="message" rows="4" style="width:100%;padding:12px 14px;background:rgba(250,246,241,0.06);border:1px solid rgba(232,177,83,0.25);color:var(--stars);font-family:'Cormorant Garamond',serif;font-size:16px;resize:vertical;"></textarea>
+      </div>
+
+      <div style="text-align:center;">
+        <button type="submit" class="btn" style="cursor:pointer;border:1px solid var(--amber);background:var(--amber);color:var(--night);font-weight:600;">Je m'inscris</button>
+        <p class="form-reassure">Aucun paiement à ce stade. Prochaine étape : un court appel pour vérifier que le voyage te correspond.</p>
+        <p class="form-error" >Une erreur s'est produite. Merci de réessayer, ou écris-nous sur Instagram.</p>
+      </div>
+    </form>
+    <div class="form-success" >
+      <p style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--amber);margin-bottom:12px;">Merci.</p>
+      <p>Ta demande nous est bien parvenue. Nous t'écrirons très vite avec tous les détails, et pour convenir d'un court appel.</p>
+    </div>
+  </div>
+</section>
+
+<section class="back-band" style="background-image:url('raul-caravan.jpg');">
+  <div class="back-in">
+    <p class="kicker">Desert Mirage Journey</p>
+    <p class="back-line">Douze jours dans le Sahara, du 10 au 21 décembre 2026.</p>
+    <a class="btn" href="index-fr.html" data-cta="photo-back">Revenir à la résidence</a>
+  </div>
+</section>
+
+<footer>Photos : Hugo Martial, Raúl Bartolome<br>© 2026 Desert Mirage Journey</footer>
 
 <script>
   window.addEventListener('scroll', function() { document.querySelector('.lp-nav').classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  window.track = function(name, data) { if (window.umami && window.umami.track) window.umami.track(name, data); };
+  document.querySelectorAll('.apply-form').forEach(function(form) {
+    var where = form.querySelector('[name=page]').value;
+    var box = form.parentNode;
+    form.addEventListener('submit', function(ev) {
+      ev.preventDefault();
+      var btn = form.querySelector('button[type=submit]');
+      var err = form.querySelector('.form-error');
+      btn.disabled = true; err.style.display = 'none';
+      var data = new FormData(form);
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function(r) {
+          if (!r.ok) throw new Error('status ' + r.status);
+          track('Inquiry Sent', { page: where, accommodation: data.get('accommodation') || '', photo_session: data.get('photo_session') ? 'yes' : 'no' });
+          form.style.display = 'none';
+          box.querySelector('.form-success').style.display = 'block';
+        })
+        .catch(function() { err.style.display = 'block'; btn.disabled = false; });
+    });
+  });
   document.addEventListener('click', function(e) {
     var a = e.target.closest && e.target.closest('.lp-lang a');
     if (!a) return;
