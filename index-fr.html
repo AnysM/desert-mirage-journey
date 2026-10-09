@@ -495,7 +495,10 @@
   .ps-insert-mosaic img { width: 100%; height: 100%; min-height: 0; object-fit: cover; display: block; }
   .ps-insert-mosaic img:first-child { grid-row: span 2; }
   .ps-insert-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .ps-insert-btns .btn { padding: 14px 26px; letter-spacing: 3px; }
+  .ps-insert-btns { align-items: center; gap: 24px; }
+  .ps-insert-btns .btn { padding: 10px 20px; font-size: 11px !important; letter-spacing: 1.5px !important; }
+  .ps-insert-more { font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sand); text-decoration: none; border-bottom: 1px solid rgba(227,200,155,0.4); padding-bottom: 2px; }
+  .ps-insert-more:hover { color: var(--amber); }
   .ps-insert-btns .btn-solid { background: var(--amber); color: var(--night); }
   .ps-insert-txt { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; }
   .ps-insert-txt .lp-kicker, .ps-insert-txt .lp-h2 { text-align: left; }
@@ -516,8 +519,7 @@
     .ps-insert-txt { padding: 28px 20px 32px; }
     .ps-insert-facts { gap: 20px; }
     .ps-insert-facts div b { font-size: 30px; }
-    .ps-insert-btns { flex-direction: column; }
-    .ps-insert-btns .btn { text-align: center; padding: 15px 16px; }
+    .ps-insert-btns { gap: 20px; }
   }
 </style>
 </head>
@@ -615,7 +617,7 @@
       <div class="lp-price"><small>Chambre simple</small><div class="amt" data-std="1820">1&nbsp;640&nbsp;€</div><s class="eb-only">1&nbsp;820&nbsp;€</s></div>
     </div>
     <p class="lp-incl">Inclus : hébergement, repas végétariens pendant le voyage, transferts aéroport et désert, guides nomades, la résidence elle-même, un photographe professionnel.<br>Non inclus : vols, assurance voyage, repas des jours d'arrivée et de départ à Marrakech, pourboires. Bourses partielles disponibles sur demande.</p>
-    <p class="lp-photo"><b>En option :</b> Hugo Martial, photographe de la résidence, couvre le voyage. Tu pourras lui acheter des photos de toi, ou réserver avec lui une session individuelle.<br><a href="photo-session-fr.html" data-cta="photo-session">La session photo</a></p>
+    <p class="lp-photo"><b>En option :</b> Hugo Martial, photographe de la résidence, couvre le voyage. Tu pourras lui acheter des photos de toi, ou réserver avec lui une session individuelle.<br><a href="photo-session-fr.html" data-cta="photo-session">En savoir plus</a></p>
   </div>
 </section>
 
@@ -802,7 +804,7 @@
       <p class="lp-kicker">Le photographe</p>
       <div class="photog-card"><img src="images/hugo/hugo-portrait.jpg" alt="Hugo Martial" loading="lazy"><div><b>Hugo Martial</b><small>Photographe et vidéaste</small>
         <p>Hugo accompagne la résidence et documente le voyage : la marche, les pratiques, ce qui naît dans le désert. Formé aux arts plastiques, il a fondé vivres, un lieu de résidence entre art, conscience et nature, dont il a photographié et filmé l'aventure pendant des années.</p>
-        <a href="photo-session-fr.html" data-cta="photog-bio">Une session photo avec lui, en option</a>
+        <a href="photo-session-fr.html#regard" data-cta="photog-bio">Découvrir son travail</a>
       </div></div>
     </div>
   </div>
@@ -859,7 +861,7 @@
       <p class="lp-kicker">Garder une trace</p>
       <h2 class="lp-h2">Si ces images t'ont plu, <em>ce sera bientôt ton tour.</em></h2>
       <p>Ce n'est pas tous les jours qu'on va dans le désert. Pour garder une trace de cette expérience rare et mettre ta création en valeur, tu pourras acheter les photos du voyage ou réserver une session individuelle avec le photographe de la résidence.</p>
-      <div class="ps-insert-btns"><a href="photo-session-fr.html#regard" class="btn btn-solid" data-cta="photo-insert-work">Découvrir le travail d'Hugo</a><a href="photo-session-fr.html" class="btn" data-cta="photo-insert-details">Voir les détails</a></div>
+      <div class="ps-insert-btns"><a href="photo-session-fr.html#regard" class="btn btn-solid" data-cta="photo-insert-work">Découvrir le travail d'Hugo</a><a href="photo-session-fr.html" class="ps-insert-more" data-cta="photo-insert-details">En savoir plus</a></div>
     </div>
   </div>
 </section>

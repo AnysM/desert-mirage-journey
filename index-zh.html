@@ -499,7 +499,10 @@
   .ps-insert-mosaic img { width: 100%; height: 100%; min-height: 0; object-fit: cover; display: block; }
   .ps-insert-mosaic img:first-child { grid-row: span 2; }
   .ps-insert-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .ps-insert-btns .btn { padding: 14px 26px; letter-spacing: 3px; }
+  .ps-insert-btns { align-items: center; gap: 24px; }
+  .ps-insert-btns .btn { padding: 10px 20px; font-size: 11px !important; letter-spacing: 1.5px !important; }
+  .ps-insert-more { font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sand); text-decoration: none; border-bottom: 1px solid rgba(227,200,155,0.4); padding-bottom: 2px; }
+  .ps-insert-more:hover { color: var(--amber); }
   .ps-insert-btns .btn-solid { background: var(--amber); color: var(--night); }
   .ps-insert-txt { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; }
   .ps-insert-txt .lp-kicker, .ps-insert-txt .lp-h2 { text-align: left; }
@@ -520,8 +523,7 @@
     .ps-insert-txt { padding: 28px 20px 32px; }
     .ps-insert-facts { gap: 20px; }
     .ps-insert-facts div b { font-size: 30px; }
-    .ps-insert-btns { flex-direction: column; }
-    .ps-insert-btns .btn { text-align: center; padding: 15px 16px; }
+    .ps-insert-btns { gap: 20px; }
   }
 </style>
 </head>
@@ -619,7 +621,7 @@
       <div class="lp-price"><small>单人间</small><div class="amt" data-std="14960">¥13600</div><s class="eb-only">¥14960</s></div>
     </div>
     <p class="lp-incl">包含：住宿、旅程期间的素食餐食、机场及往返沙漠的交通、游牧向导、驻留本身，以及一位专业摄影师。<br>不包含：机票、旅行保险、抵达与离开马拉喀什当天的餐食、小费。可应要求申请部分奖学金。</p>
-    <p class="lp-photo"><b>可选项目：</b>驻留摄影师 Hugo Martial 将全程记录旅程。你可以购买有你的照片，或与他预约一次个人拍摄。<br><a href="photo-session-zh.html" data-cta="photo-session">了解沙漠摄影</a></p>
+    <p class="lp-photo"><b>可选项目：</b>驻留摄影师 Hugo Martial 将全程记录旅程。你可以购买有你的照片，或与他预约一次个人拍摄。<br><a href="photo-session-zh.html" data-cta="photo-session">了解更多</a></p>
   </div>
 </section>
 
@@ -806,7 +808,7 @@
       <p class="lp-kicker">摄影师</p>
       <div class="photog-card"><img src="images/hugo/hugo-portrait.jpg" alt="Hugo Martial" loading="lazy"><div><b>Hugo Martial</b><small>摄影师 · 影像创作者</small>
         <p>Hugo 将随驻留同行，记录整段旅程：行走、练习，以及在沙漠中诞生的一切。他曾修读造型艺术，创立了 vivres，一个介于艺术、觉知与自然之间的驻留之地，并多年用照片与影像记录它的故事。</p>
-        <a href="photo-session-zh.html" data-cta="photog-bio">与他一起的可选拍摄</a>
+        <a href="photo-session-zh.html#regard" data-cta="photog-bio">欣赏他的作品</a>
       </div></div>
     </div>
   </div>
@@ -863,7 +865,7 @@
       <p class="lp-kicker">留下痕迹</p>
       <h2 class="lp-h2">如果你喜欢这些影像，<em>很快就轮到你了。</em></h2>
       <p>并不是每天都能走进沙漠。为了留住这段难得的经历，让你的创作被看见，你可以购买旅程中的照片，或与驻留摄影师预约一次个人拍摄。</p>
-      <div class="ps-insert-btns"><a href="photo-session-zh.html#regard" class="btn btn-solid" data-cta="photo-insert-work">欣赏 Hugo 的作品</a><a href="photo-session-zh.html" class="btn" data-cta="photo-insert-details">查看详情</a></div>
+      <div class="ps-insert-btns"><a href="photo-session-zh.html#regard" class="btn btn-solid" data-cta="photo-insert-work">欣赏 Hugo 的作品</a><a href="photo-session-zh.html" class="ps-insert-more" data-cta="photo-insert-details">了解更多</a></div>
     </div>
   </div>
 </section>

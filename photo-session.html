@@ -97,6 +97,26 @@
     .gal img { margin-bottom: 4px; }
   }
 </style>
+<script>
+(function() {
+  // Language redirect, same rules as the homepage: an explicit choice (lang switch) wins, otherwise the visitor's preferred browser languages
+  try {
+    if (window.location.search.indexOf('nolang') !== -1) return;
+    var pick = localStorage.getItem('dmjLang');
+    if (!pick) {
+      var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || navigator.userLanguage || '']);
+      for (var i = 0; i < langs.length && !pick; i++) {
+        var l = (langs[i] || '').toLowerCase();
+        if (l.indexOf('fr') === 0) pick = 'fr';
+        else if (l.indexOf('zh') === 0) pick = 'zh';
+        else if (l.indexOf('en') === 0) pick = 'en';
+      }
+    }
+    var target = pick === 'fr' ? 'photo-session-fr.html' : pick === 'zh' ? 'photo-session-zh.html' : null;
+    if (target) window.location.replace(target + window.location.search + window.location.hash);
+  } catch (e) {}
+})();
+</script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="590f9104-a44a-4373-81b8-b2058b487cbc"></script>
 </head>
 <body>
@@ -105,7 +125,7 @@
   <a class="nav-logo" href="/?nolang=1"><img src="logo.svg" style="height:44px;width:auto;" alt="Desert Mirage Journey"><span>Desert Mirage Journey</span></a>
   <div class="nav-right">
     <a class="nav-home" href="/?nolang=1">See the residency</a>
-    <div class="lp-lang"><a href="photo-session.html" class="active">EN</a><a href="photo-session-fr.html">FR</a><a href="photo-session-zh.html">中文</a></div>
+    <div class="lp-lang"><a href="photo-session.html?nolang=1" class="active">EN</a><a href="photo-session-fr.html">FR</a><a href="photo-session-zh.html">中文</a></div>
   </div>
 </nav>
 

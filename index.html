@@ -518,7 +518,10 @@
   .ps-insert-mosaic img { width: 100%; height: 100%; min-height: 0; object-fit: cover; display: block; }
   .ps-insert-mosaic img:first-child { grid-row: span 2; }
   .ps-insert-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .ps-insert-btns .btn { padding: 14px 26px; letter-spacing: 3px; }
+  .ps-insert-btns { align-items: center; gap: 24px; }
+  .ps-insert-btns .btn { padding: 10px 20px; font-size: 11px !important; letter-spacing: 1.5px !important; }
+  .ps-insert-more { font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sand); text-decoration: none; border-bottom: 1px solid rgba(227,200,155,0.4); padding-bottom: 2px; }
+  .ps-insert-more:hover { color: var(--amber); }
   .ps-insert-btns .btn-solid { background: var(--amber); color: var(--night); }
   .ps-insert-txt { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; }
   .ps-insert-txt .lp-kicker, .ps-insert-txt .lp-h2 { text-align: left; }
@@ -539,8 +542,7 @@
     .ps-insert-txt { padding: 28px 20px 32px; }
     .ps-insert-facts { gap: 20px; }
     .ps-insert-facts div b { font-size: 30px; }
-    .ps-insert-btns { flex-direction: column; }
-    .ps-insert-btns .btn { text-align: center; padding: 15px 16px; }
+    .ps-insert-btns { gap: 20px; }
   }
 </style>
 </head>
@@ -638,7 +640,7 @@
       <div class="lp-price"><small>Single room</small><div class="amt" data-std="1820">€1640</div><s class="eb-only">€1820</s></div>
     </div>
     <p class="lp-incl">Included: accommodation, vegetarian meals during the journey, airport and desert transfers, nomad guides, the residency itself, a professional photographer.<br>Not included: flights, travel insurance, meals on arrival and departure days in Marrakech, tips. Partial scholarships available on request.</p>
-    <p class="lp-photo"><b>Optional:</b> Hugo Martial, photographer of the residency, covers the journey. You will be able to buy photos of you, or book an individual session with him.<br><a href="photo-session.html" data-cta="photo-session">The photo session</a></p>
+    <p class="lp-photo"><b>Optional:</b> Hugo Martial, photographer of the residency, covers the journey. You will be able to buy photos of you, or book an individual session with him.<br><a href="photo-session.html" data-cta="photo-session">Learn more</a></p>
   </div>
 </section>
 
@@ -825,7 +827,7 @@
       <p class="lp-kicker">The photographer</p>
       <div class="photog-card"><img src="images/hugo/hugo-portrait.jpg" alt="Hugo Martial" loading="lazy"><div><b>Hugo Martial</b><small>Photographer &amp; filmmaker</small>
         <p>Hugo travels with the residency and documents the journey: the walking, the practices, what is born in the desert. Trained in the visual arts, he founded vivres, a place of residency between art, awareness and nature, and photographed and filmed its story for years.</p>
-        <a href="photo-session.html" data-cta="photog-bio">An optional photo session with him</a>
+        <a href="photo-session.html#regard" data-cta="photog-bio">Discover his work</a>
       </div></div>
     </div>
   </div>
@@ -882,7 +884,7 @@
       <p class="lp-kicker">Keep a trace</p>
       <h2 class="lp-h2">If you liked these images, <em>soon it will be your turn.</em></h2>
       <p>It is not every day that you go to the desert. To keep a trace of this rare experience and show your creation at its best, you will be able to buy photos of the journey or book an individual session with the residency's photographer.</p>
-      <div class="ps-insert-btns"><a href="photo-session.html#regard" class="btn btn-solid" data-cta="photo-insert-work">Discover Hugo's work</a><a href="photo-session.html" class="btn" data-cta="photo-insert-details">See the details</a></div>
+      <div class="ps-insert-btns"><a href="photo-session.html#regard" class="btn btn-solid" data-cta="photo-insert-work">Discover Hugo's work</a><a href="photo-session.html" class="ps-insert-more" data-cta="photo-insert-details">Learn more</a></div>
     </div>
   </div>
 </section>
