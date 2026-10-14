@@ -529,6 +529,27 @@
     .ps-insert-facts div b { font-size: 30px; }
     .ps-insert-btns { gap: 20px; }
   }
+  /* Readability: larger body text */
+  .fact span, .step p, .lp-incl, .accom-desc { font-size: 16px; }
+  .person p, .bio p, .included-list li { font-size: 17px; }
+  .form-reassure { font-size: 14px; }
+  .quotes blockquote { font-size: 23px; }
+  [style*="font-size:13px"] { font-size: 14px !important; }
+  [style*="font-size:14px"] { font-size: 16px !important; }
+  [style*="font-size:15px"] { font-size: 17px !important; }
+  [style*="font-size:16px"] { font-size: 18px !important; }
+  [style*="font-size:17px"] { font-size: 19px !important; }
+  label[style*="font-size:10px"] { font-size: 11px !important; }
+  /* Early bird highlight */
+  .eb-badge { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 28px; padding: 10px 16px; background: rgba(232,177,83,0.16); border: 1px solid var(--amber); font-family: 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.5px; color: var(--stars); opacity: 0; animation: fadeup 1s 0.8s forwards; }
+  .eb-badge b { color: var(--amber); font-weight: 500; text-transform: uppercase; letter-spacing: 2px; }
+  .eb-countdown { display: inline-block; padding: 3px 10px; background: var(--amber); color: var(--night); font-family: 'Jost', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+  .eb-countdown:empty { display: none; }
+  .lp-h2 .eb-countdown { display: table; margin: 18px auto 0; font-size: 14px; }
+  .hero-cta { margin-top: 24px; }
+  .ma-photo { max-width: 860px; }
+  .ma-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+  .eb-badge span:not(.eb-countdown) { flex-basis: 100%; }
 </style>
 </head>
 <body>
@@ -562,9 +583,10 @@
       <span style="font-family:'Cinzel','Noto Serif SC',serif;font-size:clamp(14px,1.5vw,17px);letter-spacing:4px;color:var(--amber);text-transform:uppercase;display:block;font-weight:600;">2026年12月10日 – 21日</span>
       <span style="font-family:'Cinzel','Noto Serif SC',serif;font-size:11px;letter-spacing:4px;color:rgba(250,246,241,0.6);text-transform:uppercase;display:block;margin-top:8px;">12天 · 从摩洛哥马拉喀什出发</span>
     </div>
+    <div class="eb-badge eb-only"><b>早鸟优惠</b><span>最多优惠 ¥1,980，截至 10 月 17 日</span> <span class="eb-countdown"></span></div>
     <div class="hero-cta">
       <a href="#register" class="btn btn-solid" data-cta="hero">申请名额</a>
-      <span class="hero-cta-note">限 14 位参与者<span class="eb-only"> · 早鸟优惠延长至 10 月 17 日</span></span>
+      <span class="hero-cta-note">限 14 位参与者</span>
     </div>
   </div>
   
@@ -576,11 +598,24 @@
   <p class="ma-line small">我们时时刻刻被层层包围：</p>
   <p class="ma-line ma-layers"><span>影响、</span><span>参照、</span><span>技术、</span><span>信息、</span><span>美学、</span><span>期待。</span></p>
   <p class="ma-line">层层堆叠，直到<br><em>那渴望诞生之物，再也找不到出路。</em></p>
-  <p class="ma-line small">在日语里，有一个词来称呼这份缺失的空间。</p>
+  <div class="ma-line ma-photo"><img src="raul-silhouette.jpg" alt="手掌轻放在沙上"></div>
+  <p class="ma-line small">在日语里，有一个词，指的是让事物得以诞生的那个空间。</p>
   <p class="ma-line ma-word">間<span class="ma-name">Ma</span><small>事物之间的空隙</small></p>
   <p class="ma-line">并非虚无，而是<em>一段有生命的间隙</em>：动作之间的停顿，声音之间的静默，形态由此涌现的不可见之场。</p>
+  <div class="ma-line ma-photo"><img src="raul-tree.jpg" alt="绵延的沙丘"></div>
   <p class="ma-line">沙漠，是一片广阔的 Ma 之场。<br>沙漠幻境之旅，是你给予自己的空间，<em>让那渴望诞生之物，终于找到它的路。</em></p>
+  <div class="ma-line ma-photo"><img src="raul-sand.jpg" alt="穿越撒哈拉的驼队"></div>
   <div class="ma-line" style="font-size:inherit;"><a href="#register" class="btn" data-cta="ma-intro" style="text-decoration:none;">我想给自己这份空间</a></div>
+</section>
+
+<!-- IMMERSION -->
+<section class="lp-sec" style="padding-top:0;">
+  <p class="strip-quote">白天与游牧者一同行走，夜晚睡在星空之下，远离屏幕，留出时间去创作。</p>
+  <div class="strip">
+    <img src="raul-caravan.jpg" alt="沙丘中的驼队">
+    <img src="raul-dune-dance.jpg" alt="沙丘上的舞者">
+    <img src="raul-fire1.jpg" alt="露营地的篝火">
+  </div>
 </section>
 
 <!-- AT A GLANCE -->
@@ -598,16 +633,6 @@
   </div>
 </section>
 
-<!-- IMMERSION -->
-<section class="lp-sec" style="padding-top:0;">
-  <p class="strip-quote">白天与游牧者一同行走，夜晚睡在星空之下，远离屏幕，留出时间去创作。</p>
-  <div class="strip">
-    <img src="raul-caravan.jpg" alt="沙丘中的驼队" loading="lazy">
-    <img src="raul-dune-dance.jpg" alt="沙丘上的舞者" loading="lazy">
-    <img src="raul-fire1.jpg" alt="露营地的篝火" loading="lazy">
-  </div>
-</section>
-
 <section class="lp-sec" style="padding-top:24px;padding-bottom:0;">
   <div class="lp-wrap quotes" style="grid-template-columns:1fr;max-width:720px;">
     <blockquote>「没有噪音，没有汽车，没有电视，没有收音机，没有灯光，没有路标，没有手机。什么都没有，只是在那里。壮美。与 Anys 同行不是一趟旅行，而是一场冒险。」<cite>Pascal Wagner · 2024年4月</cite></blockquote>
@@ -618,7 +643,7 @@
 <section class="lp-sec" id="price">
   <div class="lp-wrap">
     <p class="lp-kicker">费用</p>
-    <h2 class="lp-h2"><span class="eb-only">早鸟优惠延长至<em>10月17日。</em></span><span class="eb-after" style="display:none;">12 天，<em>一应俱全。</em></span></h2>
+    <h2 class="lp-h2"><span class="eb-only">早鸟优惠延长至<em>10月17日。</em><span class="eb-countdown"></span></span><span class="eb-after" style="display:none;">12 天，<em>一应俱全。</em></span></h2>
     <div class="lp-prices">
       <div class="lp-price"><small>多人间</small><div class="amt" data-std="12880">¥10900</div><s class="eb-only">¥12880</s></div>
       <div class="lp-price"><small>双人间</small><div class="amt" data-std="13500">¥11900</div><s class="eb-only">¥13500</s></div>
@@ -1189,6 +1214,16 @@
   document.querySelectorAll('.wa-btn').forEach(function(a){
     a.addEventListener('click', function(){ if (window.track) track('WhatsApp Click', { form: a.dataset.wa }); });
   });
+</script>
+<script>
+  // Early bird countdown (deadline: end of October 17)
+  (function(){
+    var end = new Date('2026-10-18T00:00:00'), now = new Date();
+    if (now >= end) return;
+    var n = Math.ceil((end - now) / 86400000);
+    var txt = n === 1 ? '最后一天' : '仅剩 ' + n + ' 天';
+    document.querySelectorAll('.eb-countdown').forEach(function(el){ el.textContent = txt; });
+  })();
 </script>
 </body>
 </html>

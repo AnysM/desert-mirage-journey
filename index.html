@@ -548,6 +548,27 @@
     .ps-insert-facts div b { font-size: 30px; }
     .ps-insert-btns { gap: 20px; }
   }
+  /* Readability: larger body text */
+  .fact span, .step p, .lp-incl, .accom-desc { font-size: 16px; }
+  .person p, .bio p, .included-list li { font-size: 17px; }
+  .form-reassure { font-size: 14px; }
+  .quotes blockquote { font-size: 23px; }
+  [style*="font-size:13px"] { font-size: 14px !important; }
+  [style*="font-size:14px"] { font-size: 16px !important; }
+  [style*="font-size:15px"] { font-size: 17px !important; }
+  [style*="font-size:16px"] { font-size: 18px !important; }
+  [style*="font-size:17px"] { font-size: 19px !important; }
+  label[style*="font-size:10px"] { font-size: 11px !important; }
+  /* Early bird highlight */
+  .eb-badge { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 28px; padding: 10px 16px; background: rgba(232,177,83,0.16); border: 1px solid var(--amber); font-family: 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.5px; color: var(--stars); opacity: 0; animation: fadeup 1s 0.8s forwards; }
+  .eb-badge b { color: var(--amber); font-weight: 500; text-transform: uppercase; letter-spacing: 2px; }
+  .eb-countdown { display: inline-block; padding: 3px 10px; background: var(--amber); color: var(--night); font-family: 'Jost', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+  .eb-countdown:empty { display: none; }
+  .lp-h2 .eb-countdown { display: table; margin: 18px auto 0; font-size: 14px; }
+  .hero-cta { margin-top: 24px; }
+  .ma-photo { max-width: 860px; }
+  .ma-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+  .eb-badge span:not(.eb-countdown) { flex-basis: 100%; }
 </style>
 </head>
 <body>
@@ -581,9 +602,10 @@
       <span style="font-family:'Cinzel',serif;font-size:clamp(14px,1.5vw,17px);letter-spacing:4px;color:var(--amber);text-transform:uppercase;display:block;font-weight:600;">December 10–21, 2026</span>
       <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:rgba(250,246,241,0.6);text-transform:uppercase;display:block;margin-top:8px;">12 days · Departing from Marrakech, Morocco</span>
     </div>
+    <div class="eb-badge eb-only"><b>Early bird</b><span>Save up to €210, until October 17</span> <span class="eb-countdown"></span></div>
     <div class="hero-cta">
       <a href="#register" class="btn btn-solid" data-cta="hero">I'd like to join</a>
-      <span class="hero-cta-note">14 participants<span class="eb-only"> · Early bird extended to Oct 17</span></span>
+      <span class="hero-cta-note">14 participants</span>
     </div>
   </div>
   
@@ -595,11 +617,24 @@
   <p class="ma-line small">We are constantly surrounded by</p>
   <p class="ma-line ma-layers"><span>influences,</span> <span>references,</span> <span>techniques,</span> <span>information,</span> <span>aesthetics,</span> <span>expectations.</span></p>
   <p class="ma-line">Layer upon layer accumulates, until<br><em>what wants to be born can't find its way.</em></p>
-  <p class="ma-line small">In Japanese, there is a word for this missing space.</p>
+  <div class="ma-line ma-photo"><img src="raul-silhouette.jpg" alt="Hand resting in the sand"></div>
+  <p class="ma-line small">In Japanese, there is a word for the space where something can be born.</p>
   <p class="ma-line ma-word">間<span class="ma-name">Ma</span><small>the space in between</small></p>
   <p class="ma-line">Not emptiness, but <em>a living interval</em>: the pause between movements, the silence between sounds, the unseen field from which forms emerge.</p>
+  <div class="ma-line ma-photo"><img src="raul-tree.jpg" alt="Empty dunes"></div>
   <p class="ma-line">The desert is a vast field of Ma.<br>Desert Mirage Journey is the space you offer yourself, <em>so that what wants to be born can finally find its way.</em></p>
+  <div class="ma-line ma-photo"><img src="raul-sand.jpg" alt="Caravan walking across the Sahara"></div>
   <div class="ma-line" style="font-size:inherit;"><a href="#register" class="btn" data-cta="ma-intro" style="text-decoration:none;">I give myself this space</a></div>
+</section>
+
+<!-- IMMERSION -->
+<section class="lp-sec" style="padding-top:0;">
+  <p class="strip-quote">Days walking with the nomads. Nights under the stars. Time to create, far from screens.</p>
+  <div class="strip">
+    <img src="raul-caravan.jpg" alt="Caravan in the dunes">
+    <img src="raul-dune-dance.jpg" alt="Dancer on the dune">
+    <img src="raul-fire1.jpg" alt="Fire at the bivouac">
+  </div>
 </section>
 
 <!-- AT A GLANCE -->
@@ -617,16 +652,6 @@
   </div>
 </section>
 
-<!-- IMMERSION -->
-<section class="lp-sec" style="padding-top:0;">
-  <p class="strip-quote">Days walking with the nomads. Nights under the stars. Time to create, far from screens.</p>
-  <div class="strip">
-    <img src="raul-caravan.jpg" alt="Caravan in the dunes" loading="lazy">
-    <img src="raul-dune-dance.jpg" alt="Dancer on the dune" loading="lazy">
-    <img src="raul-fire1.jpg" alt="Fire at the bivouac" loading="lazy">
-  </div>
-</section>
-
 <section class="lp-sec" style="padding-top:24px;padding-bottom:0;">
   <div class="lp-wrap quotes" style="grid-template-columns:1fr;max-width:720px;">
     <blockquote>"No noise, no cars, no TV, no radio, no lights, no signs, no phone. Nothing, just being there. Magnificent. Travelling with Anys is not a trip. It's an adventure."<cite>Pascal Wagner · April 2024</cite></blockquote>
@@ -637,7 +662,7 @@
 <section class="lp-sec" id="price">
   <div class="lp-wrap">
     <p class="lp-kicker">Price</p>
-    <h2 class="lp-h2"><span class="eb-only">Early bird extended until <em>October 17.</em></span><span class="eb-after" style="display:none;">12 days, <em>everything included.</em></span></h2>
+    <h2 class="lp-h2"><span class="eb-only">Early bird extended until <em>October 17.</em><span class="eb-countdown"></span></span><span class="eb-after" style="display:none;">12 days, <em>everything included.</em></span></h2>
     <div class="lp-prices">
       <div class="lp-price"><small>Dormitory</small><div class="amt" data-std="1560">€1350</div><s class="eb-only">€1560</s></div>
       <div class="lp-price"><small>Twin room</small><div class="amt" data-std="1640">€1450</div><s class="eb-only">€1640</s></div>
@@ -1208,6 +1233,16 @@
   document.querySelectorAll('.wa-btn').forEach(function(a){
     a.addEventListener('click', function(){ if (window.track) track('WhatsApp Click', { form: a.dataset.wa }); });
   });
+</script>
+<script>
+  // Early bird countdown (deadline: end of October 17)
+  (function(){
+    var end = new Date('2026-10-18T00:00:00'), now = new Date();
+    if (now >= end) return;
+    var n = Math.ceil((end - now) / 86400000);
+    var txt = n === 1 ? 'Last day' : n + ' days left';
+    document.querySelectorAll('.eb-countdown').forEach(function(el){ el.textContent = txt; });
+  })();
 </script>
 </body>
 </html>
