@@ -537,15 +537,14 @@
   [style*="font-size:17px"] { font-size: 19px !important; }
   label[style*="font-size:10px"] { font-size: 11px !important; }
   /* Early bird highlight */
-  .eb-badge { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 28px; padding: 10px 16px; background: rgba(232,177,83,0.16); border: 1px solid var(--amber); font-family: 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.5px; color: var(--stars); opacity: 0; animation: fadeup 1s 0.8s forwards; }
+  .eb-badge { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 22px; padding: 6px 12px; background: rgba(232,177,83,0.12); border: 1px solid rgba(232,177,83,0.6); font-family: 'Jost', sans-serif; font-size: 13px; letter-spacing: 0.5px; color: var(--stars); opacity: 0; animation: fadeup 1s 0.8s forwards; }
   .eb-badge b { color: var(--amber); font-weight: 500; text-transform: uppercase; letter-spacing: 2px; }
-  .eb-countdown { display: inline-block; padding: 3px 10px; background: var(--amber); color: var(--night); font-family: 'Jost', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+  .eb-countdown { display: inline-block; padding: 2px 8px; background: var(--amber); color: var(--night); font-family: 'Jost', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
   .eb-countdown:empty { display: none; }
-  .lp-h2 .eb-countdown { display: table; margin: 18px auto 0; font-size: 14px; }
+  .lp-h2 .eb-countdown { display: table; margin: 16px auto 0; font-size: 12px; }
   .hero-cta { margin-top: 24px; }
   .ma-photo { max-width: 860px; }
   .ma-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
-  .eb-badge span:not(.eb-countdown) { flex-basis: 100%; }
 </style>
 </head>
 <body>
@@ -579,7 +578,7 @@
       <span style="font-family:'Cinzel',serif;font-size:clamp(14px,1.5vw,17px);letter-spacing:4px;color:var(--amber);text-transform:uppercase;display:block;font-weight:600;">Du 10 au 21 décembre 2026</span>
       <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:rgba(250,246,241,0.6);text-transform:uppercase;display:block;margin-top:8px;">12 jours · Départ de Marrakech, Maroc</span>
     </div>
-    <div class="eb-badge eb-only"><b>Early bird</b><span>Jusqu'à 210 € de réduction, jusqu'au 17 octobre</span> <span class="eb-countdown"></span></div>
+    <div class="eb-badge eb-only"><b>Early bird</b><span>jusqu'au 17 octobre</span> <span class="eb-countdown"></span></div>
     <div class="hero-cta">
       <a href="#register" class="btn btn-solid" data-cta="hero">Rejoindre le voyage</a>
       <span class="hero-cta-note">14 participants</span>
@@ -1214,10 +1213,12 @@
 <script>
   // Early bird countdown (deadline: end of October 17)
   (function(){
-    var end = new Date('2026-10-18T00:00:00'), now = new Date();
-    if (now >= end) return;
-    var n = Math.ceil((end - now) / 86400000);
-    var txt = n === 1 ? 'Dernier jour' : 'Plus que ' + n + ' jours';
+    var now = new Date();
+    if (now >= new Date('2026-10-18T00:00:00')) return;
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var n = Math.round((new Date(2026, 9, 17) - today) / 86400000);
+    var txt;
+    if (n <= 0) txt = 'Dernier jour'; else if (n === 1) txt = "Plus qu'un jour"; else txt = 'Plus que ' + n + ' jours';
     document.querySelectorAll('.eb-countdown').forEach(function(el){ el.textContent = txt; });
   })();
 </script>
