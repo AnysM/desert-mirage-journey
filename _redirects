@@ -1,7 +1,8 @@
-# The ads landing page became the homepage (Oct 2026); old /join links keep working, query strings (UTM) are passed through
-/join          /                301
-/join.html     /                301
-/join-fr       /index-fr.html   301
-/join-fr.html  /index-fr.html   301
-/join-zh       /index-zh.html   301
-/join-zh.html  /index-zh.html   301
+# The ads landing page became the homepage (Oct 2026). Old /join links serve it directly (200 rewrite, no redirect)
+# so link previews (Instagram, WhatsApp, iMessage) load the title, description and image. Query strings (UTM) are kept.
+/join          /index.html      200
+/join.html     /index.html      200
+/join-fr       /index-fr.html   200
+/join-fr.html  /index-fr.html   200
+/join-zh       /index-zh.html   200
+/join-zh.html  /index-zh.html   200
