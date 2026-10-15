@@ -549,6 +549,20 @@
   .hero-cta { margin-top: 24px; }
   .ma-photo { max-width: 860px; }
   .ma-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+  /* Journey steps with thumbnails */
+  .jsteps { margin-top: 44px; display: flex; flex-direction: column; gap: 28px; }
+  .jstep { display: grid; grid-template-columns: 150px 1fr; gap: 24px; align-items: center; }
+  .jstep img { width: 150px; height: 190px; object-fit: cover; display: block; border-radius: 2px; }
+  .jstep small { display: block; font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+  .jstep h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2; color: var(--stars); margin-bottom: 6px; }
+  .jstep p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; line-height: 1.45; color: rgba(250,246,241,0.85); }
+  .jstep p.jinfo { font-family: 'Baskervville', serif; font-style: normal; font-size: 15px; color: rgba(250,246,241,0.55); margin-top: 8px; }
+  @media (max-width: 768px) {
+    .jstep { grid-template-columns: 104px 1fr; gap: 16px; }
+    .jstep img { width: 104px; height: 132px; }
+    .jstep h3 { font-size: 22px; }
+    .jstep p { font-size: 18px; }
+  }
 </style>
 </head>
 <body>
@@ -725,29 +739,26 @@
   <div style="max-width:700px;margin:0 auto;">
     <p class="section-label">旅程 · 主题：間 Ma</p>
     <h2 class="section-title">12月10日 – 21日<br><span style="color:var(--amber);font-size:0.65em;">12天 · 从马拉喀什到撒哈拉</span></h2>
-    <div style="margin-top:40px;display:flex;flex-direction:column;gap:0;">
-      <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
-        <div style="font-family:'Cinzel','Noto Serif SC',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第1天 · 12月10日</div>
-        <div style="font-family:'Cormorant Garamond','Noto Serif SC',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">抵达马拉喀什</div>
-        <p style="font-family:'Cormorant Garamond','Noto Serif SC',serif;font-style:italic;font-size:17px;line-height:1.6;color:var(--sand);margin-bottom:8px;">色彩、气味、喧腾，在一切归于寂静之前。</p>
-        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">机场接机，入住马拉喀什联合国教科文组织世界遗产老城中的传统里亚德庭院。与摩洛哥的初次接触。</p>
+    <div class="jsteps">
+      <div class="jstep">
+        <img src="images/journey/day1-marrakech.jpg" alt="马拉喀什。" loading="lazy">
+        <div><small>第1天 · 12月10日</small><h3>马拉喀什。</h3><p>色彩、气味、喧腾，在一切归于安静之前。</p><p class="jinfo">机场接机，入住老城中的传统庭院 riad。</p></div>
       </div>
-      <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
-        <div style="font-family:'Cinzel','Noto Serif SC',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第2–8天 · 12月11–17日</div>
-        <div style="font-family:'Cormorant Garamond','Noto Serif SC',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">走入沙漠</div>
-        <p style="font-family:'Cormorant Garamond','Noto Serif SC',serif;font-style:italic;font-size:17px;line-height:1.6;color:var(--sand);margin-bottom:8px;">沙漠褪去一切多余之物。空间由此打开。</p>
-        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">穿越阿特拉斯山脉南下，进入撒哈拉。游牧徒步、露营、在「呼啸沙丘」的时光、身体实践、艺术探索、共同创作，以及静默。</p>
+      <div class="jstep">
+        <img src="images/journey/day2-atlas.jpg" alt="南下之路。" loading="lazy">
+        <div><small>第2天 · 12月11日</small><h3>南下之路。</h3><p>穿越阿特拉斯山脉，抵达撒哈拉。</p></div>
       </div>
-      <div style="border-left:1px solid rgba(232,177,83,0.2);padding:24px 0 24px 32px;">
-        <div style="font-family:'Cinzel','Noto Serif SC',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第9–10天 · 12月18–19日</div>
-        <div style="font-family:'Cormorant Garamond','Noto Serif SC',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">艺术涌现与整合</div>
-        <p style="font-family:'Cormorant Garamond','Noto Serif SC',serif;font-style:italic;font-size:17px;line-height:1.6;color:var(--sand);margin-bottom:8px;">不是为了产出一场演出。而是与那一直在等待之物的相遇。</p>
-        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">回到固定营地，我们进入旅程中更为安定的阶段。一个用于艺术共创、自发演出、反思、整合的空间，让在沙漠中涌现之物找到属于它自己的形态。</p>
+      <div class="jstep">
+        <img src="images/journey/days3-8-desert.jpg" alt="沙漠。" loading="lazy">
+        <div><small>第3至8天 · 12月12–17日</small><h3>沙漠。</h3><p>与游牧者和骆驼同行。露营、练习、静默。</p></div>
       </div>
-      <div style="border-left:1px solid rgba(232,177,83,0.35);padding:24px 0 24px 32px;">
-        <div style="font-family:'Cinzel','Noto Serif SC',serif;font-size:11px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;">第11–12天 · 12月20–21日</div>
-        <div style="font-family:'Cormorant Garamond','Noto Serif SC',serif;font-size:20px;font-style:italic;color:var(--stars);margin-bottom:8px;">返回马拉喀什</div>
-        <p style="font-size:14px;line-height:1.7;color:rgba(250,246,241,0.5);">北上返回马拉喀什。在老城度过最后一夜。12月21日离开。</p>
+      <div class="jstep">
+        <img src="images/journey/days9-10-emergence.jpg" alt="艺术的涌现。" loading="lazy">
+        <div><small>第9至10天 · 12月18–19日</small><h3>艺术的涌现。</h3><p>在沙漠中浮现的，找到属于它自己的形式。</p><p class="jinfo">在固定营地：共同创作、表演、整合。</p></div>
+      </div>
+      <div class="jstep">
+        <img src="images/journey/days11-12-return.jpg" alt="北上返程，" loading="lazy">
+        <div><small>第11至12天 · 12月20–21日</small><h3>北上返程，</h3><p>在老城度过最后一夜。</p><p class="jinfo">12月21日离开。</p></div>
       </div>
     </div>
   </div>
