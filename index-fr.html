@@ -411,10 +411,10 @@
   .lp-lang a { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 1px; color: rgba(250,246,241,0.55); text-decoration: none; padding: 4px 6px; border: 1px solid transparent; }
   .lp-lang a.active { color: var(--amber); border-color: rgba(232,177,83,0.4); }
   /* MA INTRO (scroll-revealed) */
-  .ma { position: relative; padding: 18vh 24px 20vh; text-align: center; overflow: hidden; }
+  .ma { position: relative; padding: 12vh 24px 12vh; text-align: center; overflow: hidden; }
   .ma-bg { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0.9); font-size: min(70vw, 620px); line-height: 1; color: var(--amber); opacity: 0; filter: blur(30px); transition: opacity 2.4s ease, filter 2.4s ease, transform 2.4s ease; pointer-events: none; font-family: serif; }
   .ma.lit .ma-bg { opacity: 0.06; filter: blur(0); transform: translate(-50%,-50%) scale(1); }
-  .ma-line { position: relative; max-width: 760px; margin: 0 auto 13vh; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(24px, 3.4vw, 42px); line-height: 1.3; color: var(--stars); opacity: 0; transform: translateY(24px); filter: blur(8px); transition: opacity 1.4s ease, transform 1.4s ease, filter 1.4s ease; }
+  .ma-line { position: relative; max-width: 760px; margin: 0 auto 8vh; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(24px, 3.4vw, 42px); line-height: 1.3; color: var(--stars); opacity: 0; transform: translateY(24px); filter: blur(8px); transition: opacity 1.4s ease, transform 1.4s ease, filter 1.4s ease; }
   .ma-line.in { opacity: 1; transform: none; filter: none; }
   .ma-line em { color: var(--amber); }
   .ma-line.small { font-size: clamp(27px, 3.6vw, 44px); font-style: italic; color: rgba(250,246,241,0.88); }
@@ -437,8 +437,8 @@
   .nomads-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 56px; }
   .nomads-row img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
   @media (max-width: 768px) {
-    .ma { padding: 14vh 20px 16vh; }
-    .ma-line { margin-bottom: 11vh; }
+    .ma { padding: 10vh 20px 10vh; }
+    .ma-line { margin-bottom: 7vh; }
     .nomads { grid-template-columns: 1fr; gap: 32px; }
     .nomads-img { aspect-ratio: 4/3; }
     .nomads-row { margin-top: 32px; }
@@ -588,7 +588,6 @@
     <div style="margin-top:20px;opacity:0;animation:fadeup 1s 0.6s forwards;">
       <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,24px);font-weight:300;font-style:italic;color:rgba(250,246,241,0.75);margin-bottom:6px;">Une résidence artistique dans le Sahara marocain</p>
       <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.7vw,21px);font-weight:300;font-style:italic;color:rgba(250,246,241,0.75);margin-bottom:10px;">Ouverte à toutes celles et ceux qui ont la passion de l'expression artistique et de la co-création</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.6vw,20px);font-weight:300;font-style:italic;color:rgba(250,246,241,0.5);margin-bottom:20px;">Explorer le 間 Ma, l'espace entre les choses</p>
       <span style="font-family:'Cinzel',serif;font-size:clamp(14px,1.5vw,17px);letter-spacing:4px;color:var(--amber);text-transform:uppercase;display:block;font-weight:600;">Du 10 au 21 décembre 2026</span>
       <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:rgba(250,246,241,0.6);text-transform:uppercase;display:block;margin-top:8px;">12 jours · Départ de Marrakech, Maroc</span>
     </div>
@@ -607,7 +606,7 @@
   <p class="ma-line small">Nous sommes sans cesse entouré·es</p>
   <p class="ma-line ma-layers"><span>d'influences,</span> <span>de références,</span> <span>de techniques,</span> <span>d'informations,</span> <span>d'esthétiques,</span> <span>d'attentes.</span></p>
   <p class="ma-line">Les couches s'accumulent, jusqu'à ce que<br><em>ce qui veut naître ne trouve plus son chemin.</em></p>
-  <div class="ma-line ma-photo"><img src="raul-silhouette.jpg" alt="Une main posée dans le sable"></div>
+  <div class="ma-line ma-photo"><img src="images/ma-branches.jpg" alt="Un corps abandonné dans les branches emmêlées"></div>
   <p class="ma-line small">En japonais, un mot désigne l'espace où quelque chose peut naître.</p>
   <p class="ma-line ma-word">間<span class="ma-name">Ma</span><small>l'espace entre les choses</small></p>
   <p class="ma-line">Non pas le vide, mais <em>un intervalle vivant</em> : la pause entre les mouvements, le silence entre les sons, le champ invisible d'où les formes émergent.</p>
@@ -621,7 +620,7 @@
 <section class="lp-sec" style="padding-top:0;">
   <p class="strip-quote">Des journées à marcher avec les nomades. Des nuits sous les étoiles. Du temps pour créer, loin des écrans.</p>
   <div class="strip">
-    <img src="raul-caravan.jpg" alt="Caravane dans les dunes">
+    <img src="https://miragedesertjourney.b-cdn.net/Raul_Bartolome_Desert_retreat_trip-3.jpg" alt="Des chameaux à l'horizon">
     <img src="raul-dune-dance.jpg" alt="Danse sur la dune">
     <img src="raul-fire1.jpg" alt="Feu au bivouac">
   </div>
