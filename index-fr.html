@@ -674,11 +674,6 @@
 </section>
 
 <!-- ================= LEVEL 2 : go deeper ================= -->
-<section class="deeper" id="deeper">
-  <p>Pas encore prêt·e ? Prends ton temps.</p>
-  <a href="#journey" data-cta="go-deeper">Aller plus loin dans le voyage</a>
-</section>
-
 <section class="schedule" id="journey">
   <div style="max-width:700px;margin:0 auto;">
     <p class="section-label">Le voyage · Thème : Ma</p>
@@ -1049,7 +1044,6 @@
     if (e.key === 'Escape') { vbClose(); lbClose(); }
     if (document.getElementById('lightbox').classList.contains('open')) { if (e.key === 'ArrowLeft') lbStep(-1); if (e.key === 'ArrowRight') lbStep(1); }
   });
-  if (window.track) document.getElementById('deeper').querySelector('a').addEventListener('click', function(){ track('Go Deeper'); });
 </script>
 <script>
   // Nav: transparent over the hero, solid once scrolling
